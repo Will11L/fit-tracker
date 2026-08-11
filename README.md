@@ -4,9 +4,7 @@
 
 Serveur FastAPI/PostgreSQL auto-hébergé sur Raspberry Pi, application Android, client web et application montre. En production et utilisé quotidiennement.
 
-<!-- VISUEL 1 — Bandeau : 3 écrans Android côte à côte. Décommenter quand l'image est déposée.
-![Fit Tracker sur Android](docs/media/hero.png)
--->
+![Séance, statistiques par muscle et suivi santé sur Android](docs/media/hero.png)
 
 > [!NOTE]
 > **Ce dépôt est un instantané public d'un dépôt de travail privé**, actif depuis 2025.
@@ -30,9 +28,7 @@ L'application accompagne une pratique sportive au quotidien, du suivi de la séa
 | **Santé** | Pas, fréquence cardiaque, sommeil, SpO2, poids, stress — via Health Connect et la montre |
 | **Outils** | Chronomètre et minuteur, routines et tâches récurrentes, notifications |
 
-<!-- VISUEL 2 — Client web. Décommenter quand l'image est déposée.
-![Client web](docs/media/web.png)
--->
+![Navigation par domaines, calendrier et journal nutritionnel](docs/media/domaines.png)
 
 ---
 
@@ -46,7 +42,7 @@ Quand le réseau revient, un **protocole convergent** réconcilie les modificati
 
 Le même protocole est **réimplémenté sur deux piles différentes** : Kotlin avec Room côté Android, TypeScript avec Dexie côté web.
 
-<!-- VISUEL 3 — Démonstration de la synchronisation hors ligne (GIF). Décommenter quand le fichier est déposé.
+<!-- À VENIR — Démonstration de la synchronisation hors ligne (GIF).
 ![Synchronisation hors ligne](docs/media/sync-offline.gif)
 -->
 
@@ -98,7 +94,7 @@ Le serveur est **auto-hébergé sur une Raspberry Pi 5**, accessible uniquement 
 
 **Les migrations comme source de vérité.** Alembic côté serveur, migrations Room côté Android, avec des tests de migration sur appareil réel. Aucune création de schéma implicite.
 
-<!-- VISUEL 4 — Application montre. Décommenter quand l'image est déposée.
+<!-- À VENIR — Application montre.
 ![Application Wear OS](docs/media/watch.png)
 -->
 
