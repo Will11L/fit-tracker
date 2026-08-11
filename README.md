@@ -28,7 +28,23 @@ L'application accompagne une pratique sportive au quotidien, du suivi de la séa
 | **Santé** | Pas, fréquence cardiaque, sommeil, SpO2, poids, stress — via Health Connect et la montre |
 | **Outils** | Chronomètre et minuteur, routines et tâches récurrentes, notifications |
 
-![Navigation par domaines, calendrier et journal nutritionnel](docs/media/domaines.png)
+### Entraînement
+
+Séance en cours avec ses phases, équilibre du volume par zone, et répartition fine sur les 35 muscles de la taxonomie.
+
+![Séance, équilibre par zone et volume par muscle](docs/media/sport.png)
+
+### Nutrition
+
+Vue mensuelle où chaque jour porte ses anneaux de macros, journal du jour avec hydratation et repas, puis détail par aliment.
+
+![Calendrier nutritionnel, hydratation et repas, détail par aliment](docs/media/nutrition.png)
+
+### Santé
+
+Données lues depuis Health Connect et la montre : pas et objectif, fréquence cardiaque par tranches de 30 minutes, sommeil décomposé par phase.
+
+![Pas, fréquence cardiaque et sommeil](docs/media/sante.png)
 
 ---
 

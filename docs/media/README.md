@@ -2,15 +2,22 @@
 
 | Fichier | État | Contenu |
 |---|---|---|
-| `hero.png` | ✅ en place | Séance Push Day, radar de volume par zone, hub Santé |
-| `domaines.png` | ✅ en place | Navigation par domaines, calendrier, journal nutritionnel |
-| `sync-offline.gif` | ⬜ à produire | Couper le réseau, saisir une série, rétablir : la donnée remonte. 10 à 15 s, < 8 Mo |
-| `watch.png` | ⬜ à produire | Écran de la montre : pas et fréquence cardiaque |
-| `web.png` | ⬜ à produire | Client web connecté, page d'accueil ou statistiques, ~1600 px de large |
+| `hero.png` | ✅ | Bandeau : séance, équilibre par zone, hub Santé |
+| `sport.png` | ✅ | Séance en cours, radar par zone, volume par muscle |
+| `nutrition.png` | ✅ | Calendrier à anneaux, hydratation et repas, détail par aliment |
+| `sante.png` | ✅ | Pas, fréquence cardiaque intraday, sommeil par phase |
+| `sync-offline.gif` | ⬜ | Couper le réseau, saisir une série, rétablir : la donnée remonte. 10-15 s, < 8 Mo |
+| `watch.png` | ⬜ | Écran de la montre : pas et fréquence cardiaque |
+| `web.png` | ⬜ | Client web connecté, ~1600 px de large |
 
-Les bandes horizontales sont composées en HTML puis capturées avec Chrome en mode
-sans interface, pour garder un rendu homogène (fond `#0d1117`, coins arrondis,
-légendes). Conserver le mode sombre sur tous les visuels.
+## Méthode
 
-**Le GIF de synchronisation est le plus important** : c'est la seule façon de montrer
-la partie la plus difficile du projet. Capture possible avec `adb shell screenrecord`.
+Les bandes sont composées en HTML puis capturées avec Chrome sans interface, ce qui
+garantit un rendu homogène : fond `#0d1117` (identique au thème sombre de GitHub),
+coins arrondis, ombre portée, légende sous chaque écran.
+
+Les captures d'écran viennent du client Android réel via `adb shell screencap`.
+Conserver le mode sombre partout.
+
+**Le GIF de synchronisation reste le visuel manquant le plus important** : c'est la
+seule façon de montrer la partie la plus difficile du projet.
