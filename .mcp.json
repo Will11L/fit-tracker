@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sport-app": {
+      "type": "http",
+      "url": "https://<pi-fqdn>/mcp/protocol/mcp"
+    }
+  }
+}

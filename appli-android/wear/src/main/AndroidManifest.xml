@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <!-- Capteurs santé montre : FC (BODY_SENSORS) + pas (ACTIVITY_RECOGNITION). -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <!-- Android 13+ : lire la FC depuis l'arrière-plan (réponse pull app fermée)
+         exige cette permission séparée (« Autoriser tout le temps »). -->
+    <uses-permission android:name="android.permission.BODY_SENSORS_BACKGROUND" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/ic_wear_launcher"
+        android:label="@string/wear_app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault">
+
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="false" />
+
+        <!-- App non autonome : dépend du téléphone (canal Data Layer live). -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Répond à la requête pull du téléphone même app fermée (le système
+             réveille le service sur le message Data Layer /health/live/request). -->
+        <service
+            android:name=".WearRequestListenerService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
+                <data android:scheme="wear" android:host="*" android:pathPrefix="/health/live/request" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

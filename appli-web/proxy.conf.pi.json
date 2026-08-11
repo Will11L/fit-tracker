@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://<pi-fqdn>",
+    "secure": true,
+    "changeOrigin": true,
+    "ws": true
+  }
+}

@@ -1,0 +1,1468 @@
+<resources>
+    <string name="app_name">FitTracker</string>
+
+    <!-- ============================================================ -->
+    <!-- COMMON (boutons réutilisés) — i18n Session A 2026-05-11        -->
+    <!-- ============================================================ -->
+    <string name="common_next">Next</string>
+    <string name="common_back">Back</string>
+    <string name="common_finish">Finish</string>
+    <string name="common_skip">Skip</string>
+    <string name="common_save">Save</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="exit_app_title">Quit the app?</string>
+    <string name="exit_app_message">Are you sure you want to quit?</string>
+    <string name="exit_app_confirm">Quit</string>
+    <string name="common_theme_light">Light</string>
+    <string name="common_theme_dark">Dark</string>
+    <string name="common_theme_system">Follow system</string>
+    <string name="common_yes">Yes</string>
+    <string name="common_no">No</string>
+    <string name="common_ok">OK</string>
+    <string name="common_delete">Delete</string>
+    <string name="common_add">Add</string>
+    <string name="common_edit">Edit</string>
+    <string name="common_rename">Rename</string>
+    <string name="common_sync">Sync</string>
+    <string name="common_update">Update</string>
+    <string name="common_close">Close</string>
+    <string name="common_confirm_deletion">Confirm Deletion</string>
+
+    <!-- Days of week : storage en DB reste EN canonique ("Monday" etc.) -->
+    <!-- Display uniquement via helper localizedDayOfWeek(key) -->
+    <string name="day_monday">Monday</string>
+    <string name="day_tuesday">Tuesday</string>
+    <string name="day_wednesday">Wednesday</string>
+    <string name="day_thursday">Thursday</string>
+    <string name="day_friday">Friday</string>
+    <string name="day_saturday">Saturday</string>
+    <string name="day_sunday">Sunday</string>
+    <string name="day_rest_day">Rest Day</string>
+
+    <!-- ============================================================ -->
+    <!-- HOME SCREEN — i18n Session B 2026-05-11                        -->
+    <!-- ============================================================ -->
+    <string name="home_tab_session">Session</string>
+    <string name="home_tab_goals">Goals</string>
+    <string name="home_tab_program">Program</string>
+    <string name="home_tab_week">Week</string>
+    <string name="home_tab_calendar">Calendar</string>
+    <string name="home_currently_sleeping">Currently sleeping 💤</string>
+    <string name="home_view_program">View program</string>
+    <string name="home_start_planned">Start %1$s</string>
+    <string name="home_start_new_session">Start a new session</string>
+    <string name="home_create_workout_title">Start a session</string>
+    <string name="home_create_workout_placeholder">Session name</string>
+    <string name="home_create_workout_error_empty">Name cannot be empty.</string>
+    <string name="home_create_workout_error_rest_day">\"Rest Day\" is not allowed.</string>
+    <string name="home_create_workout_start">Start</string>
+
+    <!-- ============================================================ -->
+    <!-- FORM VALIDATION (disabled confirm-button reasons)             -->
+    <!-- ============================================================ -->
+    <string name="form_error_name_required">Name required</string>
+    <string name="form_error_title_required">Title required</string>
+    <string name="routine_period_error_end_after_start">End time must be after start time</string>
+    <string name="routine_task_error_period_required">Select a period</string>
+    <string name="tasks_calendar_error_weekday_required">Select at least one day</string>
+    <string name="quotes_error_text_required">Quote cannot be empty</string>
+    <string name="form_error_muscle_required">Select a muscle</string>
+    <string name="form_error_muscles_required">Select at least one muscle</string>
+    <string name="form_error_equipment_required">Select at least one equipment</string>
+    <string name="form_error_target_required">Select a target</string>
+
+    <!-- ============================================================ -->
+    <!-- SESSION TAB                                                    -->
+    <!-- ============================================================ -->
+    <string name="session_completion">Session Completion</string>
+    <string name="session_phase_warmup">Warm-Up</string>
+    <string name="session_phase_training">Training</string>
+    <string name="session_phase_posttraining">Post-Training</string>
+    <string name="session_phase_empty_warmup">No warm-up</string>
+    <string name="session_phase_empty_training">No training</string>
+    <string name="session_phase_empty_posttraining">No post-training</string>
+    <string name="session_sync_title">Sync Session</string>
+    <string name="session_sync_message">Do you want to sync your session now?</string>
+    <string name="session_phase_dialog_title">Add to which phase?</string>
+    <string name="session_remove_exercise_message">Are you sure you want to remove %1$s from the session?</string>
+    <string name="session_delete_title">Delete session</string>
+    <string name="session_delete_message">Are you sure you want to delete this session? This cannot be undone.</string>
+    <string name="session_rename_title">Rename session</string>
+    <string name="session_rename_label">Session name</string>
+    <string name="session_rename_placeholder">New name</string>
+
+    <!-- ============================================================ -->
+    <!-- SESSION EXERCISE SCREEN                                        -->
+    <!-- ============================================================ -->
+    <string name="session_exercise_fallback_name">Exercise Name</string>
+    <string name="session_exercise_details">Exercise Details</string>
+    <string name="session_exercise_progress">Progress Overview</string>
+    <string name="session_exercise_notes">Notes</string>
+    <string name="session_exercise_instructions">Instructions</string>
+    <string name="session_exercise_edit_reps">Edit Reps</string>
+    <string name="session_exercise_edit_weight">Edit Weight (%1$s)</string>
+    <string name="session_exercise_sync_title">Sync Sets</string>
+    <string name="session_exercise_sync_message">Do you want to sync your workout sets now?</string>
+    <string name="session_exercise_delete_set_message">Are you sure you want to delete this set?</string>
+    <!-- Table header -->
+    <string name="session_exercise_table_num">N°</string>
+    <string name="session_exercise_table_reps">Reps</string>
+    <string name="session_exercise_table_weight">Weight</string>
+    <string name="session_exercise_table_trend">Trend</string>
+    <string name="session_exercise_table_done">Done</string>
+    <string name="session_exercise_table_del">Del</string>
+    <string name="session_exercise_table_notes">Notes</string>
+
+    <!-- ============================================================ -->
+    <!-- WEEK VIEW SCREEN                                               -->
+    <!-- ============================================================ -->
+    <string name="week_completion">Week Completion</string>
+    <string name="week_days">Days</string>
+    <string name="week_rest_zzz">Zzz...</string>
+    <string name="week_rename_title">Rename Session</string>
+    <string name="week_rename_placeholder">New session name</string>
+    <string name="week_error_rest_day_name">Session name cannot be \'Rest Day\'.</string>
+    <string name="week_create_title">Plan a New Workout for %1$s</string>
+    <string name="week_create_confirm">Create</string>
+    <string name="week_create_placeholder">Workout name</string>
+    <!-- CopyPlannedWorkoutDialog (days displayed via localizedDayOfWeek) -->
+    <string name="copy_workout_title">Copy Session</string>
+    <string name="copy_workout_confirm">Copy</string>
+    <string name="copy_workout_choose_day">Choose the target day:</string>
+    <string name="copy_workout_day_label">Day</string>
+    <string name="copy_workout_current_day">Current day: %1$s</string>
+
+    <!-- ============================================================ -->
+    <!-- CALENDAR SCREEN                                                -->
+    <!-- ============================================================ -->
+    <string name="calendar_month_completion">Month Completion</string>
+    <string name="calendar_title">Calendar</string>
+    <!-- Weekday short labels : utilises aussi par BirthDatePickerDialog -->
+    <string name="weekday_short_mon">M</string>
+    <string name="weekday_short_tue">T</string>
+    <string name="weekday_short_wed">W</string>
+    <string name="weekday_short_thu">T</string>
+    <string name="weekday_short_fri">F</string>
+    <string name="weekday_short_sat">S</string>
+    <string name="weekday_short_sun">S</string>
+
+    <!-- ============================================================ -->
+    <!-- TASKS SCREEN (Phase 1 2026-05-12, unified Daily + Agenda)      -->
+    <!-- ============================================================ -->
+    <string name="tasks_tab_daily">Daily</string>
+    <string name="tasks_tab_agenda">Agenda</string>
+    <string name="tasks_calendar_title">Tasks calendar</string>
+    <string name="tasks_calendar_add_task">Add task</string>
+    <string name="tasks_calendar_add_section">Actions</string>
+    <string name="tasks_calendar_day_empty">No task on this day.</string>
+    <string name="tasks_calendar_add_title">New task</string>
+    <string name="tasks_calendar_edit_title">Edit task</string>
+    <string name="tasks_calendar_field_title">Title</string>
+    <string name="tasks_calendar_field_title_placeholder">e.g. Pay rent</string>
+    <string name="tasks_calendar_field_due_date">Due date</string>
+    <string name="tasks_calendar_field_due_time">Time (optional)</string>
+    <string name="tasks_calendar_field_due_time_placeholder">HH:MM (optional)</string>
+    <!-- Phase 2 (2026-05-12) : recurrence -->
+    <string name="tasks_calendar_field_repeat">Repeat</string>
+    <string name="tasks_calendar_recur_none">None</string>
+    <string name="tasks_calendar_recur_weekly">Weekly</string>
+    <string name="tasks_calendar_recur_monthly">Monthly</string>
+    <string name="tasks_calendar_recur_yearly">Yearly</string>
+    <string name="tasks_calendar_field_weekdays">Weekdays</string>
+    <string name="tasks_calendar_field_start_date">Start date</string>
+    <string name="tasks_calendar_field_end_date_optional">End date (optional)</string>
+    <string name="tasks_calendar_field_end_date_none">No end (until cancelled)</string>
+    <!-- Phase 3 reminders -->
+    <string name="tasks_calendar_field_reminder">Reminder</string>
+    <string name="tasks_calendar_reminder_none">None</string>
+    <string name="tasks_calendar_reminder_15min">15 min</string>
+    <string name="tasks_calendar_reminder_1h">1 hour</string>
+    <string name="tasks_calendar_reminder_1day">1 day</string>
+    <!-- Generic reminder presets (shared ReminderSelector: periods + default) -->
+    <string name="reminder_preset_none">None</string>
+    <string name="reminder_preset_5min">5 min</string>
+    <string name="reminder_preset_15min">15 min</string>
+    <string name="reminder_preset_30min">30 min</string>
+    <string name="reminder_preset_1h">1 hour</string>
+    <string name="notif_task_reminder_title">Task reminder</string>
+    <string name="notif_task_reminder_body">Upcoming: %1$s</string>
+    <string name="notif_routine_period_start_title">Routine started</string>
+    <string name="notif_routine_period_start_body">Time for your %1$s routine</string>
+    <string name="notif_routine_period_end_title">Routine ending soon</string>
+    <string name="notif_routine_period_end_body">Your %1$s routine ends soon</string>
+    <string name="tasks_calendar_task_added">Task added</string>
+    <string name="tasks_calendar_add_failed">Failed to add task</string>
+    <string name="tasks_calendar_update_failed">Failed to update task</string>
+    <string name="tasks_calendar_delete_failed">Failed to delete task</string>
+    <string name="tasks_calendar_toggle_failed">Failed to toggle task</string>
+    <string name="tasks_calendar_delete_confirm_title">Delete task</string>
+    <string name="tasks_calendar_delete_confirm_message">Delete \"%1$s\"?</string>
+
+    <!-- ============================================================ -->
+    <!-- CHRONO SCREEN                                                  -->
+    <!-- ============================================================ -->
+    <string name="chrono_screen_title">Chrono</string>
+    <string name="chrono_tab_stopwatch">Stopwatch</string>
+    <string name="chrono_tab_timer">Timer</string>
+    <!-- Stopwatch / Timer buttons -->
+    <string name="chrono_btn_start">Start</string>
+    <string name="chrono_btn_resume">Resume</string>
+    <string name="chrono_btn_stop">Stop</string>
+    <string name="chrono_btn_pause">Pause</string>
+    <string name="chrono_btn_restart">Restart</string>
+    <string name="chrono_btn_lap">Lap</string>
+    <string name="chrono_btn_reset">Reset</string>
+    <string name="chrono_btn_set">Set</string>
+    <!-- Stopwatch laps -->
+    <string name="chrono_laps_title">Laps</string>
+    <string name="chrono_no_laps">No laps yet</string>
+    <string name="chrono_laps_col_num">N°</string>
+    <string name="chrono_laps_col_delta">Δ Lap</string>
+    <string name="chrono_laps_col_time">Time</string>
+    <!-- Timer -->
+    <string name="chrono_presets_title">Pre-set</string>
+    <string name="chrono_hint_running">Timer running — reset to change preset</string>
+    <string name="chrono_hint_choose_preset">Choose a preset to start</string>
+    <string name="chrono_hint_ready">Ready</string>
+    <string name="chrono_dialog_set_timer">Set timer</string>
+
+    <!-- ============================================================ -->
+    <!-- STATS SCREEN                                                   -->
+    <!-- ============================================================ -->
+    <string name="stats_training_frequency">Training frequency</string>
+    <string name="stats_zone_balance_title">Zone balance (volume)</string>
+    <string name="stats_zone_balance_empty">No workouts in this period.</string>
+    <string name="stats_chart_zone_volume">Volume (%1$s) / Zone</string>
+    <string name="stats_chart_zone_sets">Sets / Zone</string>
+    <string name="stats_chart_zone_exercises">Exercises / Zone</string>
+    <string name="stats_chart_group_volume">Volume (%1$s) / Group</string>
+    <string name="stats_chart_group_sets">Sets / Group</string>
+    <string name="stats_chart_group_exercises">Exercises / Group</string>
+    <string name="stats_chart_muscle_volume">Volume (%1$s) / Muscle</string>
+    <string name="stats_chart_muscle_sets">Sets / Muscle</string>
+    <string name="stats_chart_muscle_exercises">Exercises / Muscle</string>
+    <string name="stats_chart_exercise_volume">Volume (%1$s) / Exercise</string>
+    <string name="stats_chart_exercise_sets">Sets / Exercise</string>
+    <string name="stats_chart_exercise_sessions">Sessions / Exercise</string>
+    <!-- Frequency card -->
+    <string name="stats_freq_sessions">Sessions</string>
+    <string name="stats_freq_per_week">Per week</string>
+    <string name="stats_freq_top_group">Top group</string>
+    <string name="stats_freq_total_volume">Total volume</string>
+    <string name="stats_freq_total_sets">Total sets</string>
+    <string name="stats_freq_total_exos">Total exos</string>
+    <!-- Range picker -->
+    <string name="stats_range_1_week">1 week</string>
+    <string name="stats_range_30_days">30 days</string>
+    <string name="stats_range_3_months">3 months</string>
+    <string name="stats_range_6_months">6 months</string>
+    <string name="stats_range_1_year">1 year</string>
+    <string name="stats_range_all">All</string>
+    <string name="stats_range_custom">Custom</string>
+    <string name="stats_range_select_title">Select date range</string>
+    <string name="stats_range_start_placeholder">Start</string>
+    <string name="stats_range_end_placeholder">End</string>
+    <!-- A11y descriptions -->
+    <string name="stats_a11y_bar_chart">Bar chart</string>
+    <string name="stats_a11y_line_chart">Line chart</string>
+    <string name="stats_a11y_sets_count">Sets count</string>
+    <string name="stats_a11y_exercises_count">Exercises count</string>
+    <string name="stats_a11y_total_weight">Total weight</string>
+    <string name="stats_a11y_sort_alpha">Sort alphabetically</string>
+    <string name="stats_a11y_sort_zone">Sort by zone color</string>
+    <!-- Zone display labels (storage DB reste EN canonique) -->
+    <string name="zone_chest">Chest</string>
+    <string name="zone_back">Back</string>
+    <string name="zone_shoulders">Shoulders</string>
+    <string name="zone_arms">Arms</string>
+    <string name="zone_legs">Legs</string>
+    <string name="zone_core">Core</string>
+    <string name="zone_other">Other</string>
+
+    <!-- ============================================================ -->
+    <!-- MUSCLE STATS SCREEN                                            -->
+    <!-- ============================================================ -->
+    <string name="muscle_stats_weekly_goal">Weekly goal</string>
+    <string name="muscle_stats_period">Period</string>
+    <string name="muscle_stats_weekly_volume">Weekly volume</string>
+    <string name="muscle_stats_exercises">Exercises</string>
+    <string name="muscle_stats_no_data">No data for this period</string>
+    <string name="muscle_stats_no_goal">No goal set for this week.</string>
+    <string name="muscle_stats_no_exercises">No exercises linked to this muscle.</string>
+    <string name="muscle_stats_goal_format">%1$d / %2$d sets</string>
+    <string name="muscle_stats_priority_status">Priority: %1$s · Status: %2$s</string>
+
+    <!-- ============================================================ -->
+    <!-- EXERCISE STATS SCREEN                                          -->
+    <!-- ============================================================ -->
+    <string name="exercise_stats_all_time">All-time totals</string>
+    <string name="exercise_stats_progression">Progression</string>
+    <string name="exercise_stats_top_set">Top set</string>
+    <string name="exercise_stats_total_sets">Total sets</string>
+    <string name="exercise_stats_total_volume">Total volume</string>
+    <string name="exercise_stats_legend_max_weight">Max weight (%1$s)</string>
+    <string name="exercise_stats_legend_volume">Volume (%1$s×reps)</string>
+    <string name="exercise_stats_legend_sets">Sets</string>
+
+    <!-- ============================================================ -->
+    <!-- DRAWER                                                         -->
+    <!-- ============================================================ -->
+    <string name="drawer_section_general">General</string>
+    <string name="drawer_section_sport">Sport</string>
+    <string name="drawer_section_nutrition">Nutrition</string>
+    <string name="drawer_section_health">Health</string>
+    <string name="drawer_section_account_settings">Account &amp; Settings</string>
+    <string name="drawer_section_admin">Admin</string>
+    <string name="drawer_section_expand">Expand section</string>
+    <string name="drawer_section_collapse">Collapse section</string>
+    <string name="drawer_item_home">Home</string>
+    <string name="drawer_item_chrono">Chrono</string>
+    <string name="drawer_item_notifications">Notifications</string>
+    <string name="drawer_item_conversations">Conversations</string>
+    <string name="drawer_item_tasks">Tasks</string>
+    <string name="drawer_item_daily_tasks">Daily Tasks</string>   <!-- legacy, kept for callers -->
+    <string name="drawer_item_no_session">No session</string>
+    <string name="drawer_item_program">Program</string>
+    <string name="drawer_item_exercises">Exercises</string>
+    <string name="drawer_item_muscles">Muscles</string>
+    <string name="drawer_item_calendar">Calendar</string>
+    <string name="drawer_item_statistics">Statistics</string>
+    <string name="drawer_item_profile">Profile</string>
+    <string name="drawer_item_settings">Settings</string>
+    <string name="drawer_item_language_display">Language &amp; Display</string>
+    <string name="drawer_item_export_datas">Export Data</string>
+    <string name="drawer_item_quotes">Motivational quotes</string>
+    <string name="drawer_item_logout">Logout</string>
+    <string name="drawer_item_sync_settings">Sync Settings</string>
+    <string name="drawer_item_manage_users">Manage users</string>
+    <string name="drawer_item_ui_showcase">UI Showcase</string>
+    <string name="drawer_last_sync">Sync: %1$s</string>
+    <string name="drawer_last_sync_never">Never</string>
+
+    <!-- ============================================================ -->
+    <!-- BOTTOM NAV (A7 — Sport/Nutrition mode + toggle)               -->
+    <!-- ============================================================ -->
+    <!-- Sport shortcuts -->
+    <string name="nav_home">Home</string>
+    <string name="nav_calendar">Calendar</string>
+    <string name="nav_chrono">Chrono</string>
+    <string name="nav_stats">Stats</string>
+    <!-- Nutrition shortcuts -->
+    <string name="nav_nutrition_journal">Journal</string>
+    <string name="nav_nutrition_goals">Goals</string>
+    <string name="nav_nutrition_catalogue">Catalogue</string>
+    <string name="nav_nutrition_stats">Nutrition stats</string>
+    <!-- Health shortcuts -->
+    <string name="nav_health">Health</string>
+    <!-- Mode toggle (content description; icon reflects current mode; cycle Sport → Nutrition → Health) -->
+    <string name="nav_switch_to_nutrition">Switch to Nutrition mode</string>
+    <string name="nav_switch_to_health">Switch to Health mode</string>
+    <string name="nav_switch_to_sport">Switch to Sport mode</string>
+
+    <!-- ============================================================ -->
+    <!-- UI SHOWCASE (admin gallery atoms/molecules)                   -->
+    <!-- ============================================================ -->
+    <string name="ui_showcase_title">UI Showcase</string>
+    <string name="ui_showcase_interactive">Interactive</string>
+    <string name="ui_showcase_all_states">All states</string>
+    <string name="ui_showcase_tab_foundations">Foundations</string>
+    <string name="ui_showcase_tab_components">Common Components</string>
+    <string name="ui_showcase_tab_atoms">Atoms</string>
+    <string name="ui_showcase_tab_molecules">Molecules</string>
+    <string name="ui_showcase_tab_organisms">Organisms</string>
+    <string name="ui_showcase_organisms_placeholder">Coming soon — Step 5 (ConfirmationDialog, OptionsBottomSheet, etc.)</string>
+
+    <!-- ============================================================ -->
+    <!-- SETTINGS                                                       -->
+    <!-- ============================================================ -->
+    <string name="settings_title">Settings</string>
+    <!-- Categories drill-down (rows on root SettingsScreen) -->
+    <string name="settings_category_appearance">Appearance</string>
+    <string name="settings_category_appearance_desc">Theme, dark/light mode</string>
+    <string name="settings_category_language_format">Language &amp; format</string>
+    <string name="settings_category_language_format_desc">Locale, weight &amp; length units</string>
+    <string name="settings_category_notifications_desc">In-app, sound, vibrate, phone</string>
+    <string name="settings_category_rerun_onboarding">Re-run onboarding</string>
+    <string name="settings_category_rerun_onboarding_desc">Restart the welcome flow and reset preferences to defaults</string>
+    <string name="settings_category_startup">Startup</string>
+    <string name="settings_category_startup_desc">Choose the screen opened at app launch</string>
+    <string name="settings_start_screen_title">Start screen</string>
+    <string name="settings_start_screen_description">Screen opened when the app launches.</string>
+    <string name="settings_start_screen_home">Today\'s session</string>
+    <string name="settings_start_screen_tasks">Tasks</string>
+    <string name="settings_start_screen_calendar">Calendar</string>
+    <string name="settings_start_screen_stats">Stats</string>
+    <string name="settings_start_screen_chrono">Chrono</string>
+    <string name="settings_start_screen_program">Program</string>
+    <string name="settings_start_screen_notifications">Notifications</string>
+    <string name="settings_start_screen_conversations">Conversations</string>
+    <string name="settings_section_language">Language</string>
+    <string name="settings_section_units">Units</string>
+    <string name="settings_section_theme">Theme</string>
+    <string name="settings_section_week">Week starts on</string>
+    <string name="settings_toggle_vibrate_title">Vibrate on in-app notification</string>
+    <string name="settings_toggle_vibrate_desc">Trigger vibration when a notification appears in the app</string>
+    <string name="settings_toggle_sound_title">Sound on in-app notification</string>
+    <string name="settings_toggle_sound_desc">Play sound when a notification appears in the app</string>
+    <string name="settings_toggle_overlay_title">Show in-app notification overlay</string>
+    <string name="settings_toggle_overlay_desc">Show a notification overlay when a notification appears in the app</string>
+    <string name="settings_toggle_phone_title">Show phone notifications</string>
+    <string name="settings_toggle_phone_desc">Show phone notifications</string>
+    <string name="settings_section_categories">Notification categories</string>
+    <string name="settings_toggle_notify_tasks_title">Task reminders</string>
+    <string name="settings_toggle_notify_tasks_desc">Notify for task reminders</string>
+    <string name="settings_toggle_notify_timers_title">Timer notifications</string>
+    <string name="settings_toggle_notify_timers_desc">Notify when a timer finishes</string>
+    <string name="settings_toggle_notify_routines_title">Routine notifications</string>
+    <string name="settings_toggle_notify_routines_desc">Notify at the start and end of routine periods</string>
+    <string name="settings_default_reminder_title">Default reminder</string>
+    <string name="settings_default_reminder_desc">Pre-fills the reminder when you create a new task or routine. \"None\" means no reminder by default.</string>
+    <string name="settings_default_reminder_label">Remind me before</string>
+    <string name="settings_weight_unit_desc">Used everywhere weights are displayed (sets, stats).</string>
+    <string name="settings_length_unit_desc">Used for height + body measurements (when added).</string>
+    <string name="settings_theme_desc">Affects M3 widgets (switches, dialogs) and the system status bar. App custom palette stays the same.</string>
+
+    <!-- ============================================================ -->
+    <!-- AUTH (Login/Signup/Logout)                                     -->
+    <!-- ============================================================ -->
+    <string name="auth_login_title">Login</string>
+    <string name="auth_signup_title">Sign up</string>
+    <string name="auth_username">Username</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_confirm_password">Confirm password</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_first_name">First name</string>
+    <string name="auth_last_name">Last name</string>
+    <string name="auth_login_button">Login</string>
+    <string name="auth_signup_button">Sign up</string>
+    <string name="auth_no_account">Don\'t have an account?</string>
+    <string name="auth_have_account">Already have an account?</string>
+    <string name="auth_logout_title">Logout</string>
+    <string name="auth_logout_confirm">Are you sure you want to logout?</string>
+    <string name="auth_brand_name">Fit Tracker</string>
+    <string name="auth_login_subtitle">Sign in to synchronize your data</string>
+    <string name="auth_username_placeholder">Ex: will</string>
+    <string name="auth_password_placeholder">••••••••</string>
+    <string name="auth_loading_login">Signing in…</string>
+    <string name="auth_loading_signup">Creating…</string>
+    <string name="auth_no_account_action">No account yet? Create one</string>
+    <string name="auth_have_account_action">Already have an account? Sign in</string>
+    <string name="auth_signup_subtitle">Sign up to start tracking</string>
+    <string name="auth_signup_title_create">Create your account</string>
+    <string name="auth_signup_button_create">Create account</string>
+    <string name="auth_signup_username_label">Username (3+ chars)</string>
+    <string name="auth_signup_username_placeholder">Ex: alice</string>
+    <string name="auth_signup_password_label">Password (8+ chars)</string>
+    <string name="auth_signup_optional_placeholder">Optional</string>
+    <string name="auth_logout_progress">Logging out…</string>
+    <string name="auth_logout_bye">See you soon 👋</string>
+
+    <!-- ============================================================ -->
+    <!-- ADMIN USERS                                                    -->
+    <!-- ============================================================ -->
+    <string name="admin_users_title">Manage users</string>
+    <string name="admin_users_error_title">Error</string>
+    <string name="admin_users_retry">Retry</string>
+    <string name="admin_users_section_admins">Admins (%1$d)</string>
+    <string name="admin_users_section_users">Users (%1$d)</string>
+    <string name="admin_users_you_chip">  (you)</string>
+
+    <!-- ============================================================ -->
+    <!-- QUOTES SCREEN (motivational quotes management)                -->
+    <!-- ============================================================ -->
+    <string name="quotes_title">Motivational quotes</string>
+    <string name="quotes_empty">No quotes yet. Tap + to add one.</string>
+    <string name="quotes_add_title">New quote</string>
+    <string name="quotes_field_text">Quote</string>
+    <string name="quotes_field_text_hint">e.g. The body achieves what the mind believes.</string>
+    <string name="quotes_field_author">Author (optional)</string>
+    <string name="quotes_field_author_hint">e.g. Unknown</string>
+    <string name="quotes_delete_title">Delete quote</string>
+    <string name="quotes_delete_message">Do you want to delete this quote?</string>
+    <string name="quotes_edit_title">Edit quote</string>
+    <string name="quotes_options_title">Quote</string>
+    <string name="quotes_section_actions">Actions</string>
+    <string name="quotes_search_hint">Search quotes</string>
+    <string name="quotes_no_results">No quotes.</string>
+    <plurals name="quotes_count">
+        <item quantity="one">%d quote</item>
+        <item quantity="other">%d quotes</item>
+    </plurals>
+
+    <!-- ============================================================ -->
+    <!-- NOTIFICATIONS SCREEN                                           -->
+    <!-- ============================================================ -->
+    <string name="notifications_inbox">Inbox</string>
+    <string name="notifications_empty">No notifications yet</string>
+    <string name="notifications_summary_read">Read</string>
+    <string name="notifications_summary_unread">Unread</string>
+    <string name="notifications_read_all_title">Mark all as read</string>
+    <string name="notifications_read_all_message">Do you want to mark all unread notifications as read?</string>
+    <string name="notifications_read_all_button">Mark all</string>
+    <string name="notifications_delete_title">Confirm Deletion</string>
+    <string name="notifications_delete_message">Do you want to delete this notification?</string>
+    <string name="notifications_swipe_go">Go</string>
+    <string name="notifications_swipe_delete">Delete</string>
+
+    <!-- NotificationCenter system push -->
+    <string name="notif_timer_done_title">Timer finished — %1$s</string>
+    <string name="notif_timer_done_body">%1$s (%2$d s)</string>
+    <string name="notif_session_started_title">Session started</string>
+    <string name="notif_routine_reminder_title">Routine reminder</string>
+
+    <!-- Relative time helper (CustomDateUtils.formatRelativeTime) -->
+    <string name="rel_time_just_now">just now</string>
+    <string name="rel_time_min_ago">%1$d min ago</string>
+    <string name="rel_time_hours_ago">%1$d h ago</string>
+    <string name="rel_time_yesterday">yesterday</string>
+    <string name="rel_time_days_ago">%1$d days ago</string>
+
+    <!-- ============================================================ -->
+    <!-- ROUTINE TASKS                                                  -->
+    <!-- ============================================================ -->
+    <string name="routine_title">Routine Tasks</string>
+    <string name="routine_progress_overview">Progress Overview</string>
+    <string name="routine_period_label">%1$s • %2$s-%3$s</string>
+    <!-- Period create/edit dialog (i18n migrated 2026-06-08) -->
+    <string name="routine_period_dialog_add_title">Add period</string>
+    <string name="routine_period_dialog_edit_title">Edit period</string>
+    <string name="routine_period_field_name">Name</string>
+    <string name="routine_period_field_name_placeholder">Enter period name…</string>
+    <string name="routine_period_field_time">Period time</string>
+    <string name="routine_period_reminder_before_start">Reminder before start</string>
+    <string name="routine_period_reminder_before_end">Reminder before end</string>
+    <string name="routine_sync_title">Sync Routine</string>
+    <string name="routine_sync_message">Do you want to sync your routine tasks now?</string>
+    <string name="routine_delete_period_title">Delete period</string>
+    <string name="routine_delete_period_message">Are you sure you want to delete this period? This will also delete all tasks inside. This cannot be undone.</string>
+    <string name="routine_delete_task_title">Delete task</string>
+    <string name="routine_delete_task_message">Are you sure you want to delete this task? This cannot be undone.</string>
+    <string name="routine_other_tasks_today">Other tasks today</string>
+    <string name="routine_empty_period">No task for this period</string>
+    <string name="routine_edit_field_period">Period</string>
+    <string name="tasks_calendar_due_in_format">in %1$s</string>
+    <string name="tasks_calendar_overdue_format">overdue %1$s</string>
+    <string name="tasks_calendar_search_placeholder">Search tasks…</string>
+    <string name="tasks_calendar_search_no_results">No matching task</string>
+    <string name="tasks_calendar_recur_edit_mode_title">Apply edit to…</string>
+    <string name="tasks_calendar_recur_edit_mode_message">This task repeats. Choose how to apply your edits.</string>
+    <string name="tasks_calendar_recur_edit_mode_only_this">This occurrence only</string>
+    <string name="tasks_calendar_recur_edit_mode_all">All occurrences (entire series)</string>
+
+    <!-- ============================================================ -->
+    <!-- PROFILE SCREEN (debug)                                         -->
+    <!-- ============================================================ -->
+    <string name="profile_refresh">🔄 Refresh User Info</string>
+    <string name="profile_refresh_success">User info refreshed</string>
+    <string name="profile_refresh_short">Refresh</string>
+    <string name="profile_title">Profile</string>
+    <string name="profile_section_account">Account</string>
+    <string name="profile_section_bio">Bio</string>
+    <string name="profile_section_app">App info</string>
+    <string name="profile_role_admin">Admin</string>
+    <string name="profile_role_user">User</string>
+    <string name="profile_field_email">Email</string>
+    <string name="profile_field_first_name">First name</string>
+    <string name="profile_field_last_name">Last name</string>
+    <string name="profile_field_birthdate">Birth date</string>
+    <string name="profile_field_sex">Sex</string>
+    <string name="profile_field_height">Height</string>
+    <string name="profile_field_weight">Weight</string>
+    <string name="profile_field_user_id">User ID</string>
+    <string name="profile_field_client_id">Client ID</string>
+    <string name="profile_field_token">Token valid</string>
+    <string name="profile_field_network">Network</string>
+    <string name="profile_field_unsynced">Unsynced data</string>
+    <string name="profile_value_not_set">—</string>
+    <string name="profile_edit">Edit profile</string>
+    <string name="profile_edit_title">Edit profile</string>
+    <string name="profile_update_success">Profile updated</string>
+    <string name="profile_update_error">Could not update profile</string>
+    <string name="profile_delete_danger_zone">Danger zone</string>
+    <string name="profile_delete_account">Delete account</string>
+    <string name="profile_delete_dialog_title">Delete your account?</string>
+    <string name="profile_delete_dialog_body">This permanently deletes your account and all your data — workouts, exercises, stats, routines. This cannot be undone.</string>
+    <string name="profile_delete_password_label">Confirm your password</string>
+    <string name="profile_delete_success">Your account has been deleted</string>
+    <string name="profile_delete_error_password">Incorrect password.</string>
+    <string name="profile_delete_error_last_admin">You are the last admin. Promote another user to admin before deleting your account.</string>
+    <string name="profile_delete_error_generic">Could not delete your account. Please try again.</string>
+
+    <!-- ============================================================ -->
+    <!-- CALENDAR SUB-COMPONENTS                                        -->
+    <!-- ============================================================ -->
+    <string name="calendar_summary_perfect_weeks">Perfect weeks</string>
+    <string name="calendar_summary_completed_days">Completed days</string>
+    <string name="calendar_summary_rest_days">Rest days</string>
+    <string name="calendar_day_options_title">What do you want to do?</string>
+    <string name="calendar_day_option_add_new">Create a new session</string>
+    <string name="calendar_day_option_from_planned">Start from planned workout</string>
+    <string name="calendar_day_options_sheet_title">Day Options</string>
+    <string name="calendar_day_option_add_new_workout">Add new actual workout</string>
+    <string name="calendar_day_option_add_from_planned">Add from planned</string>
+    <string name="calendar_summary_weeks">%1$d weeks</string>
+    <string name="calendar_summary_days">%1$d days</string>
+    <string name="calendar_summary_streak">Streak</string>
+    <string name="calendar_summary_done">Done</string>
+    <string name="calendar_summary_next_workout">Up next</string>
+    <string name="calendar_summary_next_workout_none">—</string>
+    <string name="calendar_legend_title">Legend</string>
+    <string name="calendar_legend_completed">Completed</string>
+    <string name="calendar_legend_rest_day">Rest Day</string>
+    <string name="calendar_legend_uncompleted">Uncompleted</string>
+    <string name="calendar_legend_planned">Planned</string>
+    <string name="calendar_legend_synced">Synced</string>
+    <string name="calendar_legend_missed">Missed</string>
+
+    <!-- HmsWheelPicker (timer dialog) -->
+    <string name="hms_swipe_hint">Swipe up/down to adjust</string>
+    <string name="hms_hours_label">HH</string>
+    <string name="hms_minutes_label">MM</string>
+    <string name="hms_seconds_label">SS</string>
+
+    <!-- AdminUsers VM snackbar messages -->
+    <string name="admin_promoted">%1$s promoted to admin</string>
+    <string name="admin_demoted">%1$s demoted from admin</string>
+    <string name="admin_error_action_denied">Action denied</string>
+    <string name="admin_error_not_admin">You are not admin</string>
+    <string name="admin_error_user_not_found">User not found</string>
+    <string name="admin_error_generic">Error %1$d</string>
+    <string name="admin_error_network">Network error: %1$s</string>
+
+    <!-- ============================================================ -->
+    <!-- VM SNACKBAR MESSAGES (Login/Signup/Home/Calendar/Routine/etc.) -->
+    <!-- ============================================================ -->
+    <string name="vm_login_success">Successful login!</string>
+    <string name="vm_login_failed">Login failed.</string>
+    <string name="vm_login_network_error">Network error. Check your connection and try again.</string>
+    <string name="vm_signup_username_min">Username must be 3 chars min</string>
+    <string name="vm_signup_password_min">Password must be 8 chars min</string>
+    <string name="vm_signup_passwords_mismatch">Passwords do not match</string>
+    <string name="vm_signup_welcome">Welcome %1$s!</string>
+    <string name="vm_signup_autologin_failed">Account created but auto-login failed, please login manually</string>
+    <string name="vm_signup_username_taken">Username already taken</string>
+    <string name="vm_signup_invalid_input">Invalid input (server validation failed)</string>
+    <string name="vm_signup_too_many">Too many signups, retry later</string>
+    <string name="vm_signup_failed_http">Signup failed (HTTP %1$d)</string>
+    <string name="vm_signup_error">Signup error: %1$s</string>
+    <string name="vm_user_id_missing">User ID not found</string>
+    <string name="vm_error_generic">Error</string>
+    <string name="vm_calendar_no_planned_for_day">No planned workout for %1$s</string>
+    <string name="vm_calendar_failed_create_session">Failed to create session</string>
+    <string name="vm_routine_failed_move">Failed to move task</string>
+    <string name="vm_routine_failed_reorder">Failed to reorder tasks</string>
+    <string name="vm_routine_user_null">User not found</string>
+    <string name="vm_routine_invalid_time_range">Invalid time range</string>
+    <string name="vm_routine_no_user_found">No user found</string>
+    <string name="vm_routine_failed_add_period">Failed to add period</string>
+    <string name="vm_routine_period_name_empty">Period name cannot be empty</string>
+    <string name="vm_routine_period_not_found">Period not found</string>
+    <string name="vm_routine_failed_update_period">Failed to update period</string>
+    <string name="vm_routine_failed_add_task">Failed to add task</string>
+    <string name="vm_routine_failed_edit_task">Failed to edit task</string>
+    <string name="vm_routine_failed_delete_period">Failed to delete period</string>
+    <string name="vm_routine_failed_delete_task">Failed to delete task</string>
+    <string name="vm_routine_sync_failed">RoutineTasks sync failed</string>
+    <string name="vm_routine_period_added">Period added</string>
+    <string name="vm_routine_period_updated">Period updated</string>
+    <string name="vm_routine_period_deleted">Period deleted</string>
+    <string name="vm_routine_task_added">Task added</string>
+    <string name="vm_routine_task_updated">Task updated</string>
+    <string name="vm_exercise_name_exists">Exercise name already exists</string>
+    <string name="vm_exercise_name_exists_detail">An exercise with this name already exists</string>
+    <string name="vm_goals_no_to_copy_prev">No goals to copy from previous week</string>
+    <string name="vm_goals_no_to_copy_last">No goals to copy from last week</string>
+    <string name="vm_goals_failed_copy_last">Failed to copy goals from last week</string>
+    <string name="sync_no_token">No token available, synchronization canceled.</string>
+    <string name="sync_in_progress">Synchronization already in progress, please wait…</string>
+    <string name="sync_starting">Starting automatic synchronization…</string>
+    <string name="sync_completed">Automatic synchronization completed</string>
+    <string name="sync_error">Error during automatic synchronization</string>
+    <string name="network_no_token_ws">No token for WebSocket</string>
+    <string name="network_offline">You are offline. Changes will sync when you\'re back online.</string>
+    <string name="session_expired">Session expired, please log in again</string>
+    <string name="vm_onboarding_save_name_error">Could not save name: %1$s</string>
+    <string name="vm_onboarding_save_bio_error">Could not save bio: %1$s</string>
+    <string name="vm_user_id_unavailable_reconnect">User ID is not available, please reconnect</string>
+    <string name="vm_user_id_unavailable">User ID is not available</string>
+    <string name="vm_user_id_missing_add_exercise">Cannot add exercise: User ID is missing</string>
+    <string name="vm_exercise_already_exists">Exercise \'%1$s\' already exists</string>
+    <string name="vm_goal_already_exists">Goal already exists for this muscle</string>
+
+    <!-- ============================================================ -->
+    <!-- EXERCISE LIST / SCREEN                                         -->
+    <!-- ============================================================ -->
+    <string name="exercise_list_title">Exercises</string>
+    <string name="exercise_list_search_placeholder">Search exercises…</string>
+    <string name="exercise_list_empty">No exercises yet</string>
+    <string name="exercise_list_search_short">Search exercises</string>
+    <string name="exercise_list_sort_asc">Name (A-Z)</string>
+    <string name="exercise_list_sort_desc">Name (Z-A)</string>
+    <string name="exercise_screen_title">Exercise</string>
+    <string name="exercise_details_section">Details</string>
+    <string name="exercise_muscles_section">Muscles</string>
+    <string name="exercise_equipment_section">Equipment</string>
+    <string name="exercise_history_section">Last sessions</string>
+    <string name="exercise_last_session_col_date">Date</string>
+    <string name="exercise_last_session_col_sets">Sets</string>
+    <string name="exercise_last_session_col_reps">Reps</string>
+    <string name="exercise_last_session_col_view">View</string>
+    <string name="exercise_no_recent_sessions">No recent sessions</string>
+    <string name="exercise_no_history">No previous sessions yet</string>
+    <string name="exercise_no_muscles">No muscles linked</string>
+    <string name="exercise_no_equipment">No equipment</string>
+    <string name="exercise_recommended_sets">Recommended sets</string>
+    <string name="exercise_recommended_reps">Recommended reps</string>
+    <string name="exercise_recommended_rest">Recommended rest</string>
+
+    <!-- ============================================================ -->
+    <!-- MUSCLE LIST / SCREEN                                           -->
+    <!-- ============================================================ -->
+    <string name="muscle_list_title">Muscles</string>
+    <string name="muscle_list_search_placeholder">Search muscles…</string>
+    <string name="muscle_list_empty">No muscles yet</string>
+    <string name="muscle_list_search_short">Search muscles</string>
+    <string name="muscle_list_results_count">%1$d muscle(s) • Sorted by %2$s</string>
+    <string name="muscle_screen_title">Muscle</string>
+    <string name="muscle_screen_zone">Zone</string>
+    <string name="muscle_screen_group">Group</string>
+    <string name="muscle_edit_zone_group_title">Edit zone &amp; group</string>
+    <string name="muscle_screen_exercises">Related exercises</string>
+
+    <!-- ============================================================ -->
+    <!-- PLANNED WORKOUT                                                -->
+    <!-- ============================================================ -->
+    <string name="planned_workout_title">Planned workout</string>
+    <string name="planned_workout_exercises_section">Exercises</string>
+    <string name="planned_workout_add_exercise">Add exercise</string>
+    <string name="planned_workout_no_exercises">No exercises yet</string>
+    <string name="planned_change_status_title">Change Planned Workout Exercise Status</string>
+    <string name="planned_update">Update</string>
+    <string name="planned_sync_title">Sync Session</string>
+    <string name="planned_sync_message">Do you want to sync the planned workout?</string>
+    <string name="planned_remove_exercise_message">Are you sure you want to remove this exercise from the planned workout?</string>
+
+    <!-- ============================================================ -->
+    <!-- BOTTOM SHEETS                                                  -->
+    <!-- ============================================================ -->
+    <!-- Session BottomSheet (actual workout) -->
+    <string name="sheet_session_mark_done">Mark as Done</string>
+    <string name="sheet_session_mark_undone">Mark as Undone</string>
+    <string name="sheet_session_rename">Rename session</string>
+    <string name="sheet_session_see_planned">See today\'s planned workout</string>
+    <string name="sheet_session_delete">Delete session</string>
+    <!-- Exercise BottomSheet (in session) -->
+    <string name="sheet_exercise_see_details">See exercise details</string>
+    <string name="sheet_exercise_delete_from_session">Remove from session</string>
+    <!-- AddExerciseToSession / Planned : Equipment label -->
+    <string name="sheet_add_exercise_equipment_label">Equipment</string>
+    <string name="sheet_add_exercise_search">Search exercise…</string>
+    <string name="sheet_add_exercise_exercises_section">Exercises</string>
+    <string name="sheet_add_exercise_title">Add Exercise</string>
+    <string name="sheet_add_exercise_to_plan_title">Add Exercise to Plan</string>
+    <!-- Note BottomSheet -->
+    <string name="sheet_note_title">Note</string>
+    <string name="sheet_note_placeholder">Write a note for this set…</string>
+    <!-- Set Options BottomSheet -->
+    <string name="sheet_set_options_title">Set Options</string>
+    <string name="sheet_set_add_bonus">Add a bonus set after this one</string>
+    <string name="sheet_set_add_drop">Add a drop set after this one</string>
+    <string name="sheet_set_change_status">Change status</string>
+    <string name="sheet_set_create_superset">Create superset with another exercise</string>
+    <!-- Planned Exercise BottomSheet -->
+    <string name="sheet_planned_exercise_change_status">Change status</string>
+    <string name="sheet_planned_exercise_remove">Remove from planned workout</string>
+    <!-- AddRoutineItem -->
+    <string name="sheet_add_routine_title">Add</string>
+    <string name="sheet_add_routine_task">Add a task</string>
+    <string name="sheet_add_routine_period">Add a period</string>
+    <!-- RoutinePeriod Options -->
+    <string name="sheet_period_edit">Edit period</string>
+    <string name="sheet_period_delete">Delete period</string>
+    <!-- Task Options -->
+    <string name="sheet_task_edit">Edit task</string>
+    <string name="sheet_task_delete">Delete task</string>
+    <!-- WeekView Session Options -->
+    <string name="sheet_week_session_plan">Plan a workout for this day</string>
+    <string name="sheet_week_session_rename">Rename planned workout</string>
+    <string name="sheet_week_session_duplicate">Duplicate planned workout</string>
+    <string name="sheet_week_session_delete">Delete planned workout</string>
+    <!-- Week Completion -->
+    <string name="sheet_week_completion_title">Week Completion Options</string>
+    <string name="sheet_week_sync_sessions">Sync sessions</string>
+    <string name="sheet_week_mark_done">Mark sessions as Done</string>
+    <string name="sheet_week_mark_undone">Mark sessions as Undone</string>
+    <!-- Exercise List Options -->
+    <string name="sheet_exercise_list_title">Exercise Options</string>
+    <string name="sheet_exercise_list_add_sample">Add sample exercises</string>
+    <string name="sheet_exercise_list_export">Export list</string>
+    <string name="sheet_exercise_list_clear">Clear all</string>
+    <!-- Exercise More Options (single exercise) -->
+    <string name="sheet_exercise_more_edit">Edit</string>
+    <string name="sheet_exercise_more_delavier">The Delavier Method</string>
+    <string name="sheet_exercise_more_delete">Delete</string>
+    <!-- Muscle List Options -->
+    <string name="sheet_muscle_list_title">Muscle Options</string>
+    <string name="sheet_muscle_list_add_sample">Add sample muscles</string>
+    <!-- Goals BottomSheet -->
+    <string name="sheet_goals_title">Goal Management Options</string>
+    <string name="sheet_goals_add_muscle">Add muscle to goals</string>
+    <!-- Muscle Options (Goals) -->
+    <string name="sheet_muscle_options_see">See muscle</string>
+    <string name="sheet_muscle_options_change_status">Change goal status</string>
+    <string name="sheet_muscle_options_delete">Delete this goal</string>
+    <string name="sheet_muscle_options_mark_in_progress">Mark as In Progress</string>
+    <string name="sheet_muscle_options_mark_done">Mark as Done</string>
+
+    <!-- ============================================================ -->
+    <!-- DEMO TOUR                                                      -->
+    <!-- ============================================================ -->
+    <string name="demo_welcome_title">Welcome to the tour</string>
+    <string name="demo_welcome_body">Let me show you the main features of the app in a quick guided tour.</string>
+    <string name="demo_stats_title">Statistics</string>
+    <string name="demo_stats_body">Track your training volume, sets, and progression by zone, muscle group, muscle, and exercise.</string>
+    <string name="demo_stats_range_title">Time period</string>
+    <string name="demo_stats_range_body">Quickly switch between 1 week, 30 days, 3 months, or any custom range.</string>
+    <string name="demo_stats_chart_title">Detailed charts</string>
+    <string name="demo_stats_chart_body">Filter by zone or muscle group to focus on what matters.</string>
+    <string name="demo_calendar_title">Calendar</string>
+    <string name="demo_calendar_body">See your sessions month by month: completed, skipped, planned, and rest days at a glance.</string>
+    <string name="demo_session_title">Your session</string>
+    <string name="demo_session_body">Run a workout: log sets, weights, and reps in real time.</string>
+    <string name="demo_session_header_title">Session header</string>
+    <string name="demo_session_header_body">Rename, mark as done, or delete the current session.</string>
+    <string name="demo_session_exercises_title">Exercises</string>
+    <string name="demo_session_exercises_body">Each exercise shows its progress and lets you drill into details.</string>
+    <string name="demo_program_title">Program</string>
+    <string name="demo_program_body">Define a weekly program with one planned workout per day.</string>
+    <string name="demo_program_list_title">Days of the week</string>
+    <string name="demo_program_list_body">Tap a day to plan a workout, rename it, or copy it.</string>
+    <string name="demo_chrono_title">Chrono</string>
+    <string name="demo_chrono_body">A stopwatch and timer to time your rest periods and sets.</string>
+    <string name="demo_chrono_tabs_title">Stopwatch / Timer</string>
+    <string name="demo_chrono_tabs_body">Switch between the two modes based on your need.</string>
+    <string name="demo_chrono_buttons_title">Controls</string>
+    <string name="demo_chrono_buttons_body">Start, pause, reset — usual stopwatch controls.</string>
+    <string name="demo_goodbye_title">Tour complete</string>
+    <string name="demo_goodbye_body">You\'re all set! Sample data will be cleared automatically. Have a great session.</string>
+    <string name="demo_calendar_header_title">Calendar navigation</string>
+    <string name="demo_calendar_header_body">Switch between months from here.</string>
+    <string name="demo_calendar_grid_title">Sessions per day</string>
+    <string name="demo_calendar_grid_body">Days with a session are highlighted. Tap one to see its details.</string>
+    <string name="demo_program_header_title">Week planning</string>
+    <string name="demo_program_header_body">Quick overview of your current week\'s completion.</string>
+    <string name="exercise_list_add_dialog_title">Add New Exercise</string>
+    <string name="exercise_list_field_name">Name</string>
+    <string name="exercise_list_field_select_muscles">Select Muscles</string>
+    <string name="exercise_list_field_reps_min">Reps Min</string>
+    <string name="exercise_list_field_reps_max">Reps Max</string>
+    <string name="exercise_list_field_sets">Sets</string>
+    <string name="exercise_list_field_select_equipment">Select Equipment(s)</string>
+    <string name="exercise_edit_title">Edit Exercise</string>
+    <string name="exercise_edit_confirm">Update</string>
+    <string name="exercise_edit_description">Description</string>
+    <string name="exercise_edit_instructions">Instructions</string>
+    <string name="exercise_edit_step">Step %1$d</string>
+    <string name="exercise_edit_step_placeholder">Describe step %1$d</string>
+    <string name="exercise_edit_rest_time">Rest Time</string>
+    <!-- Section edit dialog titles (reuse exercise_edit_*/exercise_list_field_* for fields) -->
+    <string name="exercise_edit_sets_title">Edit Sets / Reps / Rest</string>
+    <string name="exercise_edit_instructions_title">Edit Instructions</string>
+    <string name="exercise_edit_desc_equip_title">Edit Description &amp; Equipment</string>
+    <string name="exercise_list_filter_zone">Zone</string>
+    <string name="exercise_list_sync_title">Sync Exercises</string>
+    <string name="exercise_list_delete_title">Delete Exercise</string>
+    <string name="exercise_list_delete_message">Are you sure you want to delete \'%1$s\'?</string>
+    <string name="exercise_list_sync_message">Do you want to sync all exercises?</string>
+    <string name="muscle_list_sync_message">Do you want to sync all muscles?</string>
+    <string name="muscle_list_delete_message">Are you sure you want to delete \'%1$s\'?</string>
+    <string name="exercise_not_found">Exercise not found</string>
+    <string name="muscle_list_sync_title">Sync Muscles</string>
+    <string name="muscle_list_add_dialog_title">Add New Muscle</string>
+    <string name="muscle_list_edit_dialog_title">Edit Muscle</string>
+    <string name="muscle_list_delete_title">Delete Muscle</string>
+    <string name="muscle_field_name">Name</string>
+    <string name="muscle_field_zone">Zone</string>
+    <string name="muscle_field_uuid">UUID</string>
+    <string name="muscle_not_found">Muscle not found</string>
+    <string name="muscle_screen_actions">Actions</string>
+    <string name="muscle_screen_details">Details</string>
+    <string name="muscle_screen_delete_message">Are you sure you want to delete this muscle?</string>
+
+    <!-- ============================================================ -->
+    <!-- GOALS TAB                                                      -->
+    <!-- ============================================================ -->
+    <string name="goals_tab_title">Weekly goals</string>
+    <string name="goals_empty_week">No goals set for this week yet</string>
+    <string name="goals_progress_overview">Progress overview</string>
+    <string name="goals_add_goal">Add muscle goal</string>
+    <string name="goals_add">Add</string>
+    <string name="goals_add_muscle_title">Add Muscle to Goals</string>
+    <string name="goals_sync_now">Sync now</string>
+    <string name="goals_sync_title">Synchronize Data</string>
+    <string name="goals_sync_message">Do you want to synchronize all your goals now?</string>
+    <string name="goals_return_current_title">Return to current week</string>
+    <string name="goals_return_current_message">Do you want to return to the current week view?</string>
+    <string name="goals_select_muscle">Select Muscle</string>
+    <string name="goals_select_target">Select Target</string>
+    <!-- TargetPickerDialog / EditPriorityDialog (Close = common_close) -->
+    <string name="goals_target_title">Change Target</string>
+    <string name="goals_target_custom_label">Or choose a custom number:</string>
+    <string name="goals_priority_title">Edit Priority</string>
+    <string name="goals_priority_select">Select a priority:</string>
+
+    <!-- ============================================================ -->
+    <!-- DEMO TOUR                                                      -->
+    <!-- ============================================================ -->
+    <string name="demo_tour_skip">Skip tour</string>
+    <string name="demo_tour_got_it">Got it</string>
+    <string name="demo_tour_next">Next</string>
+
+    <!-- ============================================================ -->
+    <!-- SECONDARY SCREENS                                              -->
+    <!-- ============================================================ -->
+    <string name="language_display_title">Language &amp; Display</string>
+    <string name="sync_settings_title">Sync Settings</string>
+    <!-- Sync Settings : data grid screen (admin/debug) -->
+    <string name="sync_table_open">Open table</string>
+    <string name="sync_table_back">Back</string>
+    <string name="sync_table_search_hint">Search across all columns…</string>
+    <string name="sync_table_filter_hint">Filter…</string>
+    <string name="sync_table_no_rows">No rows.</string>
+    <string name="sync_table_clear">Clear</string>
+    <string name="sync_table_sort_asc">↑ ASC</string>
+    <string name="sync_table_sort_desc">↓ DESC</string>
+    <string name="sync_table_sort_clear">Clear sort</string>
+    <string name="sync_table_rows_per_page">Rows per page</string>
+    <string name="sync_table_page_x_of_y">Page %1$d / %2$d</string>
+    <string name="sync_table_showing_range">%1$d-%2$d / %3$d</string>
+    <string name="sync_table_prev">Previous page</string>
+    <string name="sync_table_next">Next page</string>
+    <string name="export_datas_title">Export Data</string>
+    <string name="conversations_title">Conversations</string>
+    <!-- Cas C — AI agent in-app chat (Conversations screen) -->
+    <string name="agent_empty_hint">Ask the assistant about your training: your next session, weekly volume, last performance on an exercise…</string>
+    <string name="agent_input_placeholder">Ask the assistant…</string>
+    <string name="agent_thinking">Thinking…</string>
+    <string name="agent_error_network">Network error. Please check your connection and try again.</string>
+    <string name="agent_error_unavailable">The assistant is currently unavailable.</string>
+    <string name="agent_error_rate_limited">Too many requests. Please wait a moment and try again.</string>
+    <string name="agent_error_generic">Something went wrong (HTTP %1$d).</string>
+    <string name="delavier_method_title">Delavier method</string>
+    <string name="coming_soon">Coming soon…</string>
+    <string name="delavier_page_count">Page %1$d / %2$d</string>
+
+    <!-- ============================================================ -->
+    <!-- ONBOARDING — i18n Session A 2026-05-11                         -->
+    <!-- ============================================================ -->
+
+    <!-- Header / Footer / common to all steps -->
+    <string name="onboarding_header_title">Setup</string>
+    <string name="onboarding_header_step">Step %1$d of %2$d</string>
+    <string name="onboarding_footer_skip">Skip onboarding</string>
+
+    <!-- Step 1 : Welcome -->
+    <string name="onboarding_welcome_title">Welcome to %1$s</string>
+    <string name="onboarding_welcome_subtitle">Let\'s set up your tracking experience in 4 quick steps.</string>
+    <string name="onboarding_welcome_prompt_name">How should we call you?</string>
+    <string name="onboarding_welcome_placeholder_name">Your first name</string>
+    <string name="onboarding_welcome_label_name">First name (optional)</string>
+
+    <!-- Step 2 : Bio -->
+    <string name="onboarding_bio_title">About you</string>
+    <string name="onboarding_bio_subtitle">Optional — helps us personalize stats and prepare future features (Nutrition).</string>
+    <string name="onboarding_bio_card_birthdate">Birth date</string>
+    <string name="onboarding_bio_birthdate_placeholder">MM/DD/YYYY</string>
+    <string name="onboarding_bio_card_sex">Sex</string>
+    <string name="onboarding_bio_radio_male">Male</string>
+    <string name="onboarding_bio_radio_female">Female</string>
+    <string name="onboarding_bio_radio_other">Other</string>
+    <string name="onboarding_bio_label_height">Height</string>
+    <string name="onboarding_bio_label_weight">Weight</string>
+    <string name="onboarding_bio_placeholder_height_cm">e.g. 175 cm</string>
+    <string name="onboarding_bio_placeholder_height_in">e.g. 69 inches</string>
+    <string name="onboarding_bio_placeholder_weight_kg">e.g. 72 kg</string>
+    <string name="onboarding_bio_placeholder_weight_lb">e.g. 160 lbs</string>
+
+    <!-- Step 3 : Preferences -->
+    <string name="onboarding_preferences_title">Your preferences</string>
+    <string name="onboarding_preferences_card_language">Language</string>
+    <string name="onboarding_preferences_card_week_start">Week starts on</string>
+    <string name="onboarding_preferences_card_weight_unit">Weight unit</string>
+    <string name="onboarding_preferences_card_length_unit">Length unit</string>
+    <string name="onboarding_preferences_card_theme">Theme</string>
+    <string name="onboarding_preferences_card_default_time">Default routine time</string>
+    <string name="onboarding_preferences_tap_to_change">Tap to change</string>
+    <string name="onboarding_preferences_routine_helper">Used as default when creating routine tasks. You can change per task.</string>
+    <string name="onboarding_preferences_week_monday">Monday</string>
+    <string name="onboarding_preferences_week_sunday">Sunday</string>
+    <string name="onboarding_preferences_weight_kg">Kilograms (kg)</string>
+    <string name="onboarding_preferences_weight_lbs">Pounds (lbs)</string>
+    <string name="onboarding_preferences_length_cm">Centimeters (cm)</string>
+    <string name="onboarding_preferences_length_in">Inches (in)</string>
+
+    <!-- Step 4 : Permissions -->
+    <string name="onboarding_permissions_title">Final touches</string>
+    <string name="onboarding_permissions_card_notif">System notifications</string>
+    <string name="onboarding_permissions_notif_enabled">Enabled — you\'ll get timer end alerts and reminders.</string>
+    <string name="onboarding_permissions_notif_disabled">Disabled — you\'ll miss timer end alerts and reminders.</string>
+    <string name="onboarding_permissions_notif_open">Open notification settings</string>
+    <string name="onboarding_permissions_notif_helper">Come back here when done — you\'ll be able to refresh this status.</string>
+    <string name="onboarding_permissions_card_feedback">In-app feedback</string>
+    <string name="onboarding_permissions_toggle_sound">Sound on notifications</string>
+    <string name="onboarding_permissions_toggle_vibration">Vibration on notifications</string>
+    <string name="onboarding_permissions_card_autosync">Auto-sync on wifi</string>
+    <string name="onboarding_permissions_toggle_autosync">Background sync when wifi available</string>
+    <string name="onboarding_permissions_card_samples">Sample workouts</string>
+    <string name="onboarding_permissions_samples_desc">Add 5 demo workouts so you can take a quick guided tour of Stats, Calendar and Chrono with real-looking data. The samples are removed automatically at the end of the tour.</string>
+    <string name="onboarding_permissions_toggle_samples">Try the app with sample data</string>
+    <string name="onboarding_permissions_footer_finish">Click Finish to start using the app.</string>
+
+    <!-- Server URL switcher (debug builds only) — task Notion 36b1776c -->
+    <string name="settings_category_server_url">Server URL (debug)</string>
+    <string name="settings_category_server_url_desc">Switch between PC LAN, Pi prod, or custom URL without rebuild</string>
+    <string name="settings_server_url_description">Pick the backend the app connects to. Changes take effect after restarting the app.</string>
+    <string name="settings_server_url_section_preset">Server preset</string>
+    <string name="settings_server_url_section_custom">Custom URL</string>
+    <string name="settings_server_url_section_test">Test connection</string>
+    <string name="settings_server_url_section_apply">Apply</string>
+    <string name="settings_server_url_preset_pc_lan">PC LAN (local network)</string>
+    <string name="settings_server_url_preset_pi_prod">Pi prod (Tailscale)</string>
+    <string name="settings_server_url_preset_custom">Custom URL</string>
+    <string name="settings_server_url_custom_label">Server host or full URL</string>
+    <string name="settings_server_url_custom_placeholder">e.g. 192.168.1.50:8000 or https://my.server.example.com</string>
+    <string name="settings_server_url_custom_helper">Scheme defaults to http:// if not provided. /api/v1/ is appended automatically.</string>
+    <string name="settings_server_url_save_custom">Save custom URL</string>
+    <string name="settings_server_url_effective">Effective: %1$s</string>
+    <string name="settings_server_url_test_helper">Pings &lt;server&gt;/healthz with a 5s timeout. Does not affect the running app.</string>
+    <string name="settings_server_url_test_button">Test connection</string>
+    <string name="settings_server_url_test_running">Pinging…</string>
+    <string name="settings_server_url_test_success">OK (HTTP %1$d)</string>
+    <string name="settings_server_url_test_failure">Failed: %1$s</string>
+    <string name="settings_server_url_apply_helper">Apply persists the choice. The app needs to restart to pick up the new URL (Retrofit + WebSocket are wired at boot).</string>
+    <string name="settings_server_url_apply_button">Apply &amp; restart…</string>
+    <string name="settings_server_url_restart_title">Restart required</string>
+    <string name="settings_server_url_restart_message">The new server URL will only be used after the app is fully closed and reopened. Quit now?</string>
+    <string name="settings_server_url_restart_quit">Quit now</string>
+
+    <!-- ============================================================ -->
+    <!-- STATUS / PRIORITY (display labels — wire codes stay UPPER_CASE) -->
+    <!-- Rendered via localizedStatus()/localizedPriority() helpers      -->
+    <!-- ============================================================ -->
+    <string name="status_change_set_title">Change Set Status</string>
+    <string name="status_change_goal_title">Change Goal Status</string>
+    <string name="status_not_started">Not Started</string>
+    <string name="status_in_progress">In Progress</string>
+    <string name="status_done">Done</string>
+    <string name="status_skipped">Skipped</string>
+    <string name="status_planned">Planned</string>
+    <string name="priority_high">High</string>
+    <string name="priority_medium">Medium</string>
+    <string name="priority_low">Low</string>
+
+    <!-- Nutrition A2 — Daily journal -->
+    <string name="nutrition_title">Nutrition</string>
+    <string name="drawer_item_nutrition">Nutrition</string>
+    <string name="nutrition_section_actions">Actions</string>
+    <string name="nutrition_add_snack">Add a snack</string>
+    <string name="nutrition_snack_name_hint">e.g. 4pm snack</string>
+    <string name="nutrition_manage_meals">Manage meals</string>
+    <string name="nutrition_manage_short">Manage</string>
+    <!-- Hydratation (2026-07-05) -->
+    <string name="nutrition_hydration_title">Hydration</string>
+    <string name="nutrition_hydration_amount">%1$s / %2$s L</string>
+    <string name="nutrition_hydration_amount_no_goal">%1$s L</string>
+    <string name="nutrition_hydration_no_goal">Set a daily goal in Goals.</string>
+    <string name="nutrition_hydration_undo">Undo</string>
+    <string name="nutrition_hydration_add_ml">%1$d ml</string>
+    <string name="nutrition_hydration_add_liter">1 L</string>
+    <string name="nutrition_hydration_custom">Custom</string>
+    <string name="nutrition_hydration_custom_title">Add water</string>
+    <string name="nutrition_hydration_custom_label">Volume (ml)</string>
+    <string name="nutrition_hydration_custom_hint">Enter a volume in ml.</string>
+    <string name="nutrition_food_is_water">This food is water</string>
+    <string name="nutrition_food_is_water_hint">Counts toward hydration (1 g = 1 ml)</string>
+    <string name="nutrition_goals_hydration_dialog_title">Hydration goal</string>
+    <string name="nutrition_goals_hydration_dialog_label">Goal (ml / day)</string>
+    <string name="nutrition_goals_hydration_dialog_hint">Enter a volume in ml.</string>
+    <string name="nutrition_goals_hydration_reco">~2 L/day (F) · ~2.5 L/day (M)</string>
+    <string name="nutrition_duplicate_short">Duplicate</string>
+    <string name="nutrition_add_snack_short">Snack</string>
+    <string name="nutrition_presets_header">Meals</string>
+    <string name="nutrition_no_presets">No meals — add one.</string>
+    <string name="nutrition_rename_meal">Rename meal</string>
+    <string name="nutrition_delete_preset_title">Delete meal</string>
+    <string name="nutrition_delete_preset_message">Delete "%1$s"? Days already journaled keep their entries.</string>
+    <string name="nutrition_calendar_toggle">Show or hide the calendar</string>
+    <string name="nutrition_meal_toggle">Expand or collapse the meal</string>
+    <string name="nutrition_macros_header">Macros</string>
+    <string name="nutrition_micros_header">Vitamins &amp; minerals</string>
+    <string name="nutrition_show_micros">Show micros</string>
+    <string name="nutrition_hide_micros">Hide micros</string>
+    <string name="nutrition_no_goal_hint">No target set — define your targets in the Goals page.</string>
+    <string name="nutrition_micros_note">Targets = EU NRV (1169/2011). Sodium = reference limit (≤ 2000 mg).</string>
+    <!-- Day summary view toggle (bars / rings / radar), macros + micros sections -->
+    <string name="nutrition_summary_view_bars">Bars</string>
+    <string name="nutrition_summary_view_rings">Rings</string>
+    <string name="nutrition_summary_view_radar">Radar</string>
+    <string name="nutrition_summary_radar_today">Today</string>
+    <string name="nutrition_summary_radar_target">Target</string>
+    <string name="nutrition_summary_radar_nrv">NRV</string>
+    <string name="nutrition_macro_calories">Calories</string>
+    <string name="nutrition_macro_carbs">Carbs</string>
+    <string name="nutrition_macro_fat">Fat</string>
+    <string name="nutrition_macro_protein">Protein</string>
+    <string name="nutrition_macro_fiber">Fiber</string>
+    <!-- Sugars: WHO daily cap line in the day summary (not a target macro) -->
+    <string name="nutrition_macro_sugar">Sugars</string>
+    <string name="nutrition_sugar_note">Sugars (total): cap = 5% of the kcal target in g, max 100 g — \"ideal\" marker at half.</string>
+    <string name="nutrition_short_carbs">C</string>
+    <string name="nutrition_short_fiber">Fb</string>
+    <string name="nutrition_short_fat">F</string>
+    <string name="nutrition_short_protein">P</string>
+    <!-- Sugars abbreviation in dense per-100g rows (catalogue / picker / OFF results) -->
+    <string name="nutrition_short_sugar">S</string>
+    <string name="nutrition_micro_iron">Iron</string>
+    <string name="nutrition_micro_calcium">Calcium</string>
+    <string name="nutrition_micro_magnesium">Magnesium</string>
+    <string name="nutrition_micro_zinc">Zinc</string>
+    <string name="nutrition_micro_potassium">Potassium</string>
+    <string name="nutrition_micro_sodium">Sodium</string>
+    <string name="nutrition_micro_vitamin_c">Vit. C</string>
+    <string name="nutrition_micro_vitamin_d">Vit. D</string>
+    <string name="nutrition_micro_vitamin_b12">Vit. B12</string>
+    <string name="nutrition_micro_vitamin_a">Vit. A</string>
+    <string name="nutrition_add_meal">Add meal</string>
+    <string name="nutrition_duplicate_meal">Duplicate meal</string>
+    <string name="nutrition_no_meals">No period — add a meal to start.</string>
+    <string name="nutrition_meal_empty">No food</string>
+    <string name="nutrition_edit_qty_title">Edit — %1$s</string>
+    <string name="nutrition_edit_quantity">Edit quantity</string>
+    <string name="nutrition_delete_meal">Delete meal</string>
+    <string name="nutrition_delete_meal_message">Delete \"%1$s\" and all its food?</string>
+    <string name="nutrition_meal_name">Name</string>
+    <string name="nutrition_meal_name_hint">e.g. Breakfast</string>
+    <string name="nutrition_meal_name_required">Name required</string>
+    <string name="nutrition_qty_grams">Quantity (g)</string>
+    <string name="nutrition_qty_invalid">Quantity in grams required (&gt; 0)</string>
+    <string name="nutrition_pick_food_title">Choose a food</string>
+    <string name="nutrition_pick_food_search">Search a food…</string>
+    <string name="nutrition_pick_food_empty">No food in your catalogue yet.</string>
+    <string name="nutrition_picker_tab_catalog">My catalogue</string>
+    <string name="nutrition_picker_tab_off">Open Food Facts</string>
+    <string name="nutrition_picker_tab_create">Create</string>
+    <string name="nutrition_picker_create_add">Create and add</string>
+    <string name="nutrition_picker_create_hint">Name + 4 numeric values (per 100 g) required.</string>
+    <string name="nutrition_food_kcal_per_100g">%1$d kcal/100g</string>
+    <string name="nutrition_food_kcal_value">%1$d kcal</string>
+    <string name="nutrition_food_per_100g_unit">/ 100 g</string>
+    <string name="nutrition_duplicate_title">Duplicate a past meal</string>
+    <string name="nutrition_duplicate_empty">No past meal to duplicate.</string>
+    <string name="nutrition_duplicate_count">%1$d items</string>
+    <string name="nutrition_meal_time_label">Meal time (optional)</string>
+    <string name="hour_picker_none">No time</string>
+    <string name="hour_picker_clear">Clear time</string>
+    <string name="hour_picker_hours">Hours</string>
+    <string name="hour_picker_minutes">Minutes</string>
+
+    <!-- Nutrition A3 — Food catalogue -->
+    <string name="drawer_item_food_catalogue">Food catalogue</string>
+    <string name="nutrition_catalog_title">Food catalogue</string>
+    <string name="nutrition_catalog_search">Search by name or brand…</string>
+    <string name="nutrition_catalog_filters">Filters</string>
+    <string name="nutrition_catalog_filters_count">Filters (%1$d)</string>
+    <string name="nutrition_catalog_show_archived">Show archived</string>
+    <string name="nutrition_catalog_hide_archived">Hide archived</string>
+    <string name="nutrition_catalog_create">New food</string>
+    <string name="nutrition_catalog_archived">Archived</string>
+    <string name="nutrition_catalog_new">New</string>
+    <string name="nutrition_catalog_scan">Scan</string>
+    <string name="nutrition_scan_imported">Imported: %1$s</string>
+    <string name="nutrition_scan_not_found">Product unknown to Open Food Facts.</string>
+    <string name="nutrition_scan_error">Barcode scan failed. Try again.</string>
+    <string name="nutrition_catalog_import">Import (OFF)</string>
+    <string name="nutrition_catalog_empty">No food matches.</string>
+    <string name="nutrition_catalog_group_recents">Recent</string>
+    <string name="nutrition_catalog_group_favorites">Favorites</string>
+    <string name="nutrition_catalog_group_all">All</string>
+    <string name="nutrition_catalog_group_archived">Archived</string>
+    <!-- Badges de groupe d'aliments (foods.food_group, UPPER_CASE) — cf. FoodCategory.kt -->
+    <string name="nutrition_food_group_viande_rouge">Red meat</string>
+    <string name="nutrition_food_group_viande_blanche">White meat</string>
+    <string name="nutrition_food_group_poisson">Fish</string>
+    <string name="nutrition_food_group_fruits_de_mer">Seafood</string>
+    <string name="nutrition_food_group_oeuf">Eggs</string>
+    <string name="nutrition_food_group_laitage">Dairy</string>
+    <string name="nutrition_food_group_legumineuse">Legumes</string>
+    <string name="nutrition_food_group_legume">Vegetables</string>
+    <string name="nutrition_food_group_fruit">Fruits</string>
+    <string name="nutrition_food_group_cereale_feculent">Grains &amp; starches</string>
+    <string name="nutrition_food_group_noix_graine">Nuts &amp; seeds</string>
+    <string name="nutrition_food_group_matiere_grasse">Fats &amp; oils</string>
+    <string name="nutrition_food_group_produit_sucre">Sweets</string>
+    <string name="nutrition_food_group_boisson">Beverages</string>
+    <string name="nutrition_food_group_plat_compose">Prepared meals</string>
+    <string name="nutrition_food_group_complement">Supplements</string>
+    <string name="nutrition_food_group_autre">Other</string>
+    <string name="nutrition_catalog_action_details">Details</string>
+    <string name="nutrition_catalog_action_edit">Edit</string>
+    <string name="nutrition_catalog_action_favorite">Add to favorites</string>
+    <string name="nutrition_catalog_action_unfavorite">Remove from favorites</string>
+    <string name="nutrition_catalog_action_archive">Archive</string>
+    <string name="nutrition_catalog_action_unarchive">Unarchive</string>
+    <string name="nutrition_catalog_delete_title">Delete food</string>
+    <string name="nutrition_catalog_delete_message">Delete \"%1$s\" from your catalogue?</string>
+    <!-- Filter sheet (thresholds) -->
+    <string name="nutrition_catalog_filters_title">Active filters</string>
+    <string name="nutrition_catalog_filters_none">No active filter.</string>
+    <string name="nutrition_catalog_filter_add">Add a filter</string>
+    <string name="nutrition_catalog_filter_nutrient">Nutrient</string>
+    <string name="nutrition_catalog_filter_value">Value (%1$s)</string>
+    <string name="nutrition_catalog_filter_add_button">Add</string>
+    <string name="nutrition_catalog_filter_clear">Clear all</string>
+    <!-- Food editor -->
+    <string name="nutrition_catalog_create_title">New food</string>
+    <string name="nutrition_catalog_edit_title">Edit food</string>
+    <string name="nutrition_food_name">Name</string>
+    <string name="nutrition_food_name_hint">e.g. Greek yogurt</string>
+    <string name="nutrition_food_brand">Brand</string>
+    <string name="nutrition_food_brand_hint">e.g. Fage (optional)</string>
+    <string name="nutrition_food_per_100g">Per 100 g</string>
+    <string name="nutrition_food_optional">optional</string>
+    <string name="nutrition_food_kcal_derived_hint">Derived from macros: %1$d kcal</string>
+    <string name="nutrition_food_readonly_note">Nutritional values from %1$s — not editable.</string>
+    <string name="nutrition_food_portions">Named portions</string>
+    <string name="nutrition_food_portion_label_hint">Label (e.g. 1 cup)</string>
+    <string name="nutrition_food_portion_grams">g</string>
+    <string name="nutrition_food_portion_add">Add</string>
+    <!-- Open Food Facts import -->
+    <string name="nutrition_catalog_off_title">Import from Open Food Facts</string>
+    <string name="nutrition_catalog_off_search">Search a product…</string>
+    <string name="nutrition_catalog_off_search_button">Search</string>
+    <string name="nutrition_catalog_off_hint">Search a product to import it into your catalogue.</string>
+    <string name="nutrition_catalog_off_empty">No product found.</string>
+    <string name="nutrition_catalog_off_error">Open Food Facts unreachable. Try again.</string>
+    <string name="nutrition_catalog_off_import">Import</string>
+    <string name="nutrition_catalog_off_added">Added</string>
+
+    <!-- Recipes &amp; saved meals (A4) -->
+    <string name="drawer_item_recipes">Recipes &amp; meals</string>
+    <string name="nutrition_recipes_title">Recipes &amp; saved meals</string>
+    <string name="nutrition_recipes_add">Add a recipe</string>
+    <string name="nutrition_recipes_empty">No recipe — create a dish or a saved meal.</string>
+    <string name="nutrition_recipes_section_dishes">Dishes (recipes)</string>
+    <string name="nutrition_recipes_section_saved">Saved meals</string>
+    <string name="nutrition_recipes_no_dish">No dish.</string>
+    <string name="nutrition_recipes_no_saved">No saved meal.</string>
+    <string name="nutrition_recipes_kind_recipe">Dish</string>
+    <string name="nutrition_recipes_kind_saved_meal">Saved meal</string>
+    <string name="nutrition_recipes_ingredient_count">%1$d ingredients</string>
+    <string name="nutrition_recipes_cooked_grams">%1$d g cooked</string>
+    <string name="nutrition_recipes_kcal">%1$d kcal</string>
+    <string name="nutrition_recipes_macro_line">P %1$d · C %2$d · F %3$d · Fib %4$d</string>
+    <string name="nutrition_recipes_action_add_journal">Add to journal</string>
+    <string name="nutrition_recipes_add_to_journal">Add \"%1$s\" to…</string>
+    <string name="nutrition_recipes_qty_title">Amount eaten — %1$s</string>
+    <string name="nutrition_recipes_qty_confirm">Add</string>
+    <string name="nutrition_recipes_delete_title">Delete recipe</string>
+    <string name="nutrition_recipes_delete_message">Delete \"%1$s\"? Already-logged meals are kept (snapshot).</string>
+
+    <!-- Recipe editor (A4) -->
+    <string name="nutrition_recipe_create_title">New recipe</string>
+    <string name="nutrition_recipe_edit_title">Edit recipe</string>
+    <string name="nutrition_recipe_name">Name</string>
+    <string name="nutrition_recipe_name_hint">e.g. Oatmeal bowl</string>
+    <string name="nutrition_recipe_kind_recipe">Dish (recipe)</string>
+    <string name="nutrition_recipe_kind_saved_meal">Saved meal</string>
+    <string name="nutrition_recipe_hint_recipe">Dish: added to the journal like a food, macros prorated to the amount eaten.</string>
+    <string name="nutrition_recipe_hint_saved_meal">Saved meal: its ingredients are inserted as-is into a period, in one tap.</string>
+    <string name="nutrition_recipe_cooked_weight">Final cooked weight (g, optional)</string>
+    <string name="nutrition_recipe_ingredients">Ingredients</string>
+    <string name="nutrition_recipe_no_ingredient">No ingredient — add some from the catalogue.</string>
+    <string name="nutrition_recipe_add_ingredient">Add an ingredient</string>
+    <string name="nutrition_recipe_invalid">Name, at least 1 ingredient and quantities in g (&gt; 0) required.</string>
+    <string name="nutrition_recipe_deleted_food">Deleted food</string>
+
+    <!-- Nutrition goals (A5) -->
+    <string name="drawer_item_nutrition_goals">Nutrition goals</string>
+    <string name="nutrition_goals_title">Nutrition goals</string>
+    <string name="nutrition_goals_new">New target</string>
+    <string name="nutrition_goals_active">Active target</string>
+    <string name="nutrition_goals_active_empty">No active target — set your first daily target.</string>
+    <string name="nutrition_goals_since">Since %1$s</string>
+    <string name="nutrition_goals_section_breakdown">Breakdown</string>
+    <!-- Calorie breakdown view toggle (donut / macro % / g·kg / radar) — labels + a11y descriptions -->
+    <string name="nutrition_goals_breakdown_view_donut">Donut</string>
+    <string name="nutrition_goals_breakdown_view_per_kg">Grams per kg of body weight</string>
+    <string name="nutrition_goals_breakdown_view_radar">Radar</string>
+    <string name="nutrition_goals_per_kg_hint">Set your weight in your profile to see intake per kg (g/kg).</string>
+    <string name="nutrition_goals_section_radar">Macro profile</string>
+    <string name="nutrition_goals_week_avg_caption">7-day average vs target</string>
+    <string name="nutrition_goals_radar_actual">Actual (7 d)</string>
+    <string name="nutrition_goals_radar_target">Target</string>
+    <string name="nutrition_goals_section_history">History</string>
+    <string name="nutrition_goals_history_empty">No target defined.</string>
+    <string name="nutrition_goals_from">From %1$s</string>
+    <string name="nutrition_goals_badge_active">active</string>
+    <string name="nutrition_goals_history_macros">%1$d kcal · P %2$d g · C %3$d g · F %4$d g · Fib %5$d g</string>
+    <string name="nutrition_goals_form_new_title">New target</string>
+    <string name="nutrition_goals_form_edit_title">Edit target</string>
+    <string name="nutrition_goals_form_date">Active from</string>
+    <string name="nutrition_goals_form_protein">Protein (g / day)</string>
+    <string name="nutrition_goals_form_carbs">Carbs (g / day)</string>
+    <string name="nutrition_goals_form_fat">Fat (g / day)</string>
+    <string name="nutrition_goals_form_invalid">Date + 3 macros (≥ 0, at least one &gt; 0) required.</string>
+    <string name="nutrition_goals_form_derived_label">kcal target · incl. %1$d g of fiber</string>
+    <string name="nutrition_goals_delete_title">Delete target</string>
+    <string name="nutrition_goals_delete_message">Delete the target from %1$s? The affected days will fall back to the previous target.</string>
+
+    <!-- Nutrition stats (A6) -->
+    <string name="drawer_item_nutrition_stats">Nutrition stats</string>
+    <string name="nutrition_stats_title">Nutrition stats</string>
+    <string name="nutrition_stats_all_label">All</string>
+    <string name="nutrition_stats_all_title">All macros (% of goal)</string>
+    <string name="nutrition_stats_top_foods">Top foods</string>
+    <string name="nutrition_stats_top_by_category">Top food per category</string>
+    <string name="nutrition_stats_top_empty">No food on this period.</string>
+    <string name="nutrition_stats_chart_empty">No data on this period.</string>
+    <string name="nutrition_stats_chart_empty_logged">No food logged on this period.</string>
+    <string name="nutrition_stats_legend_consumed">Consumed</string>
+    <string name="nutrition_stats_legend_target">Target</string>
+
+    <!-- Equipment screen (ANDROID_PARITY §B) -->
+    <string name="drawer_item_material">Equipment</string>
+    <string name="material_title">Equipment</string>
+    <string name="material_divider_actions">Actions</string>
+    <string name="material_divider_list">Equipment</string>
+    <string name="material_search_placeholder">Search equipment…</string>
+    <string name="material_results_count">%1$d equipment · %2$s</string>
+    <string name="material_filter_possession">Ownership</string>
+    <string name="material_filter_all">All</string>
+    <string name="material_filter_mine">My equipment</string>
+    <string name="material_filter_not_mine">Not mine</string>
+    <string name="material_empty">No equipment matches.</string>
+    <string name="material_empty_default">Catalog empty — sync, or add personal equipment with +.</string>
+    <string name="material_add_title">New equipment</string>
+    <string name="material_add_field_name">Name</string>
+    <string name="material_add_placeholder">e.g. 10 kg dumbbells</string>
+    <string name="material_detail_actions">Actions</string>
+    <string name="material_detail_add_mine">Add to my equipment</string>
+    <string name="material_detail_remove_mine">In my equipment — remove</string>
+    <string name="material_detail_exercises_title">Exercises using it · %1$d</string>
+    <string name="material_detail_exercises_simple">Exercises</string>
+    <string name="material_detail_no_catalog">Personal equipment (off-catalog) — no linked exercise.</string>
+    <string name="material_detail_no_exercises">No exercise uses this equipment.</string>
+
+    <!-- Health Connect (Santé — permissions + lecture) -->
+    <string name="settings_category_health">Health data</string>
+    <string name="settings_category_health_desc">Connect Health Connect (steps, distance, calories, heart rate, sleep)</string>
+    <string name="health_title">Health data</string>
+    <string name="health_refresh">Refresh health data</string>
+    <string name="health_status_title">Connection</string>
+    <string name="health_status_connected">Connected</string>
+    <string name="health_status_partial">Partial permissions</string>
+    <string name="health_status_disconnected">Not connected</string>
+    <string name="health_status_desc">Read-only access to your health data from Health Connect.</string>
+    <string name="health_connect_button">Connect health data</string>
+    <string name="health_manage_button">Manage in Health Connect</string>
+    <string name="health_snapshot_title">Overview — Health Connect</string>
+    <string name="health_snapshot_loading">Reading…</string>
+    <string name="health_snapshot_window">Steps, distance and calories: today. Heart rate and sleep: last 24 h.</string>
+    <string name="health_type_steps">Steps</string>
+    <string name="health_type_distance">Distance</string>
+    <string name="health_type_active_calories">Active calories</string>
+    <string name="health_type_heart_rate">Heart rate</string>
+    <string name="health_type_spo2">Blood oxygen</string>
+    <string name="health_type_sleep">Sleep</string>
+    <string name="health_snapshot_steps">%1$d steps</string>
+    <string name="health_snapshot_distance">%1$s km</string>
+    <string name="health_snapshot_calories">%1$d kcal</string>
+    <string name="health_snapshot_heart_rate">%1$d bpm</string>
+    <string name="health_hr_last">Last: %1$d bpm (%2$s)</string>
+    <string name="health_hr_avg">24 h avg: %1$d bpm</string>
+    <string name="health_snapshot_spo2">%1$d %% (%2$s)</string>
+    <string name="health_snapshot_sleep">%1$dh %2$dm</string>
+    <string name="health_sleep_asleep">Asleep %1$s</string>
+    <string name="health_sleep_in_bed">In bed %1$s</string>
+    <string name="health_types_title">Data read</string>
+    <string name="health_types_desc">Steps, distance, active calories, heart rate and sleep. Read-only: the app never writes to Health Connect.</string>
+    <string name="health_sampling_title">Real step buckets</string>
+    <string name="health_sampling_toggle">Sample steps every 30 min</string>
+    <string name="health_sampling_desc">Builds real half-hour step bars in the background instead of the flat estimate. Needs background access; today\'s total stays the same. Light on battery (~15 min checks).</string>
+    <string name="health_unavailable">Health Connect isn\'t available on this device. Install it from the Play Store to sync your health data.</string>
+    <string name="health_update_required">Health Connect needs an update to continue.</string>
+    <string name="health_update_button">Update Health Connect</string>
+
+    <!-- Canal live montre (Wear OS, Data Layer) -->
+    <string name="health_wear_title">Watch — live</string>
+    <string name="health_wear_disconnected">Watch not connected</string>
+    <string name="health_wear_querying">Querying the watch…</string>
+    <string name="health_wear_steps">Steps: %1$d</string>
+    <string name="health_wear_hr">HR: %1$d bpm</string>
+    <string name="health_wear_hr_waiting">HR: measuring…</string>
+    <string name="health_wear_freshness">updated %1$ds ago</string>
+    <string name="health_wear_stale"> · asleep</string>
+
+    <!-- Hub Santé (UI pas / objectif / cardio / sommeil) -->
+    <string name="health_dash_title">Health</string>
+    <string name="health_dash_steps_title">Steps</string>
+    <string name="health_dash_steps_of_goal">of %1$d</string>
+    <string name="health_dash_no_goal">No goal set</string>
+    <string name="health_dash_edit_goal">Set goal</string>
+    <string name="health_dash_live_badge">live</string>
+    <string name="health_dash_intraday">Today (hourly)</string>
+    <string name="health_dash_tonight">Last night</string>
+    <string name="health_dash_week">Last 7 days</string>
+    <string name="health_dash_hour_axis">%1$dh</string>
+    <string name="health_dash_cardio_title">Heart rate</string>
+    <string name="health_dash_cardio_today">%1$d bpm today</string>
+    <string name="health_dash_cardio_bpm">%1$d bpm</string>
+    <string name="health_dash_cardio_avg">avg %1$d bpm</string>
+    <string name="health_dash_cardio_at">%1$02d:%2$02d</string>
+    <string name="health_dash_sleep_title">Sleep</string>
+    <string name="health_dash_sleep_value">%1$dh %2$dm</string>
+    <string name="health_dash_sleep_bed_at">In bed at</string>
+    <string name="health_dash_sleep_asleep_at">Asleep at</string>
+    <string name="health_dash_stage_deep">Deep</string>
+    <string name="health_dash_stage_light">Light</string>
+    <string name="health_dash_stage_rem">REM</string>
+    <string name="health_dash_stage_awake">Awake</string>
+    <string name="health_dash_spo2_title">Blood oxygen</string>
+    <string name="health_dash_spo2_value">%1$d %%</string>
+    <string name="health_dash_energy_title">Distance &amp; calories</string>
+    <string name="health_dash_distance_label">Distance</string>
+    <string name="health_dash_cal_bmr_label">Basal (est.)</string>
+    <string name="health_dash_cal_active_label">Active</string>
+    <string name="health_dash_cal_total_label">Total</string>
+    <string name="health_dash_cal_kcal">%1$d kcal</string>
+    <string name="health_dash_distance_m">%1$d m</string>
+    <string name="health_dash_distance_km">%1$s km</string>
+    <string name="health_dash_source_watch">Source: Watch</string>
+    <string name="health_dash_source_hc">Source: Health Connect</string>
+    <string name="health_dash_empty">No data yet.</string>
+    <string name="health_dash_goal_dialog_title">Step goal</string>
+    <string name="health_dash_goal_label">Daily steps</string>
+    <string name="health_dash_goal_placeholder">e.g. 10000</string>
+    <string name="health_dash_goal_save">Save</string>
+    <string name="health_dash_goal_invalid">Enter a positive number.</string>
+    <string name="health_dash_weight_title">Weight</string>
+    <string name="health_dash_weight_value">%1$s kg</string>
+    <string name="health_dash_weight_avg">avg. %1$s kg</string>
+    <string name="health_dash_stress_title">Stress</string>
+    <string name="health_dash_stress_log">Log stress score</string>
+    <string name="health_dash_stress_dialog_title">Stress score</string>
+    <string name="health_dash_stress_l1">Very relaxed</string>
+    <string name="health_dash_stress_l2">Relaxed</string>
+    <string name="health_dash_stress_l3">Neutral</string>
+    <string name="health_dash_stress_l4">Stressed</string>
+    <string name="health_dash_stress_l5">Very stressed</string>
+    <string name="health_unit_steps">steps</string>
+    <string name="health_dash_weight_log">Log weight</string>
+    <string name="health_dash_weight_dialog_title">Weigh-in</string>
+    <string name="health_dash_weight_prev_month">Previous month</string>
+    <string name="health_dash_weight_next_month">Next month</string>
+    <string name="health_dash_weight_label">Weight (kg)</string>
+    <string name="health_dash_weight_placeholder">e.g. 74.5</string>
+    <string name="health_dash_weight_invalid">Enter a valid weight in kg.</string>
+    <string name="health_dash_month">Last 30 days</string>
+</resources>

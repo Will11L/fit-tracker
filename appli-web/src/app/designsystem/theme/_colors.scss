@@ -1,0 +1,181 @@
+// Port 1:1 des tokens de couleur Android (designsystem/theme/AppColors.kt + Color.kt).
+// Primitives = palette brute. Tokens sémantiques = rôle -> couleur, déclinés dark (défaut) + light.
+// Les composants consomment UNIQUEMENT les tokens sémantiques (var(--app-*)), jamais les primitives,
+// exactement comme Compose lit appColors.* et non Color.kt.
+
+:root {
+  // — Primitives (Color.kt) — référence / dérivations ponctuelles —
+  --c-first-blue: #153a6b;
+  --c-second-blue: #0f1c26;
+  --c-third-blue: #091216;
+  --c-light-gray-blue: #7b9dd0;
+  --c-gray-blue: #5e78a0;
+  --c-box-blue: #1e2a3c;
+  --c-light-green: #00d572;
+  --c-medium-green: #008444;
+  --c-yellow-medium: #c4a000;
+  --c-orange-medium: #c4841f;
+  --c-dark-orange: #9d5300;
+  --c-red-medium: #b3403e;
+  --c-red-dark: #7a2e2c;
+  --c-blue-medium: #245682;
+  --c-dark-gray: #13151a;
+  --c-light-blue: #4fc3f7;
+  --c-button-primary: #2377ca;
+  --c-light-purple: #6c2ae7;
+  --c-bright-purple: #8a40ef; // violet lisible sur fond sombre (accent Santé : stress · macro protéines), mi-chemin light-purple ↔ #a855f7
+  --c-medium-purple: #30166a;
+  --c-turquoise: #15bcab;
+  --c-blue-background: #101720;
+  --c-ui-showcase-card: #141e29; // UiShowcaseScreen _SectionCard (milieu thirdBlue/boxBlue)
+
+  // — Code couleur Nutrition par macro (convention partagée Journal + barres + graphes) —
+  // Une couleur dédiée par macro (calories / protéines / glucides / lipides / fibres), tirée des
+  // primitives de la palette (jamais de M3 brut). Réutilisée dans le bandeau du Journal, les barres
+  // et les graphes echarts de la vue à plat / stats — façon palette par zone des Stats sport.
+  --macro-kcal: var(--c-button-primary);
+  --macro-protein: var(--c-bright-purple);
+  --macro-carbs: var(--c-turquoise);
+  --macro-fat: var(--c-orange-medium);
+  --macro-fiber: var(--c-medium-green);
+  // Sucres (plafond du bandeau Journal, PAS une macro cible « à remplir ») : framboise moyen —
+  // itéré avec l'user 2026-07-14 : #e879c7 trop clair, #c2185b trop sombre sur thirdBlue.
+  // Distinct des 5 hues macros, du warning orange et du rouge brique minéraux. Dark + light.
+  --macro-sugar: #d6489b;
+
+  // — Code couleur Nutrition par FAMILLE de micronutriments (décision 2026-06-15) —
+  // 2 teintes seulement : minéraux (Fe/Ca/Mg/Zn/K/Na) vs vitamines (Vit C/D/B12/A), PAS une palette
+  // de 10 ni de dégradé par %VNR. Minéral tiré de red-medium ; vitamine = jaune franc dédié,
+  // nettement décalé de l'orange lipides (--macro-fat #c4841f), distinct des 5 hues macros et lisible
+  // sur fond recessed (thirdBlue). Déclinées dark (ici) + light (bloc clair) car le jaune doit
+  // s'assombrir pour rester lisible sur recessed clair. Cf. micro-colors.ts.
+  --micro-mineral: var(--c-red-medium); // #b3403e (brique)
+  --micro-vitamin: #e3b505; // jaune franc, distinct de l'orange lipides #c4841f (fix 2026-06-15)
+
+  // — Code couleur Nutrition par RÈGNE d'aliment (badge catégorie du catalogue) —
+  // 4 origines dérivées du groupe (animale / végétale / compléments / autre), tirées des primitives
+  // (jamais de M3 brut), distinctes entre elles et lisibles en pastille teintée (color-mix) sur fond
+  // recessed dark + light. Cf. food-category.ts (FOOD_REALM_COLOR). Pendant de --macro-*/--micro-*.
+  --food-animal: var(--c-red-medium); // brique = origine animale
+  --food-vegetal: var(--c-medium-green); // vert = origine végétale
+  --food-supplement: var(--c-bright-purple); // violet = compléments (à part des vrais aliments)
+  --food-other: var(--c-gray-blue); // gris-bleu neutre = autre / non classé
+
+  // — Code couleur Nutrition par GROUPE d'aliment (badge mnémotechnique, ~17 teintes) —
+  // Une teinte par groupe curaté (cf. food-category.ts FOOD_GROUP_COLOR) qui évoque l'aliment, en
+  // plus des 4 teintes par règne ci-dessus (gardées pour le donut « Origine »). Le badge porte aussi
+  // le libellé texte → clusters proches assumés (jaunes œuf / matière grasse, verts légume /
+  // légumineuse, bleus poisson / boisson). Variantes light assombries (bloc clair) pour rester
+  // lisibles en texte sur recessed clair, façon --micro-*. COMPLEMENT_MACRO/MICRO partagent --…-complement.
+  --food-grp-viande-rouge: #c0392b;
+  --food-grp-viande-blanche: #e0a08c;
+  --food-grp-poisson: #2e86c1;
+  --food-grp-fruits-de-mer: #ff8a65;
+  --food-grp-oeuf: #f4c430;
+  --food-grp-laitage: #cdbb93;
+  --food-grp-legume: #2ecc71;
+  --food-grp-fruit: #e0408a;
+  --food-grp-legumineuse: #8a9a2e;
+  --food-grp-cereale-feculent: #cba24c;
+  --food-grp-noix-graine: #966a47;
+  --food-grp-matiere-grasse: #e6c84f;
+  --food-grp-produit-sucre: #e879c7;
+  --food-grp-boisson: #3bc9db;
+  --food-grp-plat-compose: #7b8794;
+  --food-grp-complement: #8a40ef; // = --c-bright-purple (compléments, aligné stress/protéines)
+  --food-grp-autre: #95a5a6;
+
+  // — Tokens sémantiques : THÈME SOMBRE (défaut = appColorsDark) —
+  --app-bg-screen: #101720;
+  --app-bg-surface: #1e2a3c;
+  --app-bg-recessed: #091216;
+  --app-bg-bottom-nav: #0f1c26;
+  --app-bg-button: #1e2a3c;
+  --app-selected-fill: #153a6b;
+  --app-primary-action: #2377ca;
+  --app-text-primary: #ffffff;
+  --app-text-secondary: #5e78a0;
+  --app-text-tertiary: #d3d3d3;
+  --app-text-on-selected: #ffffff;
+  --app-accent-text: #4fc3f7;
+  --app-divider: #5e78a0;
+  --app-divider-strong: #153a6b;
+  --app-priority-high: #b3403e;
+  --app-priority-medium: #c4841f;
+  --app-priority-low: #008444;
+  --app-task-row-green-bg: #071f14;
+  --app-task-row-green-name-box: #1a4d33;
+  --app-task-row-orange-bg: #1f1408;
+  --app-task-row-orange-name-box: #52320e;
+  --app-snackbar-success: #008444;
+  --app-snackbar-warning: #c4841f;
+  /* FAVORI (étoile) : l'orange des favoris de l'app — source unique (catalogue aliments,
+     tuile « Groupe favori » des Stats…). Sémantique dédiée (demande user 2026-07-15). */
+  --app-favorite: var(--c-orange-medium);
+  --app-snackbar-error: #b3403e;
+
+  // — Boutons d'action à fond sémantique (ActionIconButton / ActionIconWithTextButton) —
+  // Action destructive (supprimer) = fond rouge plein + icône/texte blancs ; les actions non
+  // destructives réutilisent le fond neutre --app-bg-button (déjà défini ci-dessus). Tokens
+  // réutilisables pour le sweep app-wide (boutons de rows : favori orange / primaire bleu / menu
+  // neutre / delete rouge).
+  // Accent volontairement identique en clair/sombre : le rouge « danger » doit toujours ressortir.
+  --app-btn-danger-bg: #b3403e;
+  --app-btn-danger-fg: #ffffff;
+  // Icône blanche sur tout fond coloré/saturé (danger rouge, primaryAction bleu, favori orange) —
+  // théme-indépendant (jamais surchargé en clair). Les fonds NEUTRES (--app-bg-button) gardent
+  // tint=--app-text-primary (blanc en sombre, sombre en clair) pour rester lisibles sur fond clair.
+  --app-on-accent: #ffffff;
+}
+
+// — Tokens sémantiques : THÈME CLAIR (= appColorsLight) —
+:root[data-theme='light'] {
+  --app-bg-screen: #ffffff;
+  --app-bg-surface: #ffffff;
+  --app-bg-recessed: #e1e7ef;
+  --app-bg-bottom-nav: #f2f5f9;
+  --app-bg-button: #ffffff;
+  --app-selected-fill: #d3e4f7;
+  --app-primary-action: #2377ca;
+  --app-text-primary: #1a2330;
+  --app-text-secondary: #5a6472;
+  --app-text-tertiary: #9aa3b0;
+  --app-text-on-selected: #1a2330;
+  --app-accent-text: #1f86c4;
+  --app-divider: #d0d8e2;
+  --app-divider-strong: #c5d2e2;
+  --app-priority-high: #f3cfd0;
+  --app-priority-medium: #f0dbb8;
+  --app-priority-low: #c7e3d5;
+  --app-task-row-green-bg: #e3f2ea;
+  --app-task-row-green-name-box: #bfe0cd;
+  --app-task-row-orange-bg: #f5ebdd;
+  --app-task-row-orange-name-box: #e6cfa8;
+  --app-snackbar-success: #1f7a47;
+  --app-snackbar-warning: #b57e1a;
+  --app-snackbar-error: #9a2d24;
+  // Micros : teintes assombries pour rester lisibles sur recessed clair (#e1e7ef).
+  --micro-mineral: #9a2d24;
+  --micro-vitamin: #8c7003; // jaune franc assombri (sibling de #e3b505), distinct de l'orange lipides
+  // Sucres : framboise assombri (sibling de #d6489b, hue préservée) — lisible sur fond clair.
+  --macro-sugar: #a51d6c;
+  // Groupes d'aliments : teintes assombries (hue préservée) pour rester lisibles en texte de badge
+  // sur recessed clair (#e1e7ef). Pendants des tokens dark --food-grp-* ci-dessus.
+  --food-grp-viande-rouge: #9c2c20;
+  --food-grp-viande-blanche: #a8654d;
+  --food-grp-poisson: #1f6390;
+  --food-grp-fruits-de-mer: #c2552f;
+  --food-grp-oeuf: #8a6d0a;
+  --food-grp-laitage: #82734f;
+  --food-grp-legume: #1f8a4c;
+  --food-grp-fruit: #b32a6b;
+  --food-grp-legumineuse: #5d6a1f;
+  --food-grp-cereale-feculent: #886a1f;
+  --food-grp-noix-graine: #6f4c2c;
+  --food-grp-matiere-grasse: #836e1c;
+  --food-grp-produit-sucre: #b03f93;
+  --food-grp-boisson: #1f818f;
+  --food-grp-plat-compose: #545d69;
+  --food-grp-complement: #5f28c4; // assombri du nouveau #8a40ef (lisible sur recessed clair)
+  --food-grp-autre: #5c686a;
+}

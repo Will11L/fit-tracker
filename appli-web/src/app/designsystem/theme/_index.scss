@@ -1,0 +1,5 @@
+// Agrège les tokens du design system. À charger une fois via styles.scss.
+@use 'colors';
+@use 'typography';
+@use 'spacing';
+@use 'motion';

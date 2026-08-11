@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Token Helper</title>
+    <style>
+        body { font-family: sans-serif; padding: 2em; background: #f0f0f0; }
+        input { margin: 0.5em; padding: 0.5em; }
+        button { padding: 0.5em 1em; }
+    </style>
+</head>
+<body>
+    <h2>🔐 Connexion pour accéder aux docs</h2>
+    <input type="text" id="username" placeholder="Nom d'utilisateur" />
+    <input type="password" id="password" placeholder="Mot de passe" />
+    <button onclick="getToken()">Obtenir un token</button>
+
+    <script>
+        async function getToken() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const response = await fetch("/token", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+            });
+
+            if (!response.ok) {
+                alert("Échec de l'authentification !");
+                return;
+            }
+
+            const data = await response.json();
+            const token = data.access_token;
+
+            // Ouvrir /secure-docs avec le token injecté via JS
+            const swaggerWindow = window.open("/secure-docs", "_blank");
+            // Remplace par :
+            swaggerWindow.onload = () => {
+                swaggerWindow.postMessage({ token }, "*");
+            };
+        }
+
+        // Injecter le token dans Swagger UI quand il est prêt
+        window.addEventListener("message", (event) => {
+            if (event.data.token) {
+                localStorage.setItem("jwt_token", event.data.token);
+            }
+        });
+    </script>
+</body>
+</html>

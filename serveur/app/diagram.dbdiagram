@@ -1,0 +1,528 @@
+{
+  "version": "1.0.0",
+  "darkMode": true,
+  "gridEnabling": false,
+  "detailLevel": "All",
+  "tablePositions": [
+    {
+      "name": "users",
+      "schemaName": "public",
+      "x": 328,
+      "y": 552
+    },
+    {
+      "name": "actual_workouts",
+      "schemaName": "public",
+      "x": 848,
+      "y": 16
+    },
+    {
+      "name": "actual_workout_exercises",
+      "schemaName": "public",
+      "x": 1400,
+      "y": 16
+    },
+    {
+      "name": "actual_workout_sets",
+      "schemaName": "public",
+      "x": 1944,
+      "y": 16
+    },
+    {
+      "name": "available_equipments",
+      "schemaName": "public",
+      "x": 16,
+      "y": 16
+    },
+    {
+      "name": "cycle_workouts",
+      "schemaName": "public",
+      "x": 1400,
+      "y": 472
+    },
+    {
+      "name": "equipments",
+      "schemaName": "public",
+      "x": 328,
+      "y": 312
+    },
+    {
+      "name": "exercises",
+      "schemaName": "public",
+      "x": 848,
+      "y": 736
+    },
+    {
+      "name": "exercise_equipment",
+      "schemaName": "public",
+      "x": 1400,
+      "y": 744
+    },
+    {
+      "name": "exercise_muscles",
+      "schemaName": "public",
+      "x": 1400,
+      "y": 1480
+    },
+    {
+      "name": "muscles",
+      "schemaName": "public",
+      "x": 848,
+      "y": 1296
+    },
+    {
+      "name": "muscle_goals",
+      "schemaName": "public",
+      "x": 1400,
+      "y": 1776
+    },
+    {
+      "name": "planned_workouts",
+      "schemaName": "public",
+      "x": 848,
+      "y": 432
+    },
+    {
+      "name": "planned_workout_exercises",
+      "schemaName": "public",
+      "x": 1400,
+      "y": 1016
+    },
+    {
+      "name": "superset_groups",
+      "schemaName": "public",
+      "x": 848,
+      "y": 1624
+    },
+    {
+      "name": "superset_exercises",
+      "schemaName": "public",
+      "x": 1400,
+      "y": 2576
+    },
+    {
+      "name": "training_cycles",
+      "schemaName": "public",
+      "x": 328,
+      "y": 16
+    },
+    {
+      "name": "routine_periods",
+      "schemaName": "public",
+      "x": 16,
+      "y": 2882
+    },
+    {
+      "name": "routine_tasks",
+      "schemaName": "public",
+      "x": 267.7392578125,
+      "y": 2882
+    },
+    {
+      "name": "routine_task_checks",
+      "schemaName": "public",
+      "x": 537.9189453125,
+      "y": 2882
+    },
+    {
+      "name": "notifications",
+      "schemaName": "public",
+      "x": 16,
+      "y": 3284
+    }
+  ],
+  "tableGroupCollapseStates": [],
+  "stickyNoteLayouts": [],
+  "referencePaths": [
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "actual_workouts",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "users",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "exercises",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "users",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "muscles",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "users",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "muscle_goals",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "users",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "planned_workouts",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "users",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "superset_groups",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "users",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "actual_workout_uuid"
+      ],
+      "firstTableName": "actual_workout_exercises",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "actual_workouts",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "exercise_uuid"
+      ],
+      "firstTableName": "actual_workout_exercises",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "exercises",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "actual_workout_exercise_uuid"
+      ],
+      "firstTableName": "actual_workout_sets",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "actual_workout_exercises",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "planned_workout_uuid"
+      ],
+      "firstTableName": "planned_workout_exercises",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "planned_workouts",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "exercise_uuid"
+      ],
+      "firstTableName": "planned_workout_exercises",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "exercises",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "exercise_uuid"
+      ],
+      "firstTableName": "exercise_muscles",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "exercises",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "muscle_uuid"
+      ],
+      "firstTableName": "exercise_muscles",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "muscles",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "exercise_uuid"
+      ],
+      "firstTableName": "exercise_equipment",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "exercises",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "equipment_uuid"
+      ],
+      "firstTableName": "exercise_equipment",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "equipments",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "muscle_uuid"
+      ],
+      "firstTableName": "muscle_goals",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "muscles",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "superset_group_uuid"
+      ],
+      "firstTableName": "superset_exercises",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "superset_groups",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "exercise_uuid"
+      ],
+      "firstTableName": "superset_exercises",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "exercises",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "training_cycle_uuid"
+      ],
+      "firstTableName": "cycle_workouts",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "training_cycles",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "planned_workout_uuid"
+      ],
+      "firstTableName": "cycle_workouts",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "planned_workouts",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "routine_periods",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "users",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "routine_tasks",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "users",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "period_uuid"
+      ],
+      "firstTableName": "routine_tasks",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "routine_periods",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "routine_task_checks",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "users",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "task_uuid"
+      ],
+      "firstTableName": "routine_task_checks",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "uuid"
+      ],
+      "secondTableName": "routine_tasks",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "notifications",
+      "firstSchemaName": "public",
+      "firstRelation": "*",
+      "secondFieldNames": [
+        "id"
+      ],
+      "secondTableName": "users",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    }
+  ]
+}

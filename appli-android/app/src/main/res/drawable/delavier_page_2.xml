@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder. La page d'origine provenait d'un ouvrage protege et n'est pas
+     redistribuee dans ce depot. Deposer une image personnelle sous ce meme nom
+     pour la retablir (l'original est dans appli-android/local-assets/). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="508dp"
+    android:viewportWidth="800"
+    android:viewportHeight="1130">
+
+    <path android:fillColor="#16232C" android:pathData="M0,0h800v1130H0z" />
+    <path android:fillColor="#00000000" android:strokeColor="#2E86AB" android:strokeWidth="5"
+          android:pathData="M40,40h720v1050H40z" />
+
+    <!-- feuille -->
+    <path android:fillColor="#22323D"
+          android:pathData="M300,380h150l50,50v170h-200z" />
+    <path android:fillColor="#2E86AB"
+          android:pathData="M450,380l50,50h-50z" />
+
+    <!-- lignes -->
+    <path android:fillColor="#2E86AB" android:pathData="M250,680h300v10h-300z" />
+    <path android:fillColor="#1F4E63" android:pathData="M290,720h220v8h-220z" />
+    <path android:fillColor="#1F4E63" android:pathData="M330,752h140v8h-140z" />
+
+    <!-- numero de page -->
+    <path android:fillColor="#2E86AB" android:pathData="M378,980h8v50h-8z M402,980h8v50h-8z" />
+</vector>

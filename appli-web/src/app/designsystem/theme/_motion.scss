@@ -1,0 +1,35 @@
+// Tokens de motion (durées + easing) + keyframe d'entrée réutilisable. Source unique du langage
+// d'animation de l'app : entrées "slide-down + fade" douces, à étendre écran par écran.
+// Consommés par la directive `appRevealIn` (designsystem/common_components/reveal-in.ts).
+
+:root {
+  --motion-fast: 160ms;
+  --motion-base: 220ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+// Entrée en douceur : l'élément descend depuis le haut (-8px → 0) en fondu (opacité 0 → 1).
+// La directive `appRevealIn` pose `animation: app-reveal-in var(--motion-base) var(--motion-ease) both`
+// en inline-style sur l'hôte à la 1ère apparition. `prefers-reduced-motion: reduce`
+// est respecté côté directive (aucune animation n'est posée) — pas de mouvement imposé en CSS ici.
+@keyframes app-reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Fondu seul (opacité 0 → 1, sans `translateY`) : posé par `appRevealIn` aux changements de clé
+// (re-sélection) pour crossfader le contenu sans saut vertical de la colonne déjà visible.
+@keyframes app-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

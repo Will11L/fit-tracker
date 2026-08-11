@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Docs protégées</title>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css">
+</head>
+<body>
+    <div id="swagger-ui"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+    <script>
+        window.addEventListener("message", function(event) {
+            const token = event.data.token;
+            if (token) {
+                localStorage.setItem("jwt_token", token);
+                initSwaggerUI(token);
+            }
+        });
+
+        function initSwaggerUI(token) {
+            SwaggerUIBundle({
+                url: '/openapi.json',
+                dom_id: '#swagger-ui',
+                layout: "BaseLayout",
+                deepLinking: true,
+                showExtensions: true,
+                showCommonExtensions: true,
+                requestInterceptor: (req) => {
+                    req.headers["Authorization"] = "Bearer " + token;
+                    return req;
+                },
+            });
+        }
+    </script>
+    <h2>En attente du token...</h2>
+</body>
+</html>

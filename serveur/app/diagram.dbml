@@ -1,0 +1,866 @@
+Project sport_api {
+  database_type: "PostgreSQL"
+  Note: "Generated from SQLAlchemy models listing"
+}
+
+Table users {
+  id integer [pk, not null]
+  username varchar [not null, unique]
+  hashed_password varchar [not null]
+  email varchar                                     // email reel optionnel (2026-06-06), login reste username
+  first_name varchar
+  last_name varchar
+  is_admin boolean [not null, default: false]      // V1.3 (2026-05-05) : flag admin pour entites globales
+  birth_date date                                   // BIO (2026-05-11) : Nutrition future + perso
+  sex varchar                                       // UPPER_CASE policy 11 : MALE/FEMALE/OTHER
+  height_cm float                                   // canonique cm (lengthUnit clientside)
+  weight_kg float                                   // canonique kg (weightUnit clientside)
+
+  Indexes {
+    (username) [unique]
+  }
+}
+
+// V8.2 (2026-05-06) : refresh tokens long-lived (7j), sha256-hash indexe, reuse detection
+Table refresh_tokens {
+  id integer [pk, not null]
+  user_id integer [not null]
+  token_hash varchar [not null]                    // sha256(token) — JAMAIS le token brut (lookup O(1))
+  expires_at timestamp [not null]
+  revoked_at timestamp                             // NULL = actif
+  created_at timestamp [not null]
+
+  Indexes {
+    (id)
+    (token_hash) [unique, name: 'ix_refresh_tokens_token_hash']
+    (user_id, revoked_at) [name: 'ix_refresh_tokens_user_revoked']
+  }
+}
+
+Table actual_workouts {
+  id integer [pk, not null]
+  user_id integer [not null]
+  name varchar [not null]
+  date varchar [not null]
+  notes varchar
+  location varchar
+  is_done boolean [not null, default: false]
+  updated_at timestamp
+  uuid varchar [not null, unique]
+
+  Indexes {
+    (id)
+    (user_id)                                       // F4c (2026-05-06)
+  }
+}
+
+Table actual_workout_exercises {
+  id integer [pk, not null]
+  actual_workout_uuid varchar [not null]
+  exercise_uuid varchar [not null]
+  sets integer [not null, default: 0]
+  reps varchar [not null, default: '0-1']
+  phase varchar [not null, default: 'TRAINING']
+  status varchar [not null, default: 'NOT_STARTED']
+  order integer [not null, default: 0]
+  added_manually boolean [default: false]
+  updated_at timestamp
+  uuid varchar [not null, unique]
+
+  Indexes {
+    (id)
+    (actual_workout_uuid)                           // F4c (2026-05-06)
+    (exercise_uuid)                                 // F4c (2026-05-06)
+  }
+}
+
+Table actual_workout_sets {
+  id integer [pk, not null]
+  actual_workout_exercise_uuid varchar [not null]
+  set_order integer [not null]
+  reps integer [not null]
+  weight float [not null]
+  is_dropset boolean [not null, default: false]
+  notes varchar
+  recommendation varchar
+  status varchar [not null, default: 'NOT_STARTED']  // F2c-1 : aligné UPPER_CASE + sémantique correcte (set créé = pas commencé)
+  updated_at timestamp
+  uuid varchar [not null, unique]
+
+  Indexes {
+    (id)
+    (actual_workout_exercise_uuid)                  // F4c (2026-05-06)
+  }
+}
+
+Table available_equipments {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+  name varchar [not null]
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+    (user_id, name) [unique, name: 'uq_available_equipments_user_id_name']
+  }
+}
+
+Table cycle_workouts {
+  id integer [pk, not null]
+  uuid varchar [not null, unique]
+  training_cycle_uuid varchar [not null]
+  planned_workout_uuid varchar [not null]
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (training_cycle_uuid)                           // F4c (2026-05-06)
+    (planned_workout_uuid)                          // F4c (2026-05-06)
+  }
+}
+
+Table equipments {
+  id integer [pk, not null]
+  uuid varchar [not null, unique]
+  name varchar [not null, unique]
+  updated_at timestamp
+
+  Indexes {
+    (id)
+  }
+}
+
+Table exercises {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+  name varchar [not null]
+  description varchar
+  instructions jsonb
+  recommended_sets integer
+  recommended_reps varchar
+  duration_in_seconds integer
+  rest_time_seconds integer
+  gif_url varchar
+  is_favorite boolean [default: false]
+  last_done varchar
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)                                       // F4c (2026-05-06)
+    (user_id, name) [unique, name: 'uq_exercises_user_id_name']
+  }
+}
+
+Table exercise_equipment {
+  id integer [pk, not null]
+  uuid varchar [not null, unique]
+  updated_at timestamp
+  exercise_uuid varchar [not null]
+  equipment_uuid varchar [not null]
+
+  Indexes {
+    (id)
+    (exercise_uuid)                                 // F4c (2026-05-06)
+    (equipment_uuid)                                // F4c (2026-05-06)
+  }
+}
+
+Table exercise_muscles {
+  id integer [pk, not null]
+  exercise_uuid varchar [not null]
+  muscle_uuid varchar [not null]
+  coefficient float [not null, default: 1.0]
+  updated_at timestamp
+  uuid varchar [not null, unique]
+
+  Indexes {
+    (id)
+    (exercise_uuid)                                 // F4c (2026-05-06)
+    (muscle_uuid)                                   // F4c (2026-05-06)
+  }
+}
+
+Table muscles {
+  id integer [pk, not null]
+  user_id integer [not null]
+  name varchar [not null, note: 'niveau precis : Triceps Long head, Mid Chest, ...']
+  muscle_group varchar [note: 'niveau intermediaire : Triceps, Pecs, ... (refactor 2026-05-08)']
+  zone varchar [note: 'niveau haut : Arms, Chest, ...']
+  is_favorite boolean [default: false]
+  uuid varchar [not null, unique]
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)                                       // F4c (2026-05-06)
+  }
+}
+
+Table muscle_goals {
+  id integer [pk, not null]
+  user_id integer [not null]
+  muscle_uuid varchar [not null]
+  uuid varchar [not null, unique]
+  priority varchar [not null]
+  done integer [not null, default: 0]
+  target varchar [not null]
+  week_iso varchar [not null]                // Wire JSON garde "weekISO" via alias Pydantic (F2c-2)
+  status varchar [not null, default: 'IN_PROGRESS']
+  added_manually boolean [not null, default: false]
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)                                       // F4c (2026-05-06)
+    (muscle_uuid)                                   // F4c (2026-05-06)
+  }
+}
+
+Table planned_workouts {
+  id integer [pk, not null]
+  user_id integer [not null]
+  name varchar [not null]
+  day_of_week varchar [not null]
+  uuid varchar [not null, unique]
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)                                       // F4c (2026-05-06)
+  }
+}
+
+Table planned_workout_exercises {
+  id integer [pk, not null]
+  planned_workout_uuid varchar [not null]
+  exercise_uuid varchar [not null]
+  sets integer [not null]
+  reps varchar [not null]
+  phase varchar [not null, default: 'TRAINING']
+  status varchar [not null, default: 'PLANNED']
+  order integer [not null, default: 0]
+  ignored boolean [not null, default: false]
+  uuid varchar [not null, unique]
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (planned_workout_uuid)                          // F4c (2026-05-06)
+    (exercise_uuid)                                 // F4c (2026-05-06)
+  }
+}
+
+Table superset_groups {
+  id integer [pk, not null]
+  user_id integer                                   // nullable=True (cas legacy, a clarifier)
+  name varchar [not null]
+  updated_at timestamp
+  uuid varchar [not null, unique]
+
+  Indexes {
+    (id)
+    (user_id)                                       // F4c (2026-05-06)
+  }
+}
+
+Table superset_exercises {
+  id integer [pk, not null]
+  superset_group_uuid varchar [not null]
+  exercise_uuid varchar [not null]
+  order_in_group integer
+  uuid varchar [not null, unique]
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (superset_group_uuid)                           // F4c (2026-05-06)
+    (exercise_uuid)                                 // F4c (2026-05-06)
+  }
+}
+
+Table training_cycles {
+  id integer [pk, not null]
+  user_id integer [not null]                        // V5.7 (2026-05-05) : Type C -> Type A user-scoped
+  name varchar [not null]
+  start_date date [not null]
+  end_date date [not null]
+  updated_at timestamp
+  uuid varchar [not null, unique]
+
+  Indexes {
+    (id)
+    (user_id)                                       // F4c (2026-05-06)
+  }
+}
+
+Table routine_periods {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+
+  name varchar [not null]              // ex: "Matin"
+  start_time varchar [not null]        // ex: "06:30" (String côté SQLAlchemy + Pydantic + Room)
+  end_time varchar [not null]          // ex: "09:00" (String côté SQLAlchemy + Pydantic + Room)
+  order_index integer [not null, default: 0]   // F7-1 (2026-05-06) : col Postgres `order_index` (mot-cle SQL `order` evite), wire JSON garde "order" via attribut Python
+
+  // Rappels notifs (2026-06-08) : minutes avant debut / fin. NULL = desactive, 0 = pile a l'heure, N = N min avant
+  reminder_before_start_minutes integer   // backfill = 0 sur les periodes existantes (garde la notif de debut)
+  reminder_before_end_minutes integer     // opt-in (NULL par defaut)
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+    (uuid)
+  }
+}
+
+// Citations motivantes user-scoped (Type A, cascade ownership politique 8).
+// Affichees aleatoirement sur le SplashScreen apres login + gerees depuis un
+// ecran dedie cote Android. Pre-seedees au /signup via copy_starter_pack.
+Table quotes {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+
+  text varchar [not null]              // contenu de la citation (user-typed, non traduit)
+  author varchar                       // auteur optionnel
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+    (uuid)
+  }
+}
+
+// Phase 0 (2026-05-12) : unification routine_tasks/routine_task_checks -> tasks/task_checks
+// Modele unifie supportant NONE/DAILY/WEEKLY/MONTHLY/YEARLY (validations Pydantic
+// conditionnelles selon recurrence_kind). RoutinePeriod intact (table de reference
+// Morning/Midday/Evening editable par user).
+Table tasks {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+
+  title varchar [not null]
+  notes varchar
+  is_active boolean [not null, default: true]
+  order_index integer [not null, default: 0]   // F7-1 : col Postgres `order_index`, wire garde "order"
+
+  recurrence_kind varchar [not null, default: 'DAILY']  // NONE | DAILY | WEEKLY | MONTHLY | YEARLY (UPPER_CASE politique 11)
+
+  // Conditional fields (nullable, validated par Pydantic selon recurrence_kind)
+  due_date varchar                     // "YYYY-MM-DD", REQUIRED si NONE
+  due_time varchar                     // "HH:MM", optionnel toujours
+  period_uuid varchar                  // FK SET NULL -> routine_periods.uuid, valide si DAILY
+  recurrence_weekdays jsonb            // [0..6] Mon=0..Sun=6, valide si WEEKLY
+  recurrence_start_date varchar        // "YYYY-MM-DD", REQUIRED si != NONE
+  recurrence_end_date varchar          // "YYYY-MM-DD", cap optionnel
+
+  // B.4 (2026-05-12) : dates ISO a exclure des occurrences (mode "Only this")
+  excluded_dates jsonb [not null, default: `'[]'`]   // JSONB array of "YYYY-MM-DD" strings
+
+  // Phase 3 (reminders) -- ajoute en Phase 0 future-ready
+  reminder_minutes_before integer
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+    (period_uuid)
+    (uuid)
+  }
+}
+
+Table task_checks {
+  id integer [pk, not null]
+  user_id integer [not null]
+  task_uuid varchar [not null]         // FK CASCADE -> tasks.uuid
+
+  occurrence_date varchar [not null]   // "YYYY-MM-DD" (rename Phase 0 : ex-date)
+  is_checked boolean [not null, default: false]
+  checked_at timestamp
+
+  updated_at timestamp
+
+  uuid varchar [not null, unique]
+
+  Indexes {
+    (id)
+    (user_id)
+    (task_uuid)
+    (occurrence_date)
+    (user_id, task_uuid, occurrence_date) [unique, name: 'uq_task_check_per_day'] // 1 check max par tache par jour par user
+  }
+}
+
+Table notifications {
+  id integer [pk, not null]
+  user_id integer [not null]                 // FK -> users.id
+  uuid varchar [not null, unique]
+
+  type varchar [not null]                    // ex: ROUTINE_PERIOD_START, TIMER_DONE, WORKOUT_RESULT
+  level varchar [not null, default: 'info']  // info | success | warning | error
+
+  title varchar [not null]                   // ex: "3 tâches à faire"
+  body varchar                               // ex: "dans la plage 06:30 - 19:00"
+  data jsonb                                 // payload libre: period_uuid, task_uuids, deep_link, etc.
+
+  dedupe_key varchar                         // optionnel, pour éviter les doublons (idéalement unique par user)
+  created_at timestamp [not null, default: `now()`]
+  read_at timestamp                          // null = non lue
+  archived_at timestamp                      // optionnel
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)                                // F4c (2026-05-06)
+    (uuid)
+    (user_id, created_at)                    // F4d Room + équivalent Postgres possible si besoin
+  }
+}
+
+// ---- Nutrition V1 (2026-06-12, cf. docs/NUTRITION_DESIGN.md) ----
+// Catalogue d'aliments user-scoped (Type A, D9 : seed CIQUAL copie au signup en vague V2).
+// source UPPER_CASE (politique 11) : CUSTOM | CIQUAL | OFF.
+Table foods {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+
+  name varchar [not null]
+  brand varchar                          // marque (produits OFF)
+  source varchar [not null]              // CUSTOM | CIQUAL | OFF
+  source_ref varchar                     // code CIQUAL ou barcode OFF (dedup import)
+  food_group varchar                     // groupe curate UPPER_CASE (~18, cf. food_taxonomy.py) — regne derive, non stocke
+
+  kcal_per_100g float [not null]
+  protein_per_100g float [not null]
+  carbs_per_100g float [not null]
+  fat_per_100g float [not null]
+  fiber_per_100g float                   // micro-nutriments optionnels (D11)
+  sugar_per_100g float
+  sat_fat_per_100g float
+  salt_per_100g float
+  iron_per_100g float                    // vitamines & mineraux (pack essentiel ~10, D11 etendu) — mg
+  calcium_per_100g float                 // mg
+  magnesium_per_100g float               // mg
+  zinc_per_100g float                    // mg
+  potassium_per_100g float               // mg
+  sodium_per_100g float                  // mg
+  vitamin_c_per_100g float               // mg
+  vitamin_d_per_100g float               // µg
+  vitamin_b12_per_100g float             // µg
+  vitamin_a_per_100g float               // µg RAE = retinol + beta-carotene/12
+
+  is_favorite boolean [not null, default: false]
+  archived boolean [not null, default: false]
+  is_water boolean [not null, default: false]   // boisson eau → auto-comptage hydratation (1 g = 1 ml)
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+  }
+}
+
+// Portions nommees (« 1 oeuf = 60 g »). Ownership indirect via Food -> User.
+Table food_portions {
+  id integer [pk, not null]
+  uuid varchar [not null, unique]
+  food_uuid varchar [not null]           // FK CASCADE -> foods.uuid
+
+  label varchar [not null]
+  grams float [not null]
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (food_uuid)
+  }
+}
+
+// Plats composes ET repas enregistres (D7). kind UPPER_CASE : RECIPE | SAVED_MEAL.
+Table recipes {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+
+  name varchar [not null]
+  kind varchar [not null]                // RECIPE (prorata poids) | SAVED_MEAL (insertion ingredients)
+  total_weight_g float                   // poids final cuit (kind=RECIPE seulement)
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+  }
+}
+
+// Ingredient de recette. food_uuid = reference VIVANTE (pas de snapshot : modele, pas historique).
+Table recipe_ingredients {
+  id integer [pk, not null]
+  uuid varchar [not null, unique]
+  recipe_uuid varchar [not null]         // FK CASCADE -> recipes.uuid
+  food_uuid varchar [not null]           // FK CASCADE -> foods.uuid
+
+  quantity_g float [not null]
+  order_index integer [not null]         // pas de default (politique 10 : positionnel explicite)
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (recipe_uuid)
+    (food_uuid)
+  }
+}
+
+// Periodes habituelles du journal (D10). Seed 4 presets au signup (vague V2).
+Table meal_presets {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+
+  name varchar [not null]                // user-typed, jamais traduit
+  order_index integer [not null]         // ordre des sections du journal
+  default_time varchar                   // "HH:MM" indicatif (String, convention projet)
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+  }
+}
+
+// Repas du journal. Cree seulement a la 1re entry (sections vides = meal_presets).
+Table meals {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+
+  date varchar [not null]                // "YYYY-MM-DD" — jour du journal
+  name varchar [not null]                // user-typed (« Petit-dej »...), jamais traduit
+  order_index integer [not null]
+  time varchar                           // "HH:MM" heure reelle du repas (facultative ; surclasse default_time du preset a l'affichage)
+  preset_uuid varchar                    // FK SET NULL -> meal_presets.uuid (lien stable periode, null si ad hoc/legacy)
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+    (date)
+    (preset_uuid)
+  }
+}
+
+// Table centrale : snapshot D5 (per-100g figes a l'ajout, historique immuable).
+// FK food/recipe SET NULL : l'entry survit a la suppression de sa source.
+// Totaux derives : total = per_100g x quantity_g / 100.
+Table meal_entries {
+  id integer [pk, not null]
+  uuid varchar [not null, unique]
+  meal_uuid varchar [not null]           // FK CASCADE -> meals.uuid
+  food_uuid varchar                      // FK SET NULL -> foods.uuid (reference informative)
+  recipe_uuid varchar                    // FK SET NULL -> recipes.uuid (si entry issue d'une recette)
+
+  display_name varchar [not null]        // snapshot du nom
+  quantity_g float [not null]
+  portion_label varchar                  // snapshot du label de portion (« 2 oeufs »)
+
+  kcal_per_100g float [not null]         // snapshot macros (D5)
+  protein_per_100g float [not null]
+  carbs_per_100g float [not null]
+  fat_per_100g float [not null]
+  fiber_per_100g float                   // snapshot micro-nutriments optionnels
+  sugar_per_100g float
+  sat_fat_per_100g float
+  salt_per_100g float
+  iron_per_100g float                    // snapshot vitamines & mineraux (pack essentiel ~10) — mg
+  calcium_per_100g float                 // mg
+  magnesium_per_100g float               // mg
+  zinc_per_100g float                    // mg
+  potassium_per_100g float               // mg
+  sodium_per_100g float                  // mg
+  vitamin_c_per_100g float               // mg
+  vitamin_d_per_100g float               // µg
+  vitamin_b12_per_100g float             // µg
+  vitamin_a_per_100g float               // µg RAE
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (meal_uuid)
+    (food_uuid)
+    (recipe_uuid)
+  }
+}
+
+// Cibles quotidiennes. Cible active un jour J = max(effective_from <= J).
+// day_kind = ALL en v1, extension future par type de jour (D3) sans migration.
+Table nutrition_goals {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+
+  effective_from varchar [not null]      // "YYYY-MM-DD"
+  day_kind varchar [not null, default: 'ALL']
+
+  kcal float [not null]
+  protein_g float [not null]
+  carbs_g float [not null]
+  fat_g float [not null]
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+    (effective_from)
+  }
+}
+
+// Hydratation (2026-07-05). Une row = une prise d'eau horodatée. Total du jour =
+// SUM(amount_ml) sur la date (calculé côté client). Objectif journalier versionné
+// via health_goals (type WATER_ML), pas d'entité dédiée.
+Table water_intakes {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+
+  date varchar [not null]                // "YYYY-MM-DD" (jour local)
+  amount_ml integer [not null]           // volume d'une prise en ml (> 0)
+
+  created_at timestamp                   // instant de la prise
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+    (date)
+  }
+}
+
+// ---- Santé / Health Connect V1 (2026-06-17) ----
+// Métriques passives (pas + objectif, distance, calories actives, FC, sommeil).
+// 3 tables Type A user-scoped (user_id FK CASCADE). Pas d'import séances, pas de write-back.
+
+// Compteur de pas en buckets intraday. Total quotidien = SUM(steps) sur la date.
+// Bucketing -> near-real-time : le client ré-upsert le bucket courant en cours de journée.
+Table health_step_counts {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+
+  date varchar [not null]                // "YYYY-MM-DD"
+  bucket_start varchar [not null]        // "HH:MM" début de la tranche intraday
+  steps integer [not null]
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+    (date)
+  }
+}
+
+// Métriques passives génériques, vendor-agnostiques (une row = une mesure).
+// type UPPER_CASE : HEART_RATE | SLEEP | DISTANCE | ACTIVE_CALORIES. unit self-describing.
+Table health_metrics {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+
+  type varchar [not null]                // HEART_RATE | SLEEP | DISTANCE | ACTIVE_CALORIES
+  value float [not null]
+  unit varchar [not null]                // bpm | min | m | km | kcal...
+  date varchar [not null]                // "YYYY-MM-DD"
+  start_time varchar                     // "HH:MM" instant précis optionnel (mesures intraday)
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+    (date)
+  }
+}
+
+// Objectifs santé versionnés dans le temps (même sémantique que nutrition_goals).
+// Objectif actif d'un type un jour J = max(effective_from <= J). type UPPER_CASE : STEPS (v1).
+Table health_goals {
+  id integer [pk, not null]
+  user_id integer [not null]
+  uuid varchar [not null, unique]
+
+  type varchar [not null]                // STEPS (v1), extensible
+  target float [not null]
+  effective_from varchar [not null]      // "YYYY-MM-DD"
+
+  updated_at timestamp
+
+  Indexes {
+    (id)
+    (user_id)
+    (effective_from)
+  }
+}
+
+// ---- MCP server tables (scaffold 2026-05-27, cf. docs/MCP_DESIGN.md) ----
+Table mcp_clients {
+  id integer [pk, not null]
+  client_id varchar [not null, unique]
+  client_secret_hash varchar [not null]           // bcrypt
+  client_name varchar
+  redirect_uris jsonb [not null]
+  grant_types jsonb
+  token_endpoint_auth_method varchar              // client_secret_post | none
+  created_at timestamp [not null]
+
+  Indexes {
+    (client_id) [unique]
+  }
+}
+
+Table mcp_sessions {
+  id integer [pk, not null]
+  user_id integer [not null]
+  client_id varchar [not null]
+  client_name varchar
+  refresh_token_hash varchar [not null]           // sha256, jamais le brut (lookup O(1))
+  scopes varchar [not null, default: '']
+  created_at timestamp [not null]
+  expires_at timestamp [not null]
+  revoked_at timestamp                            // NULL = actif (révocation UI admin)
+  last_used_at timestamp
+
+  Indexes {
+    (user_id)
+    (client_id)
+    (refresh_token_hash) [unique, name: 'ix_mcp_sessions_token_hash']
+    (user_id, revoked_at) [name: 'ix_mcp_sessions_user_revoked']
+  }
+}
+
+Table mcp_oauth_codes {
+  id integer [pk, not null]
+  code varchar [not null, unique]
+  user_id integer [not null]
+  client_id varchar [not null]
+  redirect_uri varchar [not null]
+  code_challenge varchar                          // PKCE
+  code_challenge_method varchar                   // S256
+  scopes varchar [not null, default: '']
+  expires_at timestamp [not null]
+  consumed_at timestamp                           // single-use
+
+  Indexes {
+    (code) [unique]
+  }
+}
+
+Table mcp_audit_log {
+  id integer [pk, not null]
+  user_id integer [not null]
+  client_id varchar
+  tool_name varchar [not null]
+  args jsonb
+  result_summary text                             // tronqué 500 chars
+  status varchar [not null, default: 'ok']        // ok | error
+  error_message text
+  created_at timestamp [not null]
+
+  Indexes {
+    (user_id)
+    (tool_name)
+    (created_at)
+  }
+}
+
+/* Relationships */
+Ref: actual_workouts.user_id > users.id [delete: cascade]
+
+Ref: exercises.user_id > users.id [delete: cascade]
+Ref: muscles.user_id > users.id [delete: cascade]
+Ref: muscle_goals.user_id > users.id [delete: cascade]
+
+Ref: planned_workouts.user_id > users.id [delete: cascade]
+Ref: superset_groups.user_id > users.id [delete: cascade]
+Ref: available_equipments.user_id > users.id [delete: cascade]
+
+Ref: actual_workout_exercises.actual_workout_uuid > actual_workouts.uuid [delete: cascade]
+Ref: actual_workout_exercises.exercise_uuid > exercises.uuid [delete: cascade]
+
+Ref: actual_workout_sets.actual_workout_exercise_uuid > actual_workout_exercises.uuid [delete: cascade]
+
+Ref: planned_workout_exercises.planned_workout_uuid > planned_workouts.uuid [delete: cascade]
+Ref: planned_workout_exercises.exercise_uuid > exercises.uuid [delete: cascade]
+
+Ref: exercise_muscles.exercise_uuid > exercises.uuid [delete: cascade]
+Ref: exercise_muscles.muscle_uuid > muscles.uuid [delete: cascade]
+
+Ref: exercise_equipment.exercise_uuid > exercises.uuid [delete: cascade]
+Ref: exercise_equipment.equipment_uuid > equipments.uuid [delete: cascade]
+
+Ref: muscle_goals.muscle_uuid > muscles.uuid [delete: cascade]
+
+Ref: superset_exercises.superset_group_uuid > superset_groups.uuid [delete: cascade]
+Ref: superset_exercises.exercise_uuid > exercises.uuid [delete: cascade]
+
+Ref: cycle_workouts.training_cycle_uuid > training_cycles.uuid [delete: cascade]
+Ref: cycle_workouts.planned_workout_uuid > planned_workouts.uuid [delete: cascade]
+
+Ref: training_cycles.user_id > users.id [delete: cascade]   // V5.7 (2026-05-05)
+Ref: refresh_tokens.user_id > users.id [delete: cascade]    // V8.2 (2026-05-06)
+
+Ref: routine_periods.user_id > users.id [delete: cascade]
+
+Ref: quotes.user_id > users.id [delete: cascade]
+
+Ref: tasks.user_id > users.id [delete: cascade]
+Ref: tasks.period_uuid > routine_periods.uuid [delete: set null]   // Phase 0 : SET NULL (period optionnel sur DAILY)
+
+Ref: task_checks.user_id > users.id [delete: cascade]
+Ref: task_checks.task_uuid > tasks.uuid [delete: cascade]
+
+Ref: notifications.user_id > users.id [delete: cascade]
+
+// Nutrition V1 (2026-06-12)
+Ref: foods.user_id > users.id [delete: cascade]
+Ref: food_portions.food_uuid > foods.uuid [delete: cascade]
+Ref: recipes.user_id > users.id [delete: cascade]
+Ref: recipe_ingredients.recipe_uuid > recipes.uuid [delete: cascade]
+Ref: recipe_ingredients.food_uuid > foods.uuid [delete: cascade]      // reference vivante (pas de snapshot)
+Ref: meal_presets.user_id > users.id [delete: cascade]
+Ref: meals.user_id > users.id [delete: cascade]
+Ref: meals.preset_uuid > meal_presets.uuid [delete: set null]         // lien stable periode (suit le renommage)
+Ref: meal_entries.meal_uuid > meals.uuid [delete: cascade]
+Ref: meal_entries.food_uuid > foods.uuid [delete: set null]           // snapshot D5 : l'entry survit
+Ref: meal_entries.recipe_uuid > recipes.uuid [delete: set null]
+Ref: nutrition_goals.user_id > users.id [delete: cascade]
+Ref: water_intakes.user_id > users.id [delete: cascade]      // Hydratation (2026-07-05)
+
+// Santé / Health Connect V1 (2026-06-17)
+Ref: health_step_counts.user_id > users.id [delete: cascade]
+Ref: health_metrics.user_id > users.id [delete: cascade]
+Ref: health_goals.user_id > users.id [delete: cascade]
+
+Ref: mcp_sessions.user_id > users.id [delete: cascade]      // MCP (2026-05-27)
+Ref: mcp_oauth_codes.user_id > users.id [delete: cascade]
+Ref: mcp_audit_log.user_id > users.id [delete: cascade]

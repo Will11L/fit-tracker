@@ -1,0 +1,16 @@
+<resources>
+    <string name="wear_app_name">FitTracker Live</string>
+    <string name="wear_title">Live</string>
+    <string name="wear_steps_label">Pas</string>
+    <string name="wear_hr_label">Fréquence cardiaque</string>
+    <string name="wear_hr_value">%1$d bpm</string>
+    <string name="wear_measuring">Mesure…</string>
+    <string name="wear_no_value">—</string>
+    <string name="wear_permission_needed">Autorise les capteurs pour lire la FC et les pas.</string>
+    <string name="wear_permission_button">Accorder les permissions</string>
+    <string name="wear_background_needed">Autorise la FC « tout le temps » pour que le téléphone puisse la lire quand cette app est fermée.</string>
+    <string name="wear_background_button">Autoriser tout le temps</string>
+    <string name="wear_background_skip">Plus tard</string>
+    <string name="wear_sending">Envoi vers le téléphone</string>
+    <string name="wear_not_sending">Téléphone injoignable</string>
+</resources>

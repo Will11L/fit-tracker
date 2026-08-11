@@ -1,0 +1,1443 @@
+<resources>
+    <!-- app_name reste FitTracker (marque, non traduit). -->
+
+    <!-- ============================================================ -->
+    <!-- COMMON                                                         -->
+    <!-- ============================================================ -->
+    <string name="common_next">Suivant</string>
+    <string name="common_back">Retour</string>
+    <string name="common_finish">Terminer</string>
+    <string name="common_skip">Ignorer</string>
+    <string name="common_save">Enregistrer</string>
+    <string name="common_cancel">Annuler</string>
+    <string name="exit_app_title">Quitter l\'application ?</string>
+    <string name="exit_app_message">Êtes-vous sûr de vouloir quitter ?</string>
+    <string name="exit_app_confirm">Quitter</string>
+    <string name="common_theme_light">Clair</string>
+    <string name="common_theme_dark">Sombre</string>
+    <string name="common_theme_system">Suivre le système</string>
+    <string name="common_yes">Oui</string>
+    <string name="common_no">Non</string>
+    <string name="common_ok">OK</string>
+    <string name="common_delete">Supprimer</string>
+    <string name="common_add">Ajouter</string>
+    <string name="common_edit">Modifier</string>
+    <string name="common_rename">Renommer</string>
+    <string name="common_sync">Synchroniser</string>
+    <string name="common_update">Mettre à jour</string>
+    <string name="common_close">Fermer</string>
+    <string name="common_confirm_deletion">Confirmer la suppression</string>
+
+    <!-- Days of week -->
+    <string name="day_monday">Lundi</string>
+    <string name="day_tuesday">Mardi</string>
+    <string name="day_wednesday">Mercredi</string>
+    <string name="day_thursday">Jeudi</string>
+    <string name="day_friday">Vendredi</string>
+    <string name="day_saturday">Samedi</string>
+    <string name="day_sunday">Dimanche</string>
+    <string name="day_rest_day">Jour de repos</string>
+
+    <!-- ============================================================ -->
+    <!-- HOME SCREEN                                                    -->
+    <!-- ============================================================ -->
+    <string name="home_tab_session">Séance</string>
+    <string name="home_tab_goals">Objectifs</string>
+    <string name="home_tab_program">Programme</string>
+    <string name="home_tab_week">Semaine</string>
+    <string name="home_tab_calendar">Calendrier</string>
+    <string name="home_currently_sleeping">Au repos 💤</string>
+    <string name="home_view_program">Voir le programme</string>
+    <string name="home_start_planned">Démarrer %1$s</string>
+    <string name="home_start_new_session">Démarrer une nouvelle séance</string>
+    <string name="home_create_workout_title">Démarrer une séance</string>
+    <string name="home_create_workout_placeholder">Nom de la séance</string>
+    <string name="home_create_workout_error_empty">Le nom ne peut pas être vide.</string>
+    <string name="home_create_workout_error_rest_day">« Rest Day » n\'est pas autorisé.</string>
+    <string name="home_create_workout_start">Démarrer</string>
+
+    <!-- ============================================================ -->
+    <!-- FORM VALIDATION (disabled confirm-button reasons)             -->
+    <!-- ============================================================ -->
+    <string name="form_error_name_required">Nom requis</string>
+    <string name="form_error_title_required">Titre requis</string>
+    <string name="routine_period_error_end_after_start">La fin doit être après le début</string>
+    <string name="routine_task_error_period_required">Sélectionne une période</string>
+    <string name="tasks_calendar_error_weekday_required">Sélectionne au moins un jour</string>
+    <string name="quotes_error_text_required">La citation ne peut pas être vide</string>
+    <string name="form_error_muscle_required">Sélectionne un muscle</string>
+    <string name="form_error_muscles_required">Sélectionne au moins un muscle</string>
+    <string name="form_error_equipment_required">Sélectionne au moins un équipement</string>
+    <string name="form_error_target_required">Sélectionne un objectif</string>
+
+    <!-- ============================================================ -->
+    <!-- SESSION TAB                                                    -->
+    <!-- ============================================================ -->
+    <string name="session_completion">Avancement de la séance</string>
+    <string name="session_phase_warmup">Échauffement</string>
+    <string name="session_phase_training">Entraînement</string>
+    <string name="session_phase_posttraining">Récupération</string>
+    <string name="session_phase_empty_warmup">Pas d\'échauffement</string>
+    <string name="session_phase_empty_training">Pas d\'entraînement</string>
+    <string name="session_phase_empty_posttraining">Pas de récupération</string>
+    <string name="session_sync_title">Synchroniser la séance</string>
+    <string name="session_sync_message">Voulez-vous synchroniser votre séance maintenant ?</string>
+    <string name="session_phase_dialog_title">Ajouter à quelle phase ?</string>
+    <string name="session_remove_exercise_message">Retirer %1$s de la séance ?</string>
+    <string name="session_delete_title">Supprimer la séance</string>
+    <string name="session_delete_message">Supprimer cette séance ? Cette action est irréversible.</string>
+    <string name="session_rename_title">Renommer la séance</string>
+    <string name="session_rename_label">Nom de la séance</string>
+    <string name="session_rename_placeholder">Nouveau nom</string>
+
+    <!-- ============================================================ -->
+    <!-- SESSION EXERCISE SCREEN                                        -->
+    <!-- ============================================================ -->
+    <string name="session_exercise_fallback_name">Nom de l\'exercice</string>
+    <string name="session_exercise_details">Détails de l\'exercice</string>
+    <string name="session_exercise_progress">Aperçu de la progression</string>
+    <string name="session_exercise_notes">Notes</string>
+    <string name="session_exercise_instructions">Instructions</string>
+    <string name="session_exercise_edit_reps">Modifier les répétitions</string>
+    <string name="session_exercise_edit_weight">Modifier le poids (%1$s)</string>
+    <string name="session_exercise_sync_title">Synchroniser les séries</string>
+    <string name="session_exercise_sync_message">Voulez-vous synchroniser vos séries maintenant ?</string>
+    <string name="session_exercise_delete_set_message">Voulez-vous vraiment supprimer cette série ?</string>
+    <!-- Table header -->
+    <string name="session_exercise_table_num">N°</string>
+    <string name="session_exercise_table_reps">Rép.</string>
+    <string name="session_exercise_table_weight">Poids</string>
+    <string name="session_exercise_table_trend">Tend.</string>
+    <string name="session_exercise_table_done">Fait</string>
+    <string name="session_exercise_table_del">Suppr.</string>
+    <string name="session_exercise_table_notes">Notes</string>
+
+    <!-- ============================================================ -->
+    <!-- WEEK VIEW SCREEN                                               -->
+    <!-- ============================================================ -->
+    <string name="week_completion">Avancement de la semaine</string>
+    <string name="week_days">Jours</string>
+    <string name="week_rest_zzz">Zzz…</string>
+    <string name="week_rename_title">Renommer la séance</string>
+    <string name="week_rename_placeholder">Nouveau nom de séance</string>
+    <string name="week_error_rest_day_name">Le nom ne peut pas être « Rest Day ».</string>
+    <string name="week_create_title">Planifier une séance pour %1$s</string>
+    <string name="week_create_confirm">Créer</string>
+    <string name="week_create_placeholder">Nom de la séance</string>
+    <!-- CopyPlannedWorkoutDialog (jours affichés via localizedDayOfWeek) -->
+    <string name="copy_workout_title">Copier la séance</string>
+    <string name="copy_workout_confirm">Copier</string>
+    <string name="copy_workout_choose_day">Choisir le jour cible :</string>
+    <string name="copy_workout_day_label">Jour</string>
+    <string name="copy_workout_current_day">Jour actuel : %1$s</string>
+
+    <!-- ============================================================ -->
+    <!-- CALENDAR SCREEN                                                -->
+    <!-- ============================================================ -->
+    <string name="calendar_month_completion">Avancement du mois</string>
+    <string name="calendar_title">Calendrier</string>
+    <string name="weekday_short_mon">L</string>
+    <string name="weekday_short_tue">M</string>
+    <string name="weekday_short_wed">M</string>
+    <string name="weekday_short_thu">J</string>
+    <string name="weekday_short_fri">V</string>
+    <string name="weekday_short_sat">S</string>
+    <string name="weekday_short_sun">D</string>
+
+    <!-- ============================================================ -->
+    <!-- TASKS SCREEN (Phase 1 2026-05-12, unified Daily + Agenda)      -->
+    <!-- ============================================================ -->
+    <string name="tasks_tab_daily">Quotidien</string>
+    <string name="tasks_tab_agenda">Agenda</string>
+    <string name="tasks_calendar_title">Agenda tâches</string>
+    <string name="tasks_calendar_add_task">Ajouter une tâche</string>
+    <string name="tasks_calendar_add_section">Actions</string>
+    <string name="tasks_calendar_day_empty">Aucune tâche ce jour.</string>
+    <string name="tasks_calendar_add_title">Nouvelle tâche</string>
+    <string name="tasks_calendar_edit_title">Modifier la tâche</string>
+    <string name="tasks_calendar_field_title">Titre</string>
+    <string name="tasks_calendar_field_title_placeholder">ex. Payer loyer</string>
+    <string name="tasks_calendar_field_due_date">Date d\'échéance</string>
+    <string name="tasks_calendar_field_due_time">Heure (optionnel)</string>
+    <string name="tasks_calendar_field_due_time_placeholder">HH:MM (optionnel)</string>
+    <!-- Phase 2 (2026-05-12) : récurrence -->
+    <string name="tasks_calendar_field_repeat">Répéter</string>
+    <string name="tasks_calendar_recur_none">Aucune</string>
+    <string name="tasks_calendar_recur_weekly">Hebdo</string>
+    <string name="tasks_calendar_recur_monthly">Mensuel</string>
+    <string name="tasks_calendar_recur_yearly">Annuel</string>
+    <string name="tasks_calendar_field_weekdays">Jours</string>
+    <string name="tasks_calendar_field_start_date">Date de début</string>
+    <string name="tasks_calendar_field_end_date_optional">Date de fin (optionnel)</string>
+    <string name="tasks_calendar_field_end_date_none">Sans fin (jusqu\'à annulation)</string>
+    <!-- Phase 3 reminders -->
+    <string name="tasks_calendar_field_reminder">Rappel</string>
+    <string name="tasks_calendar_reminder_none">Aucun</string>
+    <string name="tasks_calendar_reminder_15min">15 min</string>
+    <string name="tasks_calendar_reminder_1h">1 heure</string>
+    <string name="tasks_calendar_reminder_1day">1 jour</string>
+    <!-- Presets de rappel génériques (ReminderSelector partagé : périodes + défaut) -->
+    <string name="reminder_preset_none">Aucun</string>
+    <string name="reminder_preset_5min">5 min</string>
+    <string name="reminder_preset_15min">15 min</string>
+    <string name="reminder_preset_30min">30 min</string>
+    <string name="reminder_preset_1h">1 heure</string>
+    <string name="notif_task_reminder_title">Rappel tâche</string>
+    <string name="notif_task_reminder_body">À venir : %1$s</string>
+    <string name="notif_routine_period_start_title">Routine commencée</string>
+    <string name="notif_routine_period_start_body">C\'est l\'heure de votre routine %1$s</string>
+    <string name="notif_routine_period_end_title">Routine bientôt finie</string>
+    <string name="notif_routine_period_end_body">Votre routine %1$s se termine bientôt</string>
+    <string name="tasks_calendar_task_added">Tâche ajoutée</string>
+    <string name="tasks_calendar_add_failed">Échec ajout tâche</string>
+    <string name="tasks_calendar_update_failed">Échec mise à jour tâche</string>
+    <string name="tasks_calendar_delete_failed">Échec suppression tâche</string>
+    <string name="tasks_calendar_toggle_failed">Échec basculement tâche</string>
+    <string name="tasks_calendar_delete_confirm_title">Supprimer la tâche</string>
+    <string name="tasks_calendar_delete_confirm_message">Supprimer « %1$s » ?</string>
+
+    <!-- ============================================================ -->
+    <!-- CHRONO SCREEN                                                  -->
+    <!-- ============================================================ -->
+    <string name="chrono_screen_title">Chrono</string>
+    <string name="chrono_tab_stopwatch">Chrono</string>
+    <string name="chrono_tab_timer">Minuteur</string>
+    <string name="chrono_btn_start">Démarrer</string>
+    <string name="chrono_btn_resume">Reprendre</string>
+    <string name="chrono_btn_stop">Arrêter</string>
+    <string name="chrono_btn_pause">Pause</string>
+    <string name="chrono_btn_restart">Redémarrer</string>
+    <string name="chrono_btn_lap">Tour</string>
+    <string name="chrono_btn_reset">Réinitialiser</string>
+    <string name="chrono_btn_set">Régler</string>
+    <string name="chrono_laps_title">Tours</string>
+    <string name="chrono_no_laps">Aucun tour</string>
+    <string name="chrono_laps_col_num">N°</string>
+    <string name="chrono_laps_col_delta">Δ Tour</string>
+    <string name="chrono_laps_col_time">Temps</string>
+    <string name="chrono_presets_title">Préréglages</string>
+    <string name="chrono_hint_running">Minuteur en cours — réinitialiser pour changer</string>
+    <string name="chrono_hint_choose_preset">Choisissez un préréglage</string>
+    <string name="chrono_hint_ready">Prêt</string>
+    <string name="chrono_dialog_set_timer">Régler le minuteur</string>
+
+    <!-- ============================================================ -->
+    <!-- STATS SCREEN                                                   -->
+    <!-- ============================================================ -->
+    <string name="stats_training_frequency">Fréquence d\'entraînement</string>
+    <string name="stats_zone_balance_title">Équilibre par zone (volume)</string>
+    <string name="stats_zone_balance_empty">Aucune séance sur cette période.</string>
+    <string name="stats_chart_zone_volume">Volume (%1$s) / Zone</string>
+    <string name="stats_chart_zone_sets">Séries / Zone</string>
+    <string name="stats_chart_zone_exercises">Exercices / Zone</string>
+    <string name="stats_chart_group_volume">Volume (%1$s) / Groupe</string>
+    <string name="stats_chart_group_sets">Séries / Groupe</string>
+    <string name="stats_chart_group_exercises">Exercices / Groupe</string>
+    <string name="stats_chart_muscle_volume">Volume (%1$s) / Muscle</string>
+    <string name="stats_chart_muscle_sets">Séries / Muscle</string>
+    <string name="stats_chart_muscle_exercises">Exercices / Muscle</string>
+    <string name="stats_chart_exercise_volume">Volume (%1$s) / Exercice</string>
+    <string name="stats_chart_exercise_sets">Séries / Exercice</string>
+    <string name="stats_chart_exercise_sessions">Séances / Exercice</string>
+    <string name="stats_freq_sessions">Séances</string>
+    <string name="stats_freq_per_week">Par semaine</string>
+    <string name="stats_freq_top_group">Groupe favori</string>
+    <string name="stats_freq_total_volume">Volume total</string>
+    <string name="stats_freq_total_sets">Séries totales</string>
+    <string name="stats_freq_total_exos">Exos totaux</string>
+    <string name="stats_range_1_week">1 semaine</string>
+    <string name="stats_range_30_days">30 jours</string>
+    <string name="stats_range_3_months">3 mois</string>
+    <string name="stats_range_6_months">6 mois</string>
+    <string name="stats_range_1_year">1 an</string>
+    <string name="stats_range_all">Tout</string>
+    <string name="stats_range_custom">Personnalisé</string>
+    <string name="stats_range_select_title">Sélectionner une période</string>
+    <string name="stats_range_start_placeholder">Début</string>
+    <string name="stats_range_end_placeholder">Fin</string>
+    <string name="stats_a11y_bar_chart">Graphique en barres</string>
+    <string name="stats_a11y_line_chart">Graphique en courbes</string>
+    <string name="stats_a11y_sets_count">Nombre de séries</string>
+    <string name="stats_a11y_exercises_count">Nombre d\'exercices</string>
+    <string name="stats_a11y_total_weight">Poids total</string>
+    <string name="stats_a11y_sort_alpha">Trier par ordre alphabétique</string>
+    <string name="stats_a11y_sort_zone">Trier par couleur de zone</string>
+    <string name="zone_chest">Pectoraux</string>
+    <string name="zone_back">Dos</string>
+    <string name="zone_shoulders">Épaules</string>
+    <string name="zone_arms">Bras</string>
+    <string name="zone_legs">Jambes</string>
+    <string name="zone_core">Abdos</string>
+    <string name="zone_other">Autre</string>
+
+    <!-- ============================================================ -->
+    <!-- MUSCLE STATS SCREEN                                            -->
+    <!-- ============================================================ -->
+    <string name="muscle_stats_weekly_goal">Objectif hebdo</string>
+    <string name="muscle_stats_period">Période</string>
+    <string name="muscle_stats_weekly_volume">Volume hebdo</string>
+    <string name="muscle_stats_exercises">Exercices</string>
+    <string name="muscle_stats_no_data">Aucune donnée pour cette période</string>
+    <string name="muscle_stats_no_goal">Aucun objectif défini cette semaine.</string>
+    <string name="muscle_stats_no_exercises">Aucun exercice lié à ce muscle.</string>
+    <string name="muscle_stats_goal_format">%1$d / %2$d séries</string>
+    <string name="muscle_stats_priority_status">Priorité : %1$s · Statut : %2$s</string>
+
+    <!-- ============================================================ -->
+    <!-- EXERCISE STATS SCREEN                                          -->
+    <!-- ============================================================ -->
+    <string name="exercise_stats_all_time">Totaux globaux</string>
+    <string name="exercise_stats_progression">Progression</string>
+    <string name="exercise_stats_top_set">Top série</string>
+    <string name="exercise_stats_total_sets">Séries totales</string>
+    <string name="exercise_stats_total_volume">Volume total</string>
+    <string name="exercise_stats_legend_max_weight">Poids max (%1$s)</string>
+    <string name="exercise_stats_legend_volume">Volume (%1$s×reps)</string>
+    <string name="exercise_stats_legend_sets">Séries</string>
+
+    <!-- ============================================================ -->
+    <!-- DRAWER                                                         -->
+    <!-- ============================================================ -->
+    <string name="drawer_section_general">Général</string>
+    <string name="drawer_section_sport">Sport</string>
+    <string name="drawer_section_nutrition">Nutrition</string>
+    <string name="drawer_section_health">Santé</string>
+    <string name="drawer_section_account_settings">Compte &amp; Paramètres</string>
+    <string name="drawer_section_admin">Administration</string>
+    <string name="drawer_section_expand">Développer la section</string>
+    <string name="drawer_section_collapse">Réduire la section</string>
+    <string name="drawer_item_home">Accueil</string>
+    <string name="drawer_item_chrono">Chrono</string>
+    <string name="drawer_item_notifications">Notifications</string>
+    <string name="drawer_item_conversations">Conversations</string>
+    <string name="drawer_item_tasks">Tâches</string>
+    <string name="drawer_item_daily_tasks">Tâches quotidiennes</string>   <!-- legacy, kept for callers -->
+    <string name="drawer_item_no_session">Aucune séance</string>
+    <string name="drawer_item_program">Programme</string>
+    <string name="drawer_item_exercises">Exercices</string>
+    <string name="drawer_item_muscles">Muscles</string>
+    <string name="drawer_item_calendar">Calendrier</string>
+    <string name="drawer_item_statistics">Statistiques</string>
+    <string name="drawer_item_profile">Profil</string>
+    <string name="drawer_item_settings">Paramètres</string>
+    <string name="drawer_item_language_display">Langue &amp; Affichage</string>
+    <string name="drawer_item_export_datas">Exporter les données</string>
+    <string name="drawer_item_quotes">Citations motivantes</string>
+    <string name="drawer_item_logout">Déconnexion</string>
+    <string name="drawer_item_sync_settings">Paramètres de sync</string>
+    <string name="drawer_item_manage_users">Gérer les utilisateurs</string>
+    <string name="drawer_item_ui_showcase">UI Showcase</string>
+    <string name="drawer_last_sync">Sync : %1$s</string>
+    <string name="drawer_last_sync_never">Jamais</string>
+
+    <!-- ============================================================ -->
+    <!-- BOTTOM NAV (A7 — mode Sport/Nutrition + bascule)              -->
+    <!-- ============================================================ -->
+    <!-- Raccourcis sport -->
+    <string name="nav_home">Accueil</string>
+    <string name="nav_calendar">Calendrier</string>
+    <string name="nav_chrono">Chrono</string>
+    <string name="nav_stats">Stats</string>
+    <!-- Raccourcis nutrition -->
+    <string name="nav_nutrition_journal">Journal</string>
+    <string name="nav_nutrition_goals">Objectifs</string>
+    <string name="nav_nutrition_catalogue">Catalogue</string>
+    <string name="nav_nutrition_stats">Stats nutrition</string>
+    <!-- Raccourcis santé -->
+    <string name="nav_health">Santé</string>
+    <!-- Bascule de mode (description ; l'icône reflète le mode courant ; cycle Sport → Nutrition → Santé) -->
+    <string name="nav_switch_to_nutrition">Passer en mode Nutrition</string>
+    <string name="nav_switch_to_health">Passer en mode Santé</string>
+    <string name="nav_switch_to_sport">Passer en mode Sport</string>
+
+    <!-- ============================================================ -->
+    <!-- UI SHOWCASE (galerie admin atoms/molecules)                   -->
+    <!-- ============================================================ -->
+    <string name="ui_showcase_title">UI Showcase</string>
+    <string name="ui_showcase_interactive">Interactif</string>
+    <string name="ui_showcase_all_states">Tous les états</string>
+    <string name="ui_showcase_tab_foundations">Foundations</string>
+    <string name="ui_showcase_tab_components">Common Components</string>
+    <string name="ui_showcase_tab_atoms">Atoms</string>
+    <string name="ui_showcase_tab_molecules">Molecules</string>
+    <string name="ui_showcase_tab_organisms">Organisms</string>
+    <string name="ui_showcase_organisms_placeholder">Bientôt disponible — Étape 5 (ConfirmationDialog, OptionsBottomSheet, etc.)</string>
+
+    <!-- ============================================================ -->
+    <!-- SETTINGS                                                       -->
+    <!-- ============================================================ -->
+    <string name="settings_title">Paramètres</string>
+    <!-- Catégories drill-down (rows sur SettingsScreen racine) -->
+    <string name="settings_category_appearance">Apparence</string>
+    <string name="settings_category_appearance_desc">Thème, mode sombre/clair</string>
+    <string name="settings_category_language_format">Langue &amp; format</string>
+    <string name="settings_category_language_format_desc">Langue, unités poids &amp; longueur</string>
+    <string name="settings_category_notifications_desc">In-app, son, vibration, téléphone</string>
+    <string name="settings_category_rerun_onboarding">Refaire l\'onboarding</string>
+    <string name="settings_category_rerun_onboarding_desc">Relance le parcours de bienvenue et restaure les préférences par défaut</string>
+    <string name="settings_category_startup">Démarrage</string>
+    <string name="settings_category_startup_desc">Choisir l\'écran ouvert au lancement de l\'app</string>
+    <string name="settings_start_screen_title">Page d\'accueil au démarrage</string>
+    <string name="settings_start_screen_description">Écran ouvert au lancement de l\'app.</string>
+    <string name="settings_start_screen_home">Session du jour</string>
+    <string name="settings_start_screen_tasks">Tâches</string>
+    <string name="settings_start_screen_calendar">Calendrier</string>
+    <string name="settings_start_screen_stats">Stats</string>
+    <string name="settings_start_screen_chrono">Chrono</string>
+    <string name="settings_start_screen_program">Programme</string>
+    <string name="settings_start_screen_notifications">Notifications</string>
+    <string name="settings_start_screen_conversations">Conversations</string>
+    <string name="settings_section_language">Langue</string>
+    <string name="settings_section_units">Unités</string>
+    <string name="settings_section_theme">Thème</string>
+    <string name="settings_section_week">La semaine commence le</string>
+    <string name="settings_toggle_vibrate_title">Vibrer pour les notifications in-app</string>
+    <string name="settings_toggle_vibrate_desc">Déclencher une vibration quand une notification apparaît dans l\'app</string>
+    <string name="settings_toggle_sound_title">Son sur les notifications in-app</string>
+    <string name="settings_toggle_sound_desc">Jouer un son quand une notification apparaît dans l\'app</string>
+    <string name="settings_toggle_overlay_title">Afficher la superposition de notification</string>
+    <string name="settings_toggle_overlay_desc">Afficher une notification en superposition quand elle apparaît</string>
+    <string name="settings_toggle_phone_title">Afficher les notifications système</string>
+    <string name="settings_toggle_phone_desc">Afficher les notifications dans la barre système</string>
+    <string name="settings_section_categories">Catégories de notifications</string>
+    <string name="settings_toggle_notify_tasks_title">Rappels de tâches</string>
+    <string name="settings_toggle_notify_tasks_desc">Notifier pour les rappels de tâches</string>
+    <string name="settings_toggle_notify_timers_title">Notifications de timer</string>
+    <string name="settings_toggle_notify_timers_desc">Notifier quand un timer se termine</string>
+    <string name="settings_toggle_notify_routines_title">Notifications de routines</string>
+    <string name="settings_toggle_notify_routines_desc">Notifier au début et à la fin des périodes de routine</string>
+    <string name="settings_default_reminder_title">Rappel par défaut</string>
+    <string name="settings_default_reminder_desc">Pré-remplit le rappel à la création d\'une tâche ou d\'une routine. « Aucun » = pas de rappel par défaut.</string>
+    <string name="settings_default_reminder_label">Me rappeler avant</string>
+    <string name="settings_weight_unit_desc">Utilisée partout où des poids sont affichés (séries, stats).</string>
+    <string name="settings_length_unit_desc">Utilisée pour la taille et mensurations (à venir).</string>
+    <string name="settings_theme_desc">Affecte les widgets M3 (switches, dialogues) et la barre de statut système. La palette custom de l\'app reste inchangée.</string>
+
+    <!-- ============================================================ -->
+    <!-- AUTH (Login/Signup/Logout)                                     -->
+    <!-- ============================================================ -->
+    <string name="auth_login_title">Connexion</string>
+    <string name="auth_signup_title">Inscription</string>
+    <string name="auth_username">Identifiant</string>
+    <string name="auth_password">Mot de passe</string>
+    <string name="auth_confirm_password">Confirmer le mot de passe</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_first_name">Prénom</string>
+    <string name="auth_last_name">Nom</string>
+    <string name="auth_login_button">Se connecter</string>
+    <string name="auth_signup_button">S\'inscrire</string>
+    <string name="auth_no_account">Pas encore de compte ?</string>
+    <string name="auth_have_account">Déjà un compte ?</string>
+    <string name="auth_logout_title">Déconnexion</string>
+    <string name="auth_logout_confirm">Êtes-vous sûr de vouloir vous déconnecter ?</string>
+    <string name="auth_brand_name">Fit Tracker</string>
+    <string name="auth_login_subtitle">Connectez-vous pour synchroniser vos données</string>
+    <string name="auth_username_placeholder">Ex : will</string>
+    <string name="auth_password_placeholder">••••••••</string>
+    <string name="auth_loading_login">Connexion…</string>
+    <string name="auth_loading_signup">Création…</string>
+    <string name="auth_no_account_action">Pas de compte ? Créer un compte</string>
+    <string name="auth_have_account_action">Déjà un compte ? Se connecter</string>
+    <string name="auth_signup_subtitle">Inscrivez-vous pour commencer le suivi</string>
+    <string name="auth_signup_title_create">Créer votre compte</string>
+    <string name="auth_signup_button_create">Créer le compte</string>
+    <string name="auth_signup_username_label">Identifiant (3+ caractères)</string>
+    <string name="auth_signup_username_placeholder">Ex : alice</string>
+    <string name="auth_signup_password_label">Mot de passe (8+ caractères)</string>
+    <string name="auth_signup_optional_placeholder">Facultatif</string>
+    <string name="auth_logout_progress">Déconnexion…</string>
+    <string name="auth_logout_bye">À bientôt 👋</string>
+
+    <!-- ============================================================ -->
+    <!-- ADMIN USERS                                                    -->
+    <!-- ============================================================ -->
+    <string name="admin_users_title">Gérer les utilisateurs</string>
+    <string name="admin_users_error_title">Erreur</string>
+    <string name="admin_users_retry">Réessayer</string>
+    <string name="admin_users_section_admins">Admins (%1$d)</string>
+    <string name="admin_users_section_users">Utilisateurs (%1$d)</string>
+    <string name="admin_users_you_chip">  (vous)</string>
+
+    <!-- ============================================================ -->
+    <!-- QUOTES SCREEN (gestion des citations motivantes)              -->
+    <!-- ============================================================ -->
+    <string name="quotes_title">Citations motivantes</string>
+    <string name="quotes_empty">Aucune citation. Touchez + pour en ajouter une.</string>
+    <string name="quotes_add_title">Nouvelle citation</string>
+    <string name="quotes_field_text">Citation</string>
+    <string name="quotes_field_text_hint">ex. Le corps réalise ce que l\'esprit croit.</string>
+    <string name="quotes_field_author">Auteur (facultatif)</string>
+    <string name="quotes_field_author_hint">ex. Inconnu</string>
+    <string name="quotes_delete_title">Supprimer la citation</string>
+    <string name="quotes_delete_message">Voulez-vous supprimer cette citation ?</string>
+    <string name="quotes_edit_title">Modifier la citation</string>
+    <string name="quotes_options_title">Citation</string>
+    <string name="quotes_section_actions">Actions</string>
+    <string name="quotes_search_hint">Rechercher une citation</string>
+    <string name="quotes_no_results">Aucune citation.</string>
+    <plurals name="quotes_count">
+        <item quantity="one">%d citation</item>
+        <item quantity="other">%d citations</item>
+    </plurals>
+
+    <!-- ============================================================ -->
+    <!-- NOTIFICATIONS SCREEN                                           -->
+    <!-- ============================================================ -->
+    <string name="notifications_inbox">Boîte de réception</string>
+    <string name="notifications_empty">Aucune notification</string>
+    <string name="notifications_summary_read">Lues</string>
+    <string name="notifications_summary_unread">Non lues</string>
+    <string name="notifications_read_all_title">Tout marquer comme lu</string>
+    <string name="notifications_read_all_message">Marquer toutes les notifications non lues comme lues ?</string>
+    <string name="notifications_read_all_button">Tout marquer</string>
+    <string name="notifications_delete_title">Confirmer la suppression</string>
+    <string name="notifications_delete_message">Supprimer cette notification ?</string>
+    <string name="notifications_swipe_go">Aller</string>
+    <string name="notifications_swipe_delete">Supprimer</string>
+
+    <!-- NotificationCenter system push -->
+    <string name="notif_timer_done_title">Minuteur terminé — %1$s</string>
+    <string name="notif_timer_done_body">%1$s (%2$d s)</string>
+    <string name="notif_session_started_title">Séance démarrée</string>
+    <string name="notif_routine_reminder_title">Rappel de routine</string>
+
+    <!-- Relative time helper (CustomDateUtils.formatRelativeTime) -->
+    <string name="rel_time_just_now">à l\'instant</string>
+    <string name="rel_time_min_ago">il y a %1$d min</string>
+    <string name="rel_time_hours_ago">il y a %1$d h</string>
+    <string name="rel_time_yesterday">hier</string>
+    <string name="rel_time_days_ago">il y a %1$d j</string>
+
+    <!-- ============================================================ -->
+    <!-- ROUTINE TASKS                                                  -->
+    <!-- ============================================================ -->
+    <string name="routine_title">Tâches quotidiennes</string>
+    <string name="routine_progress_overview">Avancement</string>
+    <string name="routine_period_label">%1$s • %2$s-%3$s</string>
+    <!-- Dialog création/édition de période (i18n migrée 2026-06-08) -->
+    <string name="routine_period_dialog_add_title">Ajouter une période</string>
+    <string name="routine_period_dialog_edit_title">Modifier la période</string>
+    <string name="routine_period_field_name">Nom</string>
+    <string name="routine_period_field_name_placeholder">Nom de la période…</string>
+    <string name="routine_period_field_time">Plage horaire</string>
+    <string name="routine_period_reminder_before_start">Rappel avant le début</string>
+    <string name="routine_period_reminder_before_end">Rappel avant la fin</string>
+    <string name="routine_sync_title">Synchroniser la routine</string>
+    <string name="routine_sync_message">Synchroniser vos tâches de routine maintenant ?</string>
+    <string name="routine_delete_period_title">Supprimer la période</string>
+    <string name="routine_delete_period_message">Supprimer cette période ? Toutes les tâches qu\'elle contient seront aussi supprimées. Action irréversible.</string>
+    <string name="routine_delete_task_title">Supprimer la tâche</string>
+    <string name="routine_delete_task_message">Supprimer cette tâche ? Action irréversible.</string>
+    <string name="routine_other_tasks_today">Autres tâches aujourd\'hui</string>
+    <string name="routine_empty_period">Aucune tâche pour cette période</string>
+    <string name="routine_edit_field_period">Période</string>
+    <string name="tasks_calendar_due_in_format">dans %1$s</string>
+    <string name="tasks_calendar_overdue_format">en retard %1$s</string>
+    <string name="tasks_calendar_search_placeholder">Rechercher une tâche…</string>
+    <string name="tasks_calendar_search_no_results">Aucune tâche correspondante</string>
+    <string name="tasks_calendar_recur_edit_mode_title">Appliquer l\'édition à…</string>
+    <string name="tasks_calendar_recur_edit_mode_message">Cette tâche se répète. Choisissez la portée des modifications.</string>
+    <string name="tasks_calendar_recur_edit_mode_only_this">Cette occurrence seulement</string>
+    <string name="tasks_calendar_recur_edit_mode_all">Toutes les occurrences (série entière)</string>
+
+    <!-- ============================================================ -->
+    <!-- PROFILE SCREEN (debug)                                         -->
+    <!-- ============================================================ -->
+    <string name="profile_refresh">🔄 Rafraîchir le profil</string>
+    <string name="profile_refresh_success">Profil rafraîchi</string>
+    <string name="profile_refresh_short">Rafraîchir</string>
+    <string name="profile_title">Profil</string>
+    <string name="profile_section_account">Compte</string>
+    <string name="profile_section_bio">Bio</string>
+    <string name="profile_section_app">Infos app</string>
+    <string name="profile_role_admin">Admin</string>
+    <string name="profile_role_user">Utilisateur</string>
+    <string name="profile_field_email">E-mail</string>
+    <string name="profile_field_first_name">Prénom</string>
+    <string name="profile_field_last_name">Nom</string>
+    <string name="profile_field_birthdate">Date de naissance</string>
+    <string name="profile_field_sex">Sexe</string>
+    <string name="profile_field_height">Taille</string>
+    <string name="profile_field_weight">Poids</string>
+    <string name="profile_field_user_id">ID utilisateur</string>
+    <string name="profile_field_client_id">ID client</string>
+    <string name="profile_field_token">Token valide</string>
+    <string name="profile_field_network">Réseau</string>
+    <string name="profile_field_unsynced">Données non synchronisées</string>
+    <string name="profile_value_not_set">—</string>
+    <string name="profile_edit">Modifier le profil</string>
+    <string name="profile_edit_title">Modifier le profil</string>
+    <string name="profile_update_success">Profil mis à jour</string>
+    <string name="profile_update_error">Échec de la mise à jour du profil</string>
+    <string name="profile_delete_danger_zone">Zone sensible</string>
+    <string name="profile_delete_account">Supprimer le compte</string>
+    <string name="profile_delete_dialog_title">Supprimer votre compte ?</string>
+    <string name="profile_delete_dialog_body">Cette action supprime définitivement votre compte et toutes vos données — séances, exercices, statistiques, routines. Elle est irréversible.</string>
+    <string name="profile_delete_password_label">Confirmez votre mot de passe</string>
+    <string name="profile_delete_success">Votre compte a été supprimé</string>
+    <string name="profile_delete_error_password">Mot de passe incorrect.</string>
+    <string name="profile_delete_error_last_admin">Vous êtes le dernier administrateur. Promouvez un autre utilisateur administrateur avant de supprimer votre compte.</string>
+    <string name="profile_delete_error_generic">Impossible de supprimer votre compte. Veuillez réessayer.</string>
+
+    <!-- ============================================================ -->
+    <!-- CALENDAR SUB-COMPONENTS                                        -->
+    <!-- ============================================================ -->
+    <string name="calendar_summary_perfect_weeks">Semaines parfaites</string>
+    <string name="calendar_summary_completed_days">Jours complétés</string>
+    <string name="calendar_summary_rest_days">Jours de repos</string>
+    <string name="calendar_day_options_title">Que voulez-vous faire ?</string>
+    <string name="calendar_day_option_add_new">Créer une nouvelle séance</string>
+    <string name="calendar_day_option_from_planned">Démarrer depuis une séance planifiée</string>
+    <string name="calendar_day_options_sheet_title">Options du jour</string>
+    <string name="calendar_day_option_add_new_workout">Créer une nouvelle séance</string>
+    <string name="calendar_day_option_add_from_planned">Démarrer depuis planifié</string>
+    <string name="calendar_summary_weeks">%1$d semaines</string>
+    <string name="calendar_summary_days">%1$d jours</string>
+    <string name="calendar_summary_streak">Série</string>
+    <string name="calendar_summary_done">Fait</string>
+    <string name="calendar_summary_next_workout">À venir</string>
+    <string name="calendar_summary_next_workout_none">—</string>
+    <string name="calendar_legend_title">Légende</string>
+    <string name="calendar_legend_completed">Terminé</string>
+    <string name="calendar_legend_rest_day">Repos</string>
+    <string name="calendar_legend_uncompleted">Passé</string>
+    <string name="calendar_legend_planned">Planifié</string>
+    <string name="calendar_legend_synced">Synchro</string>
+    <string name="calendar_legend_missed">Manqué</string>
+
+    <string name="hms_swipe_hint">Glissez vers le haut/bas pour ajuster</string>
+    <string name="hms_hours_label">HH</string>
+    <string name="hms_minutes_label">MM</string>
+    <string name="hms_seconds_label">SS</string>
+
+    <string name="admin_promoted">%1$s promu admin</string>
+    <string name="admin_demoted">%1$s rétrogradé d\'admin</string>
+    <string name="admin_error_action_denied">Action refusée</string>
+    <string name="admin_error_not_admin">Vous n\'êtes pas admin</string>
+    <string name="admin_error_user_not_found">Utilisateur introuvable</string>
+    <string name="admin_error_generic">Erreur %1$d</string>
+    <string name="admin_error_network">Erreur réseau : %1$s</string>
+
+    <!-- ============================================================ -->
+    <!-- VM SNACKBAR MESSAGES                                           -->
+    <!-- ============================================================ -->
+    <string name="vm_login_success">Connexion réussie !</string>
+    <string name="vm_login_failed">Échec de connexion.</string>
+    <string name="vm_login_network_error">Erreur réseau. Vérifiez votre connexion et réessayez.</string>
+    <string name="vm_signup_username_min">L\'identifiant doit faire 3 caractères min</string>
+    <string name="vm_signup_password_min">Le mot de passe doit faire 8 caractères min</string>
+    <string name="vm_signup_passwords_mismatch">Les mots de passe ne correspondent pas</string>
+    <string name="vm_signup_welcome">Bienvenue %1$s !</string>
+    <string name="vm_signup_autologin_failed">Compte créé mais auto-login échoué, connectez-vous manuellement</string>
+    <string name="vm_signup_username_taken">Identifiant déjà pris</string>
+    <string name="vm_signup_invalid_input">Saisie invalide (validation serveur échouée)</string>
+    <string name="vm_signup_too_many">Trop d\'inscriptions, réessayez plus tard</string>
+    <string name="vm_signup_failed_http">Inscription échouée (HTTP %1$d)</string>
+    <string name="vm_signup_error">Erreur d\'inscription : %1$s</string>
+    <string name="vm_user_id_missing">Identifiant utilisateur introuvable</string>
+    <string name="vm_error_generic">Erreur</string>
+    <string name="vm_calendar_no_planned_for_day">Aucune séance planifiée pour %1$s</string>
+    <string name="vm_calendar_failed_create_session">Échec de création de la séance</string>
+    <string name="vm_routine_failed_move">Échec du déplacement de la tâche</string>
+    <string name="vm_routine_failed_reorder">Échec du réordonnancement</string>
+    <string name="vm_routine_user_null">Utilisateur introuvable</string>
+    <string name="vm_routine_invalid_time_range">Plage horaire invalide</string>
+    <string name="vm_routine_no_user_found">Aucun utilisateur</string>
+    <string name="vm_routine_failed_add_period">Échec d\'ajout de la période</string>
+    <string name="vm_routine_period_name_empty">Le nom de période ne peut pas être vide</string>
+    <string name="vm_routine_period_not_found">Période introuvable</string>
+    <string name="vm_routine_failed_update_period">Échec de modification de la période</string>
+    <string name="vm_routine_failed_add_task">Échec d\'ajout de la tâche</string>
+    <string name="vm_routine_failed_edit_task">Échec de modification de la tâche</string>
+    <string name="vm_routine_failed_delete_period">Échec de suppression de la période</string>
+    <string name="vm_routine_failed_delete_task">Échec de suppression de la tâche</string>
+    <string name="vm_routine_sync_failed">Échec de la synchronisation des routines</string>
+    <string name="vm_routine_period_added">Période ajoutée</string>
+    <string name="vm_routine_period_updated">Période modifiée</string>
+    <string name="vm_routine_period_deleted">Période supprimée</string>
+    <string name="vm_routine_task_added">Tâche ajoutée</string>
+    <string name="vm_routine_task_updated">Tâche modifiée</string>
+    <string name="vm_exercise_name_exists">Ce nom d\'exercice existe déjà</string>
+    <string name="vm_exercise_name_exists_detail">Un exercice avec ce nom existe déjà</string>
+    <string name="vm_goals_no_to_copy_prev">Aucun objectif à copier de la semaine précédente</string>
+    <string name="vm_goals_no_to_copy_last">Aucun objectif à copier de la dernière semaine</string>
+    <string name="vm_goals_failed_copy_last">Échec de copie des objectifs de la dernière semaine</string>
+    <string name="sync_no_token">Aucun token disponible, synchronisation annulée.</string>
+    <string name="sync_in_progress">Synchronisation déjà en cours, veuillez patienter…</string>
+    <string name="sync_starting">Démarrage de la synchronisation automatique…</string>
+    <string name="sync_completed">Synchronisation automatique terminée</string>
+    <string name="sync_error">Erreur pendant la synchronisation automatique</string>
+    <string name="network_no_token_ws">Aucun token pour le WebSocket</string>
+    <string name="network_offline">Vous êtes hors ligne. Les modifications seront synchronisées au retour de la connexion.</string>
+    <string name="session_expired">Session expirée, veuillez vous reconnecter</string>
+    <string name="vm_onboarding_save_name_error">Impossible de sauvegarder le prénom : %1$s</string>
+    <string name="vm_onboarding_save_bio_error">Impossible de sauvegarder la bio : %1$s</string>
+    <string name="vm_user_id_unavailable_reconnect">Identifiant utilisateur indisponible, reconnectez-vous</string>
+    <string name="vm_user_id_unavailable">Identifiant utilisateur indisponible</string>
+    <string name="vm_user_id_missing_add_exercise">Impossible d\'ajouter l\'exercice : identifiant manquant</string>
+    <string name="vm_exercise_already_exists">L\'exercice « %1$s » existe déjà</string>
+    <string name="vm_goal_already_exists">Un objectif existe déjà pour ce muscle</string>
+
+    <!-- ============================================================ -->
+    <!-- EXERCISE LIST / SCREEN                                         -->
+    <!-- ============================================================ -->
+    <string name="exercise_list_title">Exercices</string>
+    <string name="exercise_list_search_placeholder">Rechercher un exercice…</string>
+    <string name="exercise_list_empty">Aucun exercice</string>
+    <string name="exercise_list_search_short">Rechercher des exercices</string>
+    <string name="exercise_list_sort_asc">Nom (A-Z)</string>
+    <string name="exercise_list_sort_desc">Nom (Z-A)</string>
+    <string name="exercise_screen_title">Exercice</string>
+    <string name="exercise_details_section">Détails</string>
+    <string name="exercise_muscles_section">Muscles</string>
+    <string name="exercise_equipment_section">Équipement</string>
+    <string name="exercise_history_section">Dernières séances</string>
+    <string name="exercise_last_session_col_date">Date</string>
+    <string name="exercise_last_session_col_sets">Séries</string>
+    <string name="exercise_last_session_col_reps">Reps</string>
+    <string name="exercise_last_session_col_view">Voir</string>
+    <string name="exercise_no_recent_sessions">Aucune séance récente</string>
+    <string name="exercise_no_history">Aucune séance précédente</string>
+    <string name="exercise_no_muscles">Aucun muscle lié</string>
+    <string name="exercise_no_equipment">Aucun équipement</string>
+    <string name="exercise_recommended_sets">Séries recommandées</string>
+    <string name="exercise_recommended_reps">Répétitions recommandées</string>
+    <string name="exercise_recommended_rest">Repos recommandé</string>
+
+    <!-- ============================================================ -->
+    <!-- MUSCLE LIST / SCREEN                                           -->
+    <!-- ============================================================ -->
+    <string name="muscle_list_title">Muscles</string>
+    <string name="muscle_list_search_placeholder">Rechercher un muscle…</string>
+    <string name="muscle_list_empty">Aucun muscle</string>
+    <string name="muscle_list_search_short">Rechercher des muscles</string>
+    <string name="muscle_list_results_count">%1$d muscle(s) • Trié par %2$s</string>
+    <string name="muscle_screen_title">Muscle</string>
+    <string name="muscle_screen_zone">Zone</string>
+    <string name="muscle_screen_group">Groupe</string>
+    <string name="muscle_edit_zone_group_title">Modifier zone et groupe</string>
+    <string name="muscle_screen_exercises">Exercices liés</string>
+
+    <!-- ============================================================ -->
+    <!-- PLANNED WORKOUT                                                -->
+    <!-- ============================================================ -->
+    <string name="planned_workout_title">Séance planifiée</string>
+    <string name="planned_workout_exercises_section">Exercices</string>
+    <string name="planned_workout_add_exercise">Ajouter un exercice</string>
+    <string name="planned_workout_no_exercises">Aucun exercice</string>
+    <string name="planned_change_status_title">Modifier le statut de l\'exercice planifié</string>
+    <string name="planned_update">Mettre à jour</string>
+    <string name="planned_sync_title">Synchroniser la séance</string>
+    <string name="planned_sync_message">Synchroniser cette séance planifiée ?</string>
+    <string name="planned_remove_exercise_message">Retirer cet exercice de la séance planifiée ?</string>
+
+    <!-- ============================================================ -->
+    <!-- BOTTOM SHEETS                                                  -->
+    <!-- ============================================================ -->
+    <string name="sheet_session_mark_done">Marquer comme terminée</string>
+    <string name="sheet_session_mark_undone">Marquer comme non terminée</string>
+    <string name="sheet_session_rename">Renommer la séance</string>
+    <string name="sheet_session_see_planned">Voir la séance planifiée du jour</string>
+    <string name="sheet_session_delete">Supprimer la séance</string>
+    <string name="sheet_exercise_see_details">Voir les détails de l\'exercice</string>
+    <string name="sheet_exercise_delete_from_session">Retirer de la séance</string>
+    <string name="sheet_add_exercise_equipment_label">Équipement</string>
+    <string name="sheet_add_exercise_search">Rechercher un exercice…</string>
+    <string name="sheet_add_exercise_exercises_section">Exercices</string>
+    <string name="sheet_add_exercise_title">Ajouter un exercice</string>
+    <string name="sheet_add_exercise_to_plan_title">Ajouter un exercice au plan</string>
+    <string name="sheet_note_title">Note</string>
+    <string name="sheet_note_placeholder">Écrire une note pour cette série…</string>
+    <string name="sheet_set_options_title">Options de la série</string>
+    <string name="sheet_set_add_bonus">Ajouter une série bonus après celle-ci</string>
+    <string name="sheet_set_add_drop">Ajouter une drop set après celle-ci</string>
+    <string name="sheet_set_change_status">Changer le statut</string>
+    <string name="sheet_set_create_superset">Créer un superset avec un autre exercice</string>
+    <string name="sheet_planned_exercise_change_status">Changer le statut</string>
+    <string name="sheet_planned_exercise_remove">Retirer de la séance planifiée</string>
+    <string name="sheet_add_routine_title">Ajouter</string>
+    <string name="sheet_add_routine_task">Ajouter une tâche</string>
+    <string name="sheet_add_routine_period">Ajouter une période</string>
+    <string name="sheet_period_edit">Modifier la période</string>
+    <string name="sheet_period_delete">Supprimer la période</string>
+    <string name="sheet_task_edit">Modifier la tâche</string>
+    <string name="sheet_task_delete">Supprimer la tâche</string>
+    <string name="sheet_week_session_plan">Planifier une séance ce jour</string>
+    <string name="sheet_week_session_rename">Renommer la séance planifiée</string>
+    <string name="sheet_week_session_duplicate">Dupliquer la séance planifiée</string>
+    <string name="sheet_week_session_delete">Supprimer la séance planifiée</string>
+    <string name="sheet_week_completion_title">Options d\'avancement de la semaine</string>
+    <string name="sheet_week_sync_sessions">Synchroniser les séances</string>
+    <string name="sheet_week_mark_done">Marquer les séances comme terminées</string>
+    <string name="sheet_week_mark_undone">Marquer les séances comme non terminées</string>
+    <string name="sheet_exercise_list_title">Options des exercices</string>
+    <string name="sheet_exercise_list_add_sample">Ajouter des exercices d\'exemple</string>
+    <string name="sheet_exercise_list_export">Exporter la liste</string>
+    <string name="sheet_exercise_list_clear">Tout effacer</string>
+    <string name="sheet_exercise_more_edit">Modifier</string>
+    <string name="sheet_exercise_more_delavier">La méthode Delavier</string>
+    <string name="sheet_exercise_more_delete">Supprimer</string>
+    <string name="sheet_muscle_list_title">Options des muscles</string>
+    <string name="sheet_muscle_list_add_sample">Ajouter des muscles d\'exemple</string>
+    <string name="sheet_goals_title">Options de gestion des objectifs</string>
+    <string name="sheet_goals_add_muscle">Ajouter un muscle aux objectifs</string>
+    <string name="sheet_muscle_options_see">Voir le muscle</string>
+    <string name="sheet_muscle_options_change_status">Changer le statut de l\'objectif</string>
+    <string name="sheet_muscle_options_delete">Supprimer cet objectif</string>
+    <string name="sheet_muscle_options_mark_in_progress">Marquer en cours</string>
+    <string name="sheet_muscle_options_mark_done">Marquer terminé</string>
+
+    <!-- ============================================================ -->
+    <!-- DEMO TOUR                                                      -->
+    <!-- ============================================================ -->
+    <string name="demo_welcome_title">Bienvenue dans la visite</string>
+    <string name="demo_welcome_body">Laissez-moi vous présenter les fonctionnalités principales en une visite guidée rapide.</string>
+    <string name="demo_stats_title">Statistiques</string>
+    <string name="demo_stats_body">Suivez votre volume d\'entraînement, vos séries et votre progression par zone, groupe musculaire, muscle et exercice.</string>
+    <string name="demo_stats_range_title">Période</string>
+    <string name="demo_stats_range_body">Basculez rapidement entre 1 semaine, 30 jours, 3 mois ou une plage personnalisée.</string>
+    <string name="demo_stats_chart_title">Graphiques détaillés</string>
+    <string name="demo_stats_chart_body">Filtrez par zone ou groupe musculaire pour vous concentrer sur l\'essentiel.</string>
+    <string name="demo_calendar_title">Calendrier</string>
+    <string name="demo_calendar_body">Visualisez vos séances mois par mois : terminées, manquées, planifiées et jours de repos d\'un coup d\'œil.</string>
+    <string name="demo_session_title">Votre séance</string>
+    <string name="demo_session_body">Effectuez une séance : enregistrez vos séries, poids et répétitions en temps réel.</string>
+    <string name="demo_session_header_title">En-tête de la séance</string>
+    <string name="demo_session_header_body">Renommez, marquez comme terminée ou supprimez la séance en cours.</string>
+    <string name="demo_session_exercises_title">Exercices</string>
+    <string name="demo_session_exercises_body">Chaque exercice affiche sa progression et permet d\'accéder à ses détails.</string>
+    <string name="demo_program_title">Programme</string>
+    <string name="demo_program_body">Définissez un programme hebdomadaire avec une séance planifiée par jour.</string>
+    <string name="demo_program_list_title">Jours de la semaine</string>
+    <string name="demo_program_list_body">Tapez sur un jour pour planifier une séance, la renommer ou la copier.</string>
+    <string name="demo_chrono_title">Chrono</string>
+    <string name="demo_chrono_body">Un chronomètre et un minuteur pour gérer vos temps de repos et vos séries.</string>
+    <string name="demo_chrono_tabs_title">Chrono / Minuteur</string>
+    <string name="demo_chrono_tabs_body">Basculez entre les deux modes selon vos besoins.</string>
+    <string name="demo_chrono_buttons_title">Commandes</string>
+    <string name="demo_chrono_buttons_body">Démarrer, mettre en pause, réinitialiser — les commandes habituelles.</string>
+    <string name="demo_goodbye_title">Visite terminée</string>
+    <string name="demo_goodbye_body">Vous êtes prêt ! Les données d\'exemple seront supprimées automatiquement. Bonne séance.</string>
+    <string name="demo_calendar_header_title">Navigation calendrier</string>
+    <string name="demo_calendar_header_body">Changez de mois depuis ici.</string>
+    <string name="demo_calendar_grid_title">Séances par jour</string>
+    <string name="demo_calendar_grid_body">Les jours avec une séance sont mis en évidence. Tapez pour voir les détails.</string>
+    <string name="demo_program_header_title">Planning de la semaine</string>
+    <string name="demo_program_header_body">Aperçu rapide de l\'avancement de votre semaine.</string>
+    <string name="exercise_list_add_dialog_title">Ajouter un exercice</string>
+    <string name="exercise_list_field_name">Nom</string>
+    <string name="exercise_list_field_select_muscles">Sélectionner des muscles</string>
+    <string name="exercise_list_field_reps_min">Reps min</string>
+    <string name="exercise_list_field_reps_max">Reps max</string>
+    <string name="exercise_list_field_sets">Séries</string>
+    <string name="exercise_list_field_select_equipment">Sélectionner l\'équipement</string>
+    <string name="exercise_edit_title">Modifier l\'exercice</string>
+    <string name="exercise_edit_confirm">Mettre à jour</string>
+    <string name="exercise_edit_description">Description</string>
+    <string name="exercise_edit_instructions">Instructions</string>
+    <string name="exercise_edit_step">Étape %1$d</string>
+    <string name="exercise_edit_step_placeholder">Décrivez l\'étape %1$d</string>
+    <string name="exercise_edit_rest_time">Temps de repos</string>
+    <!-- Titres des dialogs d'édition par section (champs réutilisés via exercise_edit_*/exercise_list_field_*) -->
+    <string name="exercise_edit_sets_title">Modifier séries / reps / repos</string>
+    <string name="exercise_edit_instructions_title">Modifier les instructions</string>
+    <string name="exercise_edit_desc_equip_title">Modifier description &amp; équipement</string>
+    <string name="exercise_list_filter_zone">Zone</string>
+    <string name="exercise_list_sync_title">Synchroniser les exercices</string>
+    <string name="exercise_list_delete_title">Supprimer l\'exercice</string>
+    <string name="exercise_list_delete_message">Supprimer « %1$s » ?</string>
+    <string name="exercise_list_sync_message">Synchroniser tous les exercices ?</string>
+    <string name="muscle_list_sync_message">Synchroniser tous les muscles ?</string>
+    <string name="muscle_list_delete_message">Supprimer « %1$s » ?</string>
+    <string name="exercise_not_found">Exercice introuvable</string>
+    <string name="muscle_list_sync_title">Synchroniser les muscles</string>
+    <string name="muscle_list_add_dialog_title">Ajouter un muscle</string>
+    <string name="muscle_list_edit_dialog_title">Modifier le muscle</string>
+    <string name="muscle_list_delete_title">Supprimer le muscle</string>
+    <string name="muscle_field_name">Nom</string>
+    <string name="muscle_field_zone">Zone</string>
+    <string name="muscle_field_uuid">UUID</string>
+    <string name="muscle_not_found">Muscle introuvable</string>
+    <string name="muscle_screen_actions">Actions</string>
+    <string name="muscle_screen_details">Détails</string>
+    <string name="muscle_screen_delete_message">Supprimer ce muscle ?</string>
+
+    <!-- ============================================================ -->
+    <!-- GOALS TAB                                                      -->
+    <!-- ============================================================ -->
+    <string name="goals_tab_title">Objectifs hebdo</string>
+    <string name="goals_empty_week">Aucun objectif défini cette semaine</string>
+    <string name="goals_progress_overview">Aperçu de la progression</string>
+    <string name="goals_add_goal">Ajouter un objectif muscle</string>
+    <string name="goals_add">Ajouter</string>
+    <string name="goals_add_muscle_title">Ajouter un muscle aux objectifs</string>
+    <string name="goals_sync_now">Synchroniser</string>
+    <string name="goals_sync_title">Synchroniser les données</string>
+    <string name="goals_sync_message">Voulez-vous synchroniser tous vos objectifs maintenant ?</string>
+    <string name="goals_return_current_title">Retour à la semaine actuelle</string>
+    <string name="goals_return_current_message">Voulez-vous revenir à la vue de la semaine actuelle ?</string>
+    <string name="goals_select_muscle">Sélectionner un muscle</string>
+    <string name="goals_select_target">Sélectionner l\'objectif</string>
+    <!-- TargetPickerDialog / EditPriorityDialog (Close = common_close) -->
+    <string name="goals_target_title">Modifier l\'objectif</string>
+    <string name="goals_target_custom_label">Ou choisir un nombre personnalisé :</string>
+    <string name="goals_priority_title">Modifier la priorité</string>
+    <string name="goals_priority_select">Sélectionner une priorité :</string>
+
+    <!-- ============================================================ -->
+    <!-- DEMO TOUR                                                      -->
+    <!-- ============================================================ -->
+    <string name="demo_tour_skip">Passer la visite</string>
+    <string name="demo_tour_got_it">Compris</string>
+    <string name="demo_tour_next">Suivant</string>
+
+    <!-- ============================================================ -->
+    <!-- SECONDARY SCREENS                                              -->
+    <!-- ============================================================ -->
+    <string name="language_display_title">Langue &amp; Affichage</string>
+    <string name="sync_settings_title">Paramètres de sync</string>
+    <!-- Sync Settings : data grid screen (admin/debug) -->
+    <string name="sync_table_open">Ouvrir la table</string>
+    <string name="sync_table_back">Retour</string>
+    <string name="sync_table_search_hint">Rechercher dans toutes les colonnes…</string>
+    <string name="sync_table_filter_hint">Filtrer…</string>
+    <string name="sync_table_no_rows">Aucune ligne.</string>
+    <string name="sync_table_clear">Effacer</string>
+    <string name="sync_table_sort_asc">↑ ASC</string>
+    <string name="sync_table_sort_desc">↓ DESC</string>
+    <string name="sync_table_sort_clear">Effacer le tri</string>
+    <string name="sync_table_rows_per_page">Lignes par page</string>
+    <string name="sync_table_page_x_of_y">Page %1$d / %2$d</string>
+    <string name="sync_table_showing_range">%1$d-%2$d / %3$d</string>
+    <string name="sync_table_prev">Page précédente</string>
+    <string name="sync_table_next">Page suivante</string>
+    <string name="export_datas_title">Exporter les données</string>
+    <string name="conversations_title">Conversations</string>
+    <!-- Cas C — chat agent IA in-app (écran Conversations) -->
+    <string name="agent_empty_hint">Pose une question à l\'assistant sur ton entraînement : ta prochaine séance, ton volume hebdo, ta dernière performance sur un exercice…</string>
+    <string name="agent_input_placeholder">Pose ta question à l\'assistant…</string>
+    <string name="agent_thinking">Réflexion en cours…</string>
+    <string name="agent_error_network">Erreur réseau. Vérifie ta connexion et réessaie.</string>
+    <string name="agent_error_unavailable">L\'assistant est momentanément indisponible.</string>
+    <string name="agent_error_rate_limited">Trop de requêtes. Patiente un instant puis réessaie.</string>
+    <string name="agent_error_generic">Une erreur est survenue (HTTP %1$d).</string>
+    <string name="delavier_method_title">Méthode Delavier</string>
+    <string name="coming_soon">Bientôt disponible…</string>
+    <string name="delavier_page_count">Page %1$d / %2$d</string>
+
+    <!-- ============================================================ -->
+    <!-- ONBOARDING                                                     -->
+    <!-- ============================================================ -->
+
+    <!-- Header / Footer / common to all steps -->
+    <string name="onboarding_header_title">Configuration</string>
+    <string name="onboarding_header_step">Étape %1$d sur %2$d</string>
+    <string name="onboarding_footer_skip">Ignorer la configuration</string>
+
+    <!-- Step 1 : Welcome -->
+    <string name="onboarding_welcome_title">Bienvenue dans %1$s</string>
+    <string name="onboarding_welcome_subtitle">Configurons votre expérience de suivi en 4 étapes rapides.</string>
+    <string name="onboarding_welcome_prompt_name">Comment souhaitez-vous être appelé ?</string>
+    <string name="onboarding_welcome_placeholder_name">Votre prénom</string>
+    <string name="onboarding_welcome_label_name">Prénom (facultatif)</string>
+
+    <!-- Step 2 : Bio -->
+    <string name="onboarding_bio_title">À propos de vous</string>
+    <string name="onboarding_bio_subtitle">Facultatif — nous aide à personnaliser vos stats et préparer les futures fonctionnalités (Nutrition).</string>
+    <string name="onboarding_bio_card_birthdate">Date de naissance</string>
+    <!-- Placeholder = format US affiche tel quel (MM/DD/YYYY hardcode dans
+         BirthDateField). Localisation date proper = chantier separe. -->
+    <string name="onboarding_bio_birthdate_placeholder">MM/DD/YYYY</string>
+    <string name="onboarding_bio_card_sex">Sexe</string>
+    <string name="onboarding_bio_radio_male">Homme</string>
+    <string name="onboarding_bio_radio_female">Femme</string>
+    <string name="onboarding_bio_radio_other">Autre</string>
+    <string name="onboarding_bio_label_height">Taille</string>
+    <string name="onboarding_bio_label_weight">Poids</string>
+    <string name="onboarding_bio_placeholder_height_cm">ex. 175 cm</string>
+    <string name="onboarding_bio_placeholder_height_in">ex. 69 pouces</string>
+    <string name="onboarding_bio_placeholder_weight_kg">ex. 72 kg</string>
+    <string name="onboarding_bio_placeholder_weight_lb">ex. 160 lbs</string>
+
+    <!-- Step 3 : Preferences -->
+    <string name="onboarding_preferences_title">Vos préférences</string>
+    <string name="onboarding_preferences_card_language">Langue</string>
+    <string name="onboarding_preferences_card_week_start">La semaine commence le</string>
+    <string name="onboarding_preferences_card_weight_unit">Unité de poids</string>
+    <string name="onboarding_preferences_card_length_unit">Unité de longueur</string>
+    <string name="onboarding_preferences_card_theme">Thème</string>
+    <string name="onboarding_preferences_card_default_time">Heure par défaut des routines</string>
+    <string name="onboarding_preferences_tap_to_change">Appuyer pour modifier</string>
+    <string name="onboarding_preferences_routine_helper">Utilisée par défaut lors de la création de tâches de routine. Modifiable par tâche.</string>
+    <string name="onboarding_preferences_week_monday">Lundi</string>
+    <string name="onboarding_preferences_week_sunday">Dimanche</string>
+    <string name="onboarding_preferences_weight_kg">Kilogrammes (kg)</string>
+    <string name="onboarding_preferences_weight_lbs">Livres (lbs)</string>
+    <string name="onboarding_preferences_length_cm">Centimètres (cm)</string>
+    <string name="onboarding_preferences_length_in">Pouces (in)</string>
+
+    <!-- Step 4 : Permissions -->
+    <string name="onboarding_permissions_title">Dernières touches</string>
+    <string name="onboarding_permissions_card_notif">Notifications système</string>
+    <string name="onboarding_permissions_notif_enabled">Activées — vous recevrez les alertes de fin de minuteur et les rappels.</string>
+    <string name="onboarding_permissions_notif_disabled">Désactivées — vous manquerez les alertes de fin de minuteur et les rappels.</string>
+    <string name="onboarding_permissions_notif_open">Ouvrir les paramètres de notifications</string>
+    <string name="onboarding_permissions_notif_helper">Revenez ici une fois terminé — vous pourrez actualiser ce statut.</string>
+    <string name="onboarding_permissions_card_feedback">Retour dans l\'application</string>
+    <string name="onboarding_permissions_toggle_sound">Son sur les notifications</string>
+    <string name="onboarding_permissions_toggle_vibration">Vibration sur les notifications</string>
+    <string name="onboarding_permissions_card_autosync">Synchronisation auto en wifi</string>
+    <string name="onboarding_permissions_toggle_autosync">Synchronisation en arrière-plan quand le wifi est disponible</string>
+    <string name="onboarding_permissions_card_samples">Séances d\'exemple</string>
+    <string name="onboarding_permissions_samples_desc">Ajoute 5 séances d\'exemple pour une visite guidée rapide de Stats, Calendrier et Chrono avec des données réalistes. Les exemples sont supprimés automatiquement à la fin de la visite.</string>
+    <string name="onboarding_permissions_toggle_samples">Essayer l\'application avec des données d\'exemple</string>
+    <string name="onboarding_permissions_footer_finish">Appuyer sur Terminer pour commencer à utiliser l\'application.</string>
+
+    <!-- Switcher URL serveur (debug uniquement) — tâche Notion 36b1776c -->
+    <string name="settings_category_server_url">URL serveur (debug)</string>
+    <string name="settings_category_server_url_desc">Basculer entre PC LAN, Pi prod ou URL custom sans rebuild</string>
+    <string name="settings_server_url_description">Choisir le backend auquel l\'app se connecte. Les changements prennent effet après redémarrage de l\'app.</string>
+    <string name="settings_server_url_section_preset">Préréglage serveur</string>
+    <string name="settings_server_url_section_custom">URL personnalisée</string>
+    <string name="settings_server_url_section_test">Test de connexion</string>
+    <string name="settings_server_url_section_apply">Appliquer</string>
+    <string name="settings_server_url_preset_pc_lan">PC LAN (reseau local)</string>
+    <string name="settings_server_url_preset_pi_prod">Pi prod (Tailscale)</string>
+    <string name="settings_server_url_preset_custom">URL personnalisée</string>
+    <string name="settings_server_url_custom_label">Hôte ou URL complète du serveur</string>
+    <string name="settings_server_url_custom_placeholder">ex. 192.168.1.50:8000 ou https://mon.serveur.example.com</string>
+    <string name="settings_server_url_custom_helper">Le schéma http:// est ajouté par défaut si absent. /api/v1/ est ajouté automatiquement.</string>
+    <string name="settings_server_url_save_custom">Enregistrer l\'URL custom</string>
+    <string name="settings_server_url_effective">Effectif : %1$s</string>
+    <string name="settings_server_url_test_helper">Ping &lt;serveur&gt;/healthz avec timeout de 5s. N\'affecte pas l\'app en cours.</string>
+    <string name="settings_server_url_test_button">Tester la connexion</string>
+    <string name="settings_server_url_test_running">Ping en cours…</string>
+    <string name="settings_server_url_test_success">OK (HTTP %1$d)</string>
+    <string name="settings_server_url_test_failure">Échec : %1$s</string>
+    <string name="settings_server_url_apply_helper">Appliquer enregistre le choix. L\'app doit redémarrer pour prendre en compte la nouvelle URL (Retrofit + WebSocket sont câblés au boot).</string>
+    <string name="settings_server_url_apply_button">Appliquer et redémarrer…</string>
+    <string name="settings_server_url_restart_title">Redémarrage nécessaire</string>
+    <string name="settings_server_url_restart_message">La nouvelle URL serveur ne sera utilisée qu\'après fermeture et réouverture complète de l\'app. Quitter maintenant ?</string>
+    <string name="settings_server_url_restart_quit">Quitter maintenant</string>
+
+    <!-- ============================================================ -->
+    <!-- STATUT / PRIORITÉ (labels d'affichage — codes wire en UPPER_CASE) -->
+    <!-- Rendus via les helpers localizedStatus()/localizedPriority()      -->
+    <!-- ============================================================ -->
+    <string name="status_change_set_title">Changer le statut de la série</string>
+    <string name="status_change_goal_title">Changer le statut de l\'objectif</string>
+    <string name="status_not_started">Non commencé</string>
+    <string name="status_in_progress">En cours</string>
+    <string name="status_done">Terminé</string>
+    <string name="status_skipped">Ignoré</string>
+    <string name="status_planned">Planifié</string>
+    <string name="priority_high">Haute</string>
+    <string name="priority_medium">Moyenne</string>
+    <string name="priority_low">Basse</string>
+
+    <!-- Nutrition A2 — Journal du jour -->
+    <string name="nutrition_title">Nutrition</string>
+    <string name="drawer_item_nutrition">Nutrition</string>
+    <string name="nutrition_section_actions">Actions</string>
+    <string name="nutrition_add_snack">Ajouter une collation</string>
+    <string name="nutrition_snack_name_hint">Ex. En-cas de 16h</string>
+    <string name="nutrition_manage_meals">Gérer les repas</string>
+    <string name="nutrition_manage_short">Gérer</string>
+    <!-- Hydratation (2026-07-05) -->
+    <string name="nutrition_hydration_title">Hydratation</string>
+    <string name="nutrition_hydration_amount">%1$s / %2$s L</string>
+    <string name="nutrition_hydration_amount_no_goal">%1$s L</string>
+    <string name="nutrition_hydration_no_goal">Définissez un objectif quotidien dans Objectifs.</string>
+    <string name="nutrition_hydration_undo">Annuler</string>
+    <string name="nutrition_hydration_add_ml">%1$d ml</string>
+    <string name="nutrition_hydration_add_liter">1 L</string>
+    <string name="nutrition_hydration_custom">Perso</string>
+    <string name="nutrition_hydration_custom_title">Ajouter de l\'eau</string>
+    <string name="nutrition_hydration_custom_label">Volume (ml)</string>
+    <string name="nutrition_hydration_custom_hint">Saisissez un volume en ml.</string>
+    <string name="nutrition_food_is_water">Cet aliment est de l\'eau</string>
+    <string name="nutrition_food_is_water_hint">Compté dans l\'hydratation (1 g = 1 ml)</string>
+    <string name="nutrition_goals_hydration_dialog_title">Objectif d\'hydratation</string>
+    <string name="nutrition_goals_hydration_dialog_label">Objectif (ml / jour)</string>
+    <string name="nutrition_goals_hydration_dialog_hint">Saisissez un volume en ml.</string>
+    <string name="nutrition_goals_hydration_reco">~2 L/j (F) · ~2,5 L/j (H)</string>
+    <string name="nutrition_duplicate_short">Dupliquer</string>
+    <string name="nutrition_add_snack_short">Collation</string>
+    <string name="nutrition_presets_header">Repas</string>
+    <string name="nutrition_no_presets">Aucun repas — ajoute-en un.</string>
+    <string name="nutrition_rename_meal">Renommer le repas</string>
+    <string name="nutrition_delete_preset_title">Supprimer le repas</string>
+    <string name="nutrition_delete_preset_message">Supprimer « %1$s » ? Les jours déjà journalisés gardent leurs entrées.</string>
+    <string name="nutrition_calendar_toggle">Afficher ou masquer le calendrier</string>
+    <string name="nutrition_meal_toggle">Déplier ou replier le repas</string>
+    <string name="nutrition_macros_header">Macros</string>
+    <string name="nutrition_micros_header">Vitamines &amp; minéraux</string>
+    <string name="nutrition_show_micros">Afficher les micros</string>
+    <string name="nutrition_hide_micros">Masquer les micros</string>
+    <string name="nutrition_no_goal_hint">Aucune cible définie — définis tes cibles dans la page Objectifs.</string>
+    <string name="nutrition_micros_note">Cibles = VNR UE (1169/2011). Sodium = plafond repère (≤ 2000 mg).</string>
+    <!-- Sélecteur de vue du résumé du jour (barres / anneaux / radar), sections macros + micros -->
+    <string name="nutrition_summary_view_bars">Barres</string>
+    <string name="nutrition_summary_view_rings">Anneaux</string>
+    <string name="nutrition_summary_view_radar">Radar</string>
+    <string name="nutrition_summary_radar_today">Aujourd\'hui</string>
+    <string name="nutrition_summary_radar_target">Cible</string>
+    <string name="nutrition_summary_radar_nrv">VNR</string>
+    <string name="nutrition_macro_calories">Calories</string>
+    <string name="nutrition_macro_carbs">Glucides</string>
+    <string name="nutrition_macro_fat">Lipides</string>
+    <string name="nutrition_macro_protein">Protéines</string>
+    <string name="nutrition_macro_fiber">Fibres</string>
+    <!-- Sucres : ligne plafond OMS du résumé du jour (pas une macro cible) -->
+    <string name="nutrition_macro_sugar">Sucres</string>
+    <string name="nutrition_sugar_note">Sucres (totaux) : plafond = 5 % de la cible kcal en g, max 100 g — repère « idéal » à la moitié.</string>
+    <string name="nutrition_short_carbs">G</string>
+    <string name="nutrition_short_fiber">F</string>
+    <string name="nutrition_short_fat">L</string>
+    <string name="nutrition_short_protein">P</string>
+    <!-- Abréviation des sucres dans les lignes denses per-100 g (catalogue / picker / résultats OFF) -->
+    <string name="nutrition_short_sugar">S</string>
+    <string name="nutrition_micro_iron">Fer</string>
+    <string name="nutrition_micro_calcium">Calcium</string>
+    <string name="nutrition_micro_magnesium">Magnésium</string>
+    <string name="nutrition_micro_zinc">Zinc</string>
+    <string name="nutrition_micro_potassium">Potassium</string>
+    <string name="nutrition_micro_sodium">Sodium</string>
+    <string name="nutrition_micro_vitamin_c">Vit. C</string>
+    <string name="nutrition_micro_vitamin_d">Vit. D</string>
+    <string name="nutrition_micro_vitamin_b12">Vit. B12</string>
+    <string name="nutrition_micro_vitamin_a">Vit. A</string>
+    <string name="nutrition_add_meal">Ajouter repas</string>
+    <string name="nutrition_duplicate_meal">Dupliquer repas</string>
+    <string name="nutrition_no_meals">Aucune période — ajoute un repas pour commencer.</string>
+    <string name="nutrition_meal_empty">Aucun aliment</string>
+    <string name="nutrition_edit_qty_title">Modifier — %1$s</string>
+    <string name="nutrition_edit_quantity">Modifier la quantité</string>
+    <string name="nutrition_delete_meal">Supprimer le repas</string>
+    <string name="nutrition_delete_meal_message">Supprimer « %1$s » et tous ses aliments ?</string>
+    <string name="nutrition_meal_name">Nom</string>
+    <string name="nutrition_meal_name_hint">Ex. Petit-déjeuner</string>
+    <string name="nutrition_meal_name_required">Nom requis</string>
+    <string name="nutrition_qty_grams">Quantité (g)</string>
+    <string name="nutrition_qty_invalid">Quantité en grammes requise (&gt; 0)</string>
+    <string name="nutrition_pick_food_title">Choisir un aliment</string>
+    <string name="nutrition_pick_food_search">Rechercher un aliment…</string>
+    <string name="nutrition_pick_food_empty">Aucun aliment dans ton catalogue pour l\'instant.</string>
+    <string name="nutrition_picker_tab_catalog">Mon catalogue</string>
+    <string name="nutrition_picker_tab_off">Open Food Facts</string>
+    <string name="nutrition_picker_tab_create">Créer</string>
+    <string name="nutrition_picker_create_add">Créer et ajouter</string>
+    <string name="nutrition_picker_create_hint">Nom + 4 valeurs numériques (pour 100 g) requises.</string>
+    <string name="nutrition_food_kcal_per_100g">%1$d kcal/100g</string>
+    <string name="nutrition_food_kcal_value">%1$d kcal</string>
+    <string name="nutrition_food_per_100g_unit">/ 100 g</string>
+    <string name="nutrition_duplicate_title">Dupliquer un repas passé</string>
+    <string name="nutrition_duplicate_empty">Aucun repas passé à dupliquer.</string>
+    <string name="nutrition_duplicate_count">%1$d aliments</string>
+    <string name="nutrition_meal_time_label">Heure du repas (facultatif)</string>
+    <string name="hour_picker_none">Aucune heure</string>
+    <string name="hour_picker_clear">Effacer l\'heure</string>
+    <string name="hour_picker_hours">Heures</string>
+    <string name="hour_picker_minutes">Minutes</string>
+
+    <!-- Nutrition A3 — Catalogue d'aliments -->
+    <string name="drawer_item_food_catalogue">Catalogue d\'aliments</string>
+    <string name="nutrition_catalog_title">Catalogue d\'aliments</string>
+    <string name="nutrition_catalog_search">Rechercher par nom ou marque…</string>
+    <string name="nutrition_catalog_filters">Filtres</string>
+    <string name="nutrition_catalog_filters_count">Filtres (%1$d)</string>
+    <string name="nutrition_catalog_show_archived">Afficher les archivés</string>
+    <string name="nutrition_catalog_hide_archived">Masquer les archivés</string>
+    <string name="nutrition_catalog_create">Nouvel aliment</string>
+    <string name="nutrition_catalog_archived">Archivés</string>
+    <string name="nutrition_catalog_new">Nouveau</string>
+    <string name="nutrition_catalog_scan">Scan</string>
+    <string name="nutrition_scan_imported">Importé : %1$s</string>
+    <string name="nutrition_scan_not_found">Produit inconnu d\'Open Food Facts.</string>
+    <string name="nutrition_scan_error">Échec du scan. Réessaie.</string>
+    <string name="nutrition_catalog_import">Importer (OFF)</string>
+    <string name="nutrition_catalog_empty">Aucun aliment ne correspond.</string>
+    <string name="nutrition_catalog_group_recents">Récents</string>
+    <string name="nutrition_catalog_group_favorites">Favoris</string>
+    <string name="nutrition_catalog_group_all">Tous</string>
+    <string name="nutrition_catalog_group_archived">Archivés</string>
+    <!-- Badges de groupe d'aliments (foods.food_group, UPPER_CASE) — cf. FoodCategory.kt -->
+    <string name="nutrition_food_group_viande_rouge">Viande rouge</string>
+    <string name="nutrition_food_group_viande_blanche">Viande blanche</string>
+    <string name="nutrition_food_group_poisson">Poisson</string>
+    <string name="nutrition_food_group_fruits_de_mer">Fruits de mer</string>
+    <string name="nutrition_food_group_oeuf">Œufs</string>
+    <string name="nutrition_food_group_laitage">Laitages</string>
+    <string name="nutrition_food_group_legumineuse">Légumineuses</string>
+    <string name="nutrition_food_group_legume">Légumes</string>
+    <string name="nutrition_food_group_fruit">Fruits</string>
+    <string name="nutrition_food_group_cereale_feculent">Céréales &amp; féculents</string>
+    <string name="nutrition_food_group_noix_graine">Noix &amp; graines</string>
+    <string name="nutrition_food_group_matiere_grasse">Matières grasses</string>
+    <string name="nutrition_food_group_produit_sucre">Produits sucrés</string>
+    <string name="nutrition_food_group_boisson">Boissons</string>
+    <string name="nutrition_food_group_plat_compose">Plats composés</string>
+    <string name="nutrition_food_group_complement">Compléments</string>
+    <string name="nutrition_food_group_autre">Autre</string>
+    <string name="nutrition_catalog_action_details">Détails</string>
+    <string name="nutrition_catalog_action_edit">Modifier</string>
+    <string name="nutrition_catalog_action_favorite">Ajouter aux favoris</string>
+    <string name="nutrition_catalog_action_unfavorite">Retirer des favoris</string>
+    <string name="nutrition_catalog_action_archive">Archiver</string>
+    <string name="nutrition_catalog_action_unarchive">Désarchiver</string>
+    <string name="nutrition_catalog_delete_title">Supprimer l\'aliment</string>
+    <string name="nutrition_catalog_delete_message">Supprimer « %1$s » de ton catalogue ?</string>
+    <!-- Panneau de filtres (seuils) -->
+    <string name="nutrition_catalog_filters_title">Filtres actifs</string>
+    <string name="nutrition_catalog_filters_none">Aucun filtre actif.</string>
+    <string name="nutrition_catalog_filter_add">Ajouter un filtre</string>
+    <string name="nutrition_catalog_filter_nutrient">Nutriment</string>
+    <string name="nutrition_catalog_filter_value">Valeur (%1$s)</string>
+    <string name="nutrition_catalog_filter_add_button">Ajouter</string>
+    <string name="nutrition_catalog_filter_clear">Tout effacer</string>
+    <!-- Éditeur d'aliment -->
+    <string name="nutrition_catalog_create_title">Nouvel aliment</string>
+    <string name="nutrition_catalog_edit_title">Modifier l\'aliment</string>
+    <string name="nutrition_food_name">Nom</string>
+    <string name="nutrition_food_name_hint">Ex. Yaourt grec</string>
+    <string name="nutrition_food_brand">Marque</string>
+    <string name="nutrition_food_brand_hint">Ex. Fage (optionnel)</string>
+    <string name="nutrition_food_per_100g">Pour 100 g</string>
+    <string name="nutrition_food_optional">optionnel</string>
+    <string name="nutrition_food_kcal_derived_hint">Dérivée des macros : %1$d kcal</string>
+    <string name="nutrition_food_readonly_note">Valeurs nutritionnelles issues de %1$s — non modifiables.</string>
+    <string name="nutrition_food_portions">Portions nommées</string>
+    <string name="nutrition_food_portion_label_hint">Libellé (ex. 1 bol)</string>
+    <string name="nutrition_food_portion_grams">g</string>
+    <string name="nutrition_food_portion_add">Ajouter</string>
+    <!-- Import Open Food Facts -->
+    <string name="nutrition_catalog_off_title">Importer depuis Open Food Facts</string>
+    <string name="nutrition_catalog_off_search">Rechercher un produit…</string>
+    <string name="nutrition_catalog_off_search_button">Rechercher</string>
+    <string name="nutrition_catalog_off_hint">Cherche un produit pour l\'importer dans ton catalogue.</string>
+    <string name="nutrition_catalog_off_empty">Aucun produit trouvé.</string>
+    <string name="nutrition_catalog_off_error">Open Food Facts injoignable. Réessaie.</string>
+    <string name="nutrition_catalog_off_import">Importer</string>
+    <string name="nutrition_catalog_off_added">Ajouté</string>
+
+    <!-- Recettes &amp; repas enregistrés (A4) -->
+    <string name="drawer_item_recipes">Recettes &amp; repas</string>
+    <string name="nutrition_recipes_title">Recettes &amp; repas enregistrés</string>
+    <string name="nutrition_recipes_add">Ajouter une recette</string>
+    <string name="nutrition_recipes_empty">Aucune recette — crée un plat ou un repas enregistré.</string>
+    <string name="nutrition_recipes_section_dishes">Plats (recettes)</string>
+    <string name="nutrition_recipes_section_saved">Repas enregistrés</string>
+    <string name="nutrition_recipes_no_dish">Aucun plat.</string>
+    <string name="nutrition_recipes_no_saved">Aucun repas enregistré.</string>
+    <string name="nutrition_recipes_kind_recipe">Plat</string>
+    <string name="nutrition_recipes_kind_saved_meal">Repas enregistré</string>
+    <string name="nutrition_recipes_ingredient_count">%1$d ingrédients</string>
+    <string name="nutrition_recipes_cooked_grams">%1$d g cuit</string>
+    <string name="nutrition_recipes_kcal">%1$d kcal</string>
+    <string name="nutrition_recipes_macro_line">P %1$d · G %2$d · L %3$d · Fib %4$d</string>
+    <string name="nutrition_recipes_action_add_journal">Ajouter au journal</string>
+    <string name="nutrition_recipes_add_to_journal">Ajouter « %1$s » à…</string>
+    <string name="nutrition_recipes_qty_title">Quantité consommée — %1$s</string>
+    <string name="nutrition_recipes_qty_confirm">Ajouter</string>
+    <string name="nutrition_recipes_delete_title">Supprimer la recette</string>
+    <string name="nutrition_recipes_delete_message">Supprimer « %1$s » ? Les repas déjà journalisés sont conservés (snapshot).</string>
+
+    <!-- Éditeur de recette (A4) -->
+    <string name="nutrition_recipe_create_title">Nouvelle recette</string>
+    <string name="nutrition_recipe_edit_title">Modifier la recette</string>
+    <string name="nutrition_recipe_name">Nom</string>
+    <string name="nutrition_recipe_name_hint">Ex. Bol d\'avoine</string>
+    <string name="nutrition_recipe_kind_recipe">Plat (recette)</string>
+    <string name="nutrition_recipe_kind_saved_meal">Repas enregistré</string>
+    <string name="nutrition_recipe_hint_recipe">Plat : ajouté au journal comme un aliment, macros au prorata du poids consommé.</string>
+    <string name="nutrition_recipe_hint_saved_meal">Repas enregistré : ses ingrédients sont insérés tels quels dans une période, en un tap.</string>
+    <string name="nutrition_recipe_cooked_weight">Poids final cuit (g, facultatif)</string>
+    <string name="nutrition_recipe_ingredients">Ingrédients</string>
+    <string name="nutrition_recipe_no_ingredient">Aucun ingrédient — ajoute-en depuis le catalogue.</string>
+    <string name="nutrition_recipe_add_ingredient">Ajouter un ingrédient</string>
+    <string name="nutrition_recipe_invalid">Nom, au moins 1 ingrédient et quantités en g (&gt; 0) requis.</string>
+    <string name="nutrition_recipe_deleted_food">Aliment supprimé</string>
+
+    <!-- Objectifs nutrition (A5) -->
+    <string name="drawer_item_nutrition_goals">Objectifs nutrition</string>
+    <string name="nutrition_goals_title">Objectifs nutrition</string>
+    <string name="nutrition_goals_new">Nouvelle cible</string>
+    <string name="nutrition_goals_active">Cible active</string>
+    <string name="nutrition_goals_active_empty">Aucune cible active — définis ta première cible quotidienne.</string>
+    <string name="nutrition_goals_since">Depuis le %1$s</string>
+    <string name="nutrition_goals_section_breakdown">Répartition</string>
+    <!-- Sélecteur de vue de la répartition des calories (anneau / % macros / g·kg / radar) — libellés + descriptions a11y -->
+    <string name="nutrition_goals_breakdown_view_donut">Anneau</string>
+    <string name="nutrition_goals_breakdown_view_per_kg">Grammes par kg de poids de corps</string>
+    <string name="nutrition_goals_breakdown_view_radar">Radar</string>
+    <string name="nutrition_goals_per_kg_hint">Renseigne ton poids dans le profil pour les apports rapportés au poids (g/kg).</string>
+    <string name="nutrition_goals_section_radar">Profil macro</string>
+    <string name="nutrition_goals_week_avg_caption">Moyenne sur 7 jours vs cible</string>
+    <string name="nutrition_goals_radar_actual">Réel (7 j)</string>
+    <string name="nutrition_goals_radar_target">Cible</string>
+    <string name="nutrition_goals_section_history">Historique</string>
+    <string name="nutrition_goals_history_empty">Aucune cible définie.</string>
+    <string name="nutrition_goals_from">À partir du %1$s</string>
+    <string name="nutrition_goals_badge_active">active</string>
+    <string name="nutrition_goals_history_macros">%1$d kcal · P %2$d g · G %3$d g · L %4$d g · Fib %5$d g</string>
+    <string name="nutrition_goals_form_new_title">Nouvelle cible</string>
+    <string name="nutrition_goals_form_edit_title">Modifier la cible</string>
+    <string name="nutrition_goals_form_date">Active à partir du</string>
+    <string name="nutrition_goals_form_protein">Protéines (g / jour)</string>
+    <string name="nutrition_goals_form_carbs">Glucides (g / jour)</string>
+    <string name="nutrition_goals_form_fat">Lipides (g / jour)</string>
+    <string name="nutrition_goals_form_invalid">Date + 3 macros (≥ 0, au moins un &gt; 0) requis.</string>
+    <string name="nutrition_goals_form_derived_label">kcal objectif · dont %1$d g de fibres</string>
+    <string name="nutrition_goals_delete_title">Supprimer la cible</string>
+    <string name="nutrition_goals_delete_message">Supprimer la cible du %1$s ? Les jours concernés retomberont sur la cible précédente.</string>
+
+    <!-- Stats nutrition (A6) -->
+    <string name="drawer_item_nutrition_stats">Stats nutrition</string>
+    <string name="nutrition_stats_title">Stats nutrition</string>
+    <string name="nutrition_stats_all_label">Tout</string>
+    <string name="nutrition_stats_all_title">Toutes les macros (% de l\'objectif)</string>
+    <string name="nutrition_stats_top_foods">Top aliments</string>
+    <string name="nutrition_stats_top_by_category">Top aliment par catégorie</string>
+    <string name="nutrition_stats_top_empty">Aucun aliment sur cette période.</string>
+    <string name="nutrition_stats_chart_empty">Aucune donnée sur la période.</string>
+    <string name="nutrition_stats_chart_empty_logged">Aucun aliment saisi sur la période.</string>
+    <string name="nutrition_stats_legend_consumed">Consommé</string>
+    <string name="nutrition_stats_legend_target">Cible</string>
+
+    <!-- Écran Matériel (ANDROID_PARITY §B) -->
+    <string name="drawer_item_material">Matériel</string>
+    <string name="material_title">Matériel</string>
+    <string name="material_divider_actions">Actions</string>
+    <string name="material_divider_list">Matériel</string>
+    <string name="material_search_placeholder">Rechercher du matériel…</string>
+    <string name="material_results_count">%1$d matériel · %2$s</string>
+    <string name="material_filter_possession">Possession</string>
+    <string name="material_filter_all">Tout</string>
+    <string name="material_filter_mine">Mon matériel</string>
+    <string name="material_filter_not_mine">Hors mon matériel</string>
+    <string name="material_empty">Aucun matériel ne correspond.</string>
+    <string name="material_empty_default">Catalogue vide — synchronise, ou ajoute du matériel perso avec +.</string>
+    <string name="material_add_title">Nouveau matériel</string>
+    <string name="material_add_field_name">Nom</string>
+    <string name="material_add_placeholder">ex. Haltères 10 kg</string>
+    <string name="material_detail_actions">Actions</string>
+    <string name="material_detail_add_mine">Ajouter à mon matériel</string>
+    <string name="material_detail_remove_mine">Dans mon matériel — retirer</string>
+    <string name="material_detail_exercises_title">Exercices qui l\'utilisent · %1$d</string>
+    <string name="material_detail_exercises_simple">Exercices</string>
+    <string name="material_detail_no_catalog">Matériel personnel (hors catalogue) — aucun exercice lié.</string>
+    <string name="material_detail_no_exercises">Aucun exercice n\'utilise ce matériel.</string>
+
+    <!-- Health Connect (Santé — permissions + lecture) -->
+    <string name="settings_category_health">Données santé</string>
+    <string name="settings_category_health_desc">Connecter Health Connect (pas, distance, calories, fréquence cardiaque, sommeil)</string>
+    <string name="health_title">Données santé</string>
+    <string name="health_refresh">Rafraîchir les données santé</string>
+    <string name="health_status_title">Connexion</string>
+    <string name="health_status_connected">Connecté</string>
+    <string name="health_status_partial">Permissions partielles</string>
+    <string name="health_status_disconnected">Non connecté</string>
+    <string name="health_status_desc">Accès en lecture seule à tes données santé via Health Connect.</string>
+    <string name="health_connect_button">Connecter les données santé</string>
+    <string name="health_manage_button">Gérer dans Health Connect</string>
+    <string name="health_snapshot_title">Aperçu — Health Connect</string>
+    <string name="health_snapshot_loading">Lecture…</string>
+    <string name="health_snapshot_window">Pas, distance et calories : aujourd\'hui. Fréquence cardiaque et sommeil : dernières 24 h.</string>
+    <string name="health_type_steps">Pas</string>
+    <string name="health_type_distance">Distance</string>
+    <string name="health_type_active_calories">Calories actives</string>
+    <string name="health_type_heart_rate">Fréquence cardiaque</string>
+    <string name="health_type_spo2">Oxygène du sang</string>
+    <string name="health_type_sleep">Sommeil</string>
+    <string name="health_snapshot_steps">%1$d pas</string>
+    <string name="health_snapshot_distance">%1$s km</string>
+    <string name="health_snapshot_calories">%1$d kcal</string>
+    <string name="health_snapshot_heart_rate">%1$d bpm</string>
+    <string name="health_hr_last">Dernière : %1$d bpm (%2$s)</string>
+    <string name="health_hr_avg">Moy. 24 h : %1$d bpm</string>
+    <string name="health_snapshot_spo2">%1$d %% (%2$s)</string>
+    <string name="health_snapshot_sleep">%1$d h %2$d min</string>
+    <string name="health_sleep_asleep">Dormi %1$s</string>
+    <string name="health_sleep_in_bed">Au lit %1$s</string>
+    <string name="health_types_title">Données lues</string>
+    <string name="health_types_desc">Pas, distance, calories actives, fréquence cardiaque et sommeil. Lecture seule : l\'appli n\'écrit jamais dans Health Connect.</string>
+    <string name="health_sampling_title">Vraies tranches de pas</string>
+    <string name="health_sampling_toggle">Échantillonner les pas toutes les 30 min</string>
+    <string name="health_sampling_desc">Construit de vraies barres de pas par demi-heure en arrière-plan au lieu de l\'estimation plate. Nécessite l\'accès en arrière-plan ; le total du jour reste identique. Léger pour la batterie (relevés ~15 min).</string>
+    <string name="health_unavailable">Health Connect n\'est pas disponible sur cet appareil. Installe-le depuis le Play Store pour synchroniser tes données santé.</string>
+    <string name="health_update_required">Health Connect doit être mis à jour pour continuer.</string>
+    <string name="health_update_button">Mettre à jour Health Connect</string>
+
+    <!-- Canal live montre (Wear OS, Data Layer) -->
+    <string name="health_wear_title">Montre — live</string>
+    <string name="health_wear_disconnected">Montre non connectée</string>
+    <string name="health_wear_querying">Interrogation de la montre…</string>
+    <string name="health_wear_steps">Pas : %1$d</string>
+    <string name="health_wear_hr">FC : %1$d bpm</string>
+    <string name="health_wear_hr_waiting">FC : mesure…</string>
+    <string name="health_wear_freshness">il y a %1$d s</string>
+    <string name="health_wear_stale"> · en veille</string>
+
+    <!-- Hub Santé (UI pas / objectif / cardio / sommeil) -->
+    <string name="health_dash_title">Santé</string>
+    <string name="health_dash_steps_title">Pas</string>
+    <string name="health_dash_steps_of_goal">sur %1$d</string>
+    <string name="health_dash_no_goal">Objectif non défini</string>
+    <string name="health_dash_edit_goal">Régler l\'objectif</string>
+    <string name="health_dash_live_badge">live</string>
+    <string name="health_dash_intraday">Aujourd\'hui (par heure)</string>
+    <string name="health_dash_tonight">Cette nuit</string>
+    <string name="health_dash_week">7 derniers jours</string>
+    <string name="health_dash_hour_axis">%1$d h</string>
+    <string name="health_dash_cardio_title">Fréquence cardiaque</string>
+    <string name="health_dash_cardio_today">%1$d bpm aujourd\'hui</string>
+    <string name="health_dash_cardio_bpm">%1$d bpm</string>
+    <string name="health_dash_cardio_avg">moy. %1$d bpm</string>
+    <string name="health_dash_cardio_at">%1$02d:%2$02d</string>
+    <string name="health_dash_sleep_title">Sommeil</string>
+    <string name="health_dash_sleep_value">%1$d h %2$d min</string>
+    <string name="health_dash_sleep_bed_at">Au lit à</string>
+    <string name="health_dash_sleep_asleep_at">Endormi à</string>
+    <string name="health_dash_stage_deep">Profond</string>
+    <string name="health_dash_stage_light">Léger</string>
+    <string name="health_dash_stage_rem">Paradoxal</string>
+    <string name="health_dash_stage_awake">Éveillé</string>
+    <string name="health_dash_spo2_title">Oxygène du sang</string>
+    <string name="health_dash_spo2_value">%1$d %%</string>
+    <string name="health_dash_energy_title">Distance &amp; calories</string>
+    <string name="health_dash_distance_label">Distance</string>
+    <string name="health_dash_cal_bmr_label">Métabolisme (est.)</string>
+    <string name="health_dash_cal_active_label">Activité</string>
+    <string name="health_dash_cal_total_label">Total</string>
+    <string name="health_dash_cal_kcal">%1$d kcal</string>
+    <string name="health_dash_distance_m">%1$d m</string>
+    <string name="health_dash_distance_km">%1$s km</string>
+    <string name="health_dash_source_watch">Source : Montre</string>
+    <string name="health_dash_source_hc">Source : Health Connect</string>
+    <string name="health_dash_empty">Aucune donnée pour l\'instant.</string>
+    <string name="health_dash_goal_dialog_title">Objectif de pas</string>
+    <string name="health_dash_goal_label">Pas par jour</string>
+    <string name="health_dash_goal_placeholder">ex. 10000</string>
+    <string name="health_dash_goal_save">Enregistrer</string>
+    <string name="health_dash_goal_invalid">Saisis un nombre positif.</string>
+    <string name="health_dash_weight_title">Poids</string>
+    <string name="health_dash_weight_value">%1$s kg</string>
+    <string name="health_dash_weight_avg">moy. %1$s kg</string>
+    <string name="health_dash_stress_title">Stress</string>
+    <string name="health_dash_stress_log">Saisir le score de stress</string>
+    <string name="health_dash_stress_dialog_title">Score de stress</string>
+    <string name="health_dash_stress_l1">Très détendu</string>
+    <string name="health_dash_stress_l2">Détendu</string>
+    <string name="health_dash_stress_l3">Neutre</string>
+    <string name="health_dash_stress_l4">Stressé</string>
+    <string name="health_dash_stress_l5">Très stressé</string>
+    <string name="health_unit_steps">pas</string>
+    <string name="health_dash_weight_log">Saisir le poids</string>
+    <string name="health_dash_weight_dialog_title">Pesée</string>
+    <string name="health_dash_weight_prev_month">Mois précédent</string>
+    <string name="health_dash_weight_next_month">Mois suivant</string>
+    <string name="health_dash_weight_label">Poids (kg)</string>
+    <string name="health_dash_weight_placeholder">ex. 74,5</string>
+    <string name="health_dash_weight_invalid">Saisis un poids valide en kg.</string>
+    <string name="health_dash_month">30 derniers jours</string>
+</resources>

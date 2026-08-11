@@ -1,0 +1,107 @@
+/* Styles globaux — tokens du design system + reset léger. */
+@use './app/designsystem/theme';
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Pas d'outline carré au tap/clic (le flash débordait des coins arrondis) ; gardé pour le clavier (a11y). */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--app-text-primary);
+  background-color: var(--app-bg-screen);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar stylée et discrète, cohérente avec le thème (s'applique partout : page, drawer,
+   bottom-sheets, dialogs, pickers…). Firefox : `scrollbar-*` ; WebKit/Blink : pseudo-éléments.
+   Le thumb utilise le divider gris-bleu et s'éclaircit au survol ; piste transparente. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--app-divider) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  /* bordure transparente + background-clip = thumb plus fin que la gouttière, avec une marge. */
+  background: var(--app-divider);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 6px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--app-text-secondary);
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Animations d'entrée des overlays modaux (dialogs) — partagées par les .dlg__scrim / .dlg__card.
+   @keyframes sont globales : définies une fois ici, référencées depuis les styles scopés des dialogs. */
+@keyframes app-scrim-in {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+@keyframes app-dialog-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Transition de mode d'affichage (parité AnimatedModeContent Android, 2026-07-14) : le contenu
+   entrant glisse depuis le côté du sens de navigation + fondu, jouée à la CRÉATION du DOM
+   (@switch/@if recrée la branche). Poser la classe selon un signal de direction (null au
+   chargement → pas d'animation initiale). Utilisé par le bandeau du Journal nutrition. */
+@keyframes mode-in-right {
+  from {
+    transform: translateX(32px);
+    opacity: 0;
+  }
+}
+@keyframes mode-in-left {
+  from {
+    transform: translateX(-32px);
+    opacity: 0;
+  }
+}
+.mode-anim--right {
+  animation: mode-in-right 0.22s ease;
+}
+.mode-anim--left {
+  animation: mode-in-left 0.22s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mode-anim--right,
+  .mode-anim--left {
+    animation: none;
+  }
+}

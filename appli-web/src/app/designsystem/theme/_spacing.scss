@@ -1,0 +1,25 @@
+// Échelle d'espacement base 4px (= dp Android) + rayons.
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  // Gouttière horizontale des pages (corps de page) — réglage unique pour "plus/moins d'espace
+  // gauche/droite partout" (sert aussi de gap entre panneaux côte à côte). Responsive :
+  // 20px (mobile) -> ~57px (1920) -> 64px (ultrawide).
+  // Les barres de titre pleine largeur (ScreenTitleBar) NE la subissent pas (hors corps de page).
+  --page-gutter: clamp(20px, 3vw, 64px);
+  // Gouttière HAUTE (sous header/tabs) — découplée + plus petite que la latérale
+  // (l'espace vertical "pèse" plus). Réglage unique du haut. ~12px (mobile) -> ~28px (grand écran).
+  --page-gutter-top: clamp(12px, 1.5vw, 28px);
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+}

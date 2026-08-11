@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sport-app — Autorisation MCP</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #0f1729;
+            color: #e8eaf2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            background: #1a2438;
+            border-radius: 12px;
+            padding: 32px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            margin: 0 0 8px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .subtitle {
+            color: #97a3c0;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .client-badge {
+            background: #2a3550;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .client-badge strong { color: #6b8aff; }
+        .scopes {
+            background: #141c2e;
+            border-left: 3px solid #6b8aff;
+            padding: 12px 16px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+            font-size: 13px;
+        }
+        .scopes-title {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #c7d0e8;
+        }
+        .scopes ul { margin: 6px 0 0; padding-left: 18px; color: #97a3c0; }
+        .scopes li { margin-bottom: 4px; }
+        label {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 6px;
+            color: #c7d0e8;
+        }
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 10px 12px;
+            background: #141c2e;
+            border: 1px solid #2a3550;
+            border-radius: 6px;
+            color: #e8eaf2;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #6b8aff;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #6b8aff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button:hover { background: #5a78ee; }
+        .error {
+            background: #3a1a24;
+            border-left: 3px solid #ff5b6e;
+            padding: 10px 14px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: #ffb3bc;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #6b7894;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Autoriser l'accès</h1>
+        <p class="subtitle">Un client MCP demande à accéder à votre compte sport-app.</p>
+
+        <div class="client-badge">
+            Client : <strong>{{ client_name }}</strong>
+        </div>
+
+        {% if scope_descriptions %}
+        <div class="scopes">
+            <div class="scopes-title">Permissions demandées :</div>
+            <ul>
+                {% for scope, desc in scope_descriptions %}
+                <li><code>{{ scope }}</code> — {{ desc }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST" action="/mcp/oauth/authorize">
+            <input type="hidden" name="client_id" value="{{ client_id }}">
+            <input type="hidden" name="redirect_uri" value="{{ redirect_uri }}">
+            <input type="hidden" name="scope" value="{{ scope }}">
+            <input type="hidden" name="state" value="{{ state }}">
+            <input type="hidden" name="code_challenge" value="{{ code_challenge }}">
+            <input type="hidden" name="code_challenge_method" value="{{ code_challenge_method }}">
+
+            <label for="username">Nom d'utilisateur sport-app</label>
+            <input type="text" id="username" name="username" autocomplete="username" required autofocus>
+
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" required>
+
+            <button type="submit">Autoriser</button>
+        </form>
+
+        <p class="footer">sport-app · MCP authorization · ne saisissez vos identifiants que sur ce domaine</p>
+    </div>
+</body>
+</html>

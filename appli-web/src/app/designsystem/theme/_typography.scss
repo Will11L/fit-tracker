@@ -1,0 +1,18 @@
+// Échelle typographique. Android (Type.kt) est minimaliste (Roboto, tailles inline) :
+// on pose une base raisonnable, surchargée ponctuellement par composant.
+
+:root {
+  --font-family-base: 'Roboto', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --font-size-display: 28px;
+  --font-size-title: 20px;
+  --font-size-subtitle: 16px;
+  --font-size-body: 14px;
+  --font-size-caption: 12px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --line-height-body: 1.5;
+}

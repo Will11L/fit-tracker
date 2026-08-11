@@ -1,0 +1,16 @@
+<resources>
+    <string name="wear_app_name">FitTracker Live</string>
+    <string name="wear_title">Live</string>
+    <string name="wear_steps_label">Steps</string>
+    <string name="wear_hr_label">Heart rate</string>
+    <string name="wear_hr_value">%1$d bpm</string>
+    <string name="wear_measuring">Measuring…</string>
+    <string name="wear_no_value">—</string>
+    <string name="wear_permission_needed">Allow sensors to read heart rate and steps.</string>
+    <string name="wear_permission_button">Grant permissions</string>
+    <string name="wear_background_needed">Allow heart rate access \"all the time\" so the phone can read it when this app is closed.</string>
+    <string name="wear_background_button">Allow all the time</string>
+    <string name="wear_background_skip">Later</string>
+    <string name="wear_sending">Sending to phone</string>
+    <string name="wear_not_sending">Phone not reachable</string>
+</resources>

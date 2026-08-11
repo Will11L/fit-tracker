@@ -1,0 +1,19 @@
+[Unit]
+Description=GitHub webhook -> Pi auto-deploy (sportapi)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=william
+Group=william
+WorkingDirectory=/home/william/Applications/sport-app/serveur
+EnvironmentFile=/home/william/.config/sportapi-webhook.env
+ExecStart=/usr/bin/python3 /home/william/Applications/sport-app/serveur/webhook/webhook.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

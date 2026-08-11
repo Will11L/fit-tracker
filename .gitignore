@@ -1,0 +1,21 @@
+# Export HTML d'Android Studio (généré, pas du code source)
+appli-android/exportToHTML/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editeurs
+*.swp
+*.swo
+*~
+
+# Claude Code local config (per-machine)
+.claude/
+
+# Valeurs d'infrastructure reelles (jamais versionnees)
+INFRA_LOCAL.md
+
+# Assets locaux non redistribuables (originaux d'ouvrages proteges)
+appli-android/local-assets/
