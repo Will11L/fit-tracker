@@ -3,7 +3,8 @@
 | Fichier | État | Contenu |
 |---|---|---|
 | `hero.png` | ✅ | Bandeau : séance, équilibre par zone, hub Santé |
-| `sport.png` | ✅ | Séance en cours, radar par zone, volume par muscle |
+| `sport-planification.png` | ✅ | Programme de la semaine, séance en cours, calendrier |
+| `sport-catalogue.png` | ✅ | Fiche exercice et muscles, radar par zone, volume par muscle |
 | `nutrition.png` | ✅ | Calendrier à anneaux, hydratation et repas, détail par aliment |
 | `sante.png` | ✅ | Pas, fréquence cardiaque intraday, sommeil par phase |
 | `sync-offline.gif` | ⬜ | Couper le réseau, saisir une série, rétablir : la donnée remonte. 10-15 s, < 8 Mo |

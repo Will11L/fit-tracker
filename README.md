@@ -30,9 +30,13 @@ L'application accompagne une pratique sportive au quotidien, du suivi de la séa
 
 ### Entraînement
 
-Séance en cours avec ses phases, équilibre du volume par zone, et répartition fine sur les 35 muscles de la taxonomie.
+Programme hebdomadaire, déroulé d'une séance découpée en phases (échauffement, entraînement, récupération), et calendrier de progression mensuelle.
 
-![Séance, équilibre par zone et volume par muscle](docs/media/sport.png)
+![Programme de la semaine, séance en cours, calendrier](docs/media/sport-planification.png)
+
+Chaque exercice porte ses muscles précis, ses séries et son temps de repos. Les statistiques s'appuient sur cette taxonomie : équilibre par zone en radar, puis volume détaillé muscle par muscle.
+
+![Fiche exercice, équilibre par zone, volume par muscle](docs/media/sport-catalogue.png)
 
 ### Nutrition
 
