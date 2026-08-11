@@ -1,0 +1,105 @@
+name: Tests
+
+# T1.2 (2026-05-06) : CI basique — exécute pytest serveur + tests JVM Android
+# au push sur main et sur les PRs. Cf. TODO_FEATURES.md §0 Tier 1.2.
+#
+# Pas d'androidTest instrumented ici (besoin émulateur, lent, ~10min).
+# À ajouter en cron quotidien quand stable (T1.2-bis).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  serveur-pytest:
+    name: Serveur pytest (Postgres)
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: fittracker
+          POSTGRES_PASSWORD: fittracker
+          POSTGRES_DB: fittracker_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    defaults:
+      run:
+        working-directory: serveur
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python 3.14
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+          cache-dependency-path: serveur/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run pytest
+        env:
+          # Override par défaut de TEST_DATABASE_URL pour pointer le service container CI.
+          TEST_DATABASE_URL: postgresql+asyncpg://fittracker:fittracker@localhost:5432/fittracker_test
+          # Secrets minimaux pour les tests (pas la prod, just for runtime).
+          DATABASE_URL: postgresql+asyncpg://fittracker:fittracker@localhost:5432/fittracker_test
+          JWT_SECRET_KEY: ci-test-secret-key-not-for-prod
+        run: pytest -v
+
+  android-junit:
+    name: Android JVM tests (JUnit + Robolectric)
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: appli-android
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Make gradlew executable
+        # Le bit +x n'est pas préservé quand on clone depuis Windows (NTFS).
+        # Doit être AVANT setup-gradle car celui-ci lance ./gradlew --version
+        # au setup pour valider le wrapper → exit 126 sans chmod.
+        run: chmod +x gradlew
+
+      - name: Setup JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Setup Android SDK
+        # ubuntu-latest n'a pas le SDK Android pré-installé.
+        # compileSdk=36 nécessite le platform-36 (Android 16).
+        uses: android-actions/setup-android@v3
+        with:
+          packages: "platforms;android-36 build-tools;36.0.0"
+
+      - name: Setup Gradle (with cache)
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Run :app:testDebugUnitTest
+        run: ./gradlew :app:testDebugUnitTest --no-daemon --stacktrace
+
+      - name: Upload test reports on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-junit-reports
+          path: appli-android/app/build/reports/tests/testDebugUnitTest/
+          retention-days: 7
